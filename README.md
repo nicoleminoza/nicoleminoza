@@ -1,4 +1,4 @@
-# Nicole Miñoza — Personal Site
+# Nicole Miñoza — Professional Site
 
 Static site. No build step. Two pages:
 
