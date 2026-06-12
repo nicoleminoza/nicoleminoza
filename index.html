@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#faf6f1;
@@ -96,7 +96,7 @@
     opacity:0;visibility:hidden;position:absolute;inset:0;
     transition:opacity .4s ease;
   }
-  .pos b{font-weight:600;font-style:normal}
+  .pos b{font-weight:700;font-style:normal}
   [data-tone="editorial"] .pos.editorial,
   [data-tone="punchy"] .pos.punchy,
   [data-tone="warm"] .pos.warm{opacity:1;visibility:visible;position:relative}
@@ -153,7 +153,7 @@
     font-size:clamp(40px,5.4vw,68px);line-height:1;display:block}
   .metric .fig small{font-size:.5em;font-weight:500;color:var(--accent);margin-left:2px}
   .metric .cap{font-family:var(--sans);font-size:13.5px;line-height:1.4;color:#d9ccc4;
-    margin-top:12px;max-width:22ch}
+    margin-top:12px;max-width:23ch;text-wrap:balance}
   @media(max-width:760px){.metrics .inner{grid-template-columns:1fr 1fr;gap:30px 24px}}
   @media(max-width:430px){.metrics .inner{grid-template-columns:1fr}}
 
@@ -259,6 +259,9 @@
   .role .what li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;
     border-radius:50%;background:var(--accent)}
   .role .what li b{font-weight:600}
+  .role .what li a{color:var(--brand);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent);transition:border-color .15s}
+  .role .what li a:hover{border-bottom-color:var(--brand)}
+  #adobe-originals,#microsites{scroll-margin-top:92px}
   @media(max-width:720px){.role{grid-template-columns:1fr;gap:14px}}
 
   /* ---------- now / board ---------- */
@@ -281,6 +284,9 @@
   .now-card li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;
     background:var(--accent)}
   .now-card li b{color:var(--paper);font-weight:600}
+  .now-card .subdiv{display:flex;align-items:center;gap:12px;margin:16px 0 12px}
+  .now-card .subdiv span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .now-card .subdiv::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--paper) 16%,transparent)}
   @media(max-width:720px){.now-grid{grid-template-columns:1fr}}
 
   /* ---------- credentials + references ---------- */
@@ -296,7 +302,17 @@
   .creds .refs a{color:var(--brand);text-decoration:none;font-weight:600;
     border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent)}
   .creds .refs a:hover{border-bottom-color:var(--brand)}
-  .creds .refs .meta{color:var(--faint);font-size:13px;display:block;margin-top:3px}
+  .creds .refs .meta{color:var(--faint);font-size:13px;display:block;margin-top:5px}
+  .creds .refs li b{font-weight:600;font-size:16px}
+  .creds .refs .yr{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent);margin-left:8px;vertical-align:1px}
+  .creds .refs .meta a{font-weight:500}
+  .creds .refs-quote{margin:14px 0 2px;padding:16px 0 0;border-top:1px solid var(--rule)}
+  .creds .refs-quote p{font-family:var(--display);font-style:italic;font-weight:400;
+    font-size:clamp(17px,1.6vw,20px);line-height:1.4;letter-spacing:-.005em;color:var(--ink);margin:0 0 11px}
+  .creds .refs-quote cite{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+    color:var(--soft);line-height:1.5;display:block}
+  .creds .refs-quote cite b{color:var(--brand);font-weight:600}
+  .creds .refs-quote cite .sub{display:block;color:var(--faint);margin-top:4px;letter-spacing:.04em}
   @media(max-width:720px){.creds .inner{grid-template-columns:1fr;gap:40px}}
 
   /* ---------- selected writing ---------- */
@@ -311,6 +327,101 @@
   .writing-list .meta .yr{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
     text-transform:uppercase;color:var(--accent);margin-right:2px}
   @media(max-width:760px){.writing-list{grid-template-columns:1fr}}
+
+  /* ---------- earned media ---------- */
+  .earned .frame{font-family:var(--display);font-weight:400;font-size:clamp(19px,2vw,24px);
+    line-height:1.4;color:var(--ink);max-width:62ch;margin:0 0 clamp(30px,4vw,44px)}
+  .earned .frame b{font-weight:600}
+  .earned .frame .sep{color:var(--faint);padding:0 6px}
+  .em-lead{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(26px,4vw,56px);
+    border:1px solid var(--rule);border-radius:8px;background:var(--paper);
+    padding:clamp(24px,2.8vw,38px);margin-bottom:clamp(16px,2vw,24px);align-items:center;
+    transition:transform .2s,box-shadow .2s,border-color .2s}
+  .em-lead:hover{transform:translateY(-3px);box-shadow:0 22px 48px -30px rgba(43,20,30,.4);border-color:var(--accent)}
+  .em-lead .lh h3{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.9vw,34px);
+    line-height:1.06;letter-spacing:-.015em;margin:0 0 8px}
+  .em-lead .lh .yr{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--accent)}
+  .em-lead .lh .outlets{margin:16px 0 0;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;
+    text-transform:uppercase;color:var(--faint)}
+  .em-lead .lh .outlets a{color:var(--brand);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent)}
+  .em-lead .lh .outlets a:hover{border-bottom-color:var(--brand)}
+  .em-lead .pull{margin:0}
+  .em-lead .pull p{font-family:var(--display);font-style:italic;font-weight:400;
+    font-size:clamp(20px,2vw,25px);line-height:1.42;letter-spacing:-.005em;color:var(--ink);margin:0 0 14px}
+  .em-lead .pull cite{font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--soft);line-height:1.55;display:block}
+  .em-lead .pull cite b{color:var(--brand);font-weight:600}
+  .em-lead .pull cite .sub{display:block;color:var(--faint);margin-top:5px;letter-spacing:.03em}
+  @media(max-width:780px){.em-lead{grid-template-columns:1fr;gap:22px;align-items:start}}
+  .em-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);align-items:start}
+  .em-card{border:1px solid var(--rule);border-radius:8px;background:var(--paper);
+    padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;
+    transition:transform .2s,box-shadow .2s,border-color .2s}
+  .em-card:hover{transform:translateY(-3px);box-shadow:0 20px 44px -30px rgba(43,20,30,.4);border-color:var(--accent)}
+  .em-card .kick{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:14px}
+  .em-card h3{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.2vw,26px);
+    line-height:1.12;letter-spacing:-.01em;margin:0 0 12px}
+  .em-card p{margin:0 0 18px;color:var(--soft);font-size:15px;line-height:1.55}
+  .em-card .cov{margin-top:auto;padding-top:16px;border-top:1px solid var(--rule)}
+  .em-card .cov-links{margin:0;font-size:12.5px;line-height:1.7;color:var(--soft)}
+  .em-card .cov-links .clab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-right:7px}
+  .em-card .cov-links a{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--brand);
+    text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent)}
+  .em-card .cov-links a:hover{border-bottom-color:var(--brand)}
+  .em-card .card-archive{display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--faint);text-decoration:none;transition:color .15s}
+  .em-card .card-archive:hover{color:var(--brand)}
+  .em-card .card-archive .arr{transition:transform .18s}
+  .em-card .card-archive:hover .arr{transform:translateX(3px)}
+  @media(max-width:680px){.em-cards{grid-template-columns:1fr}}
+  .em-micro{margin:clamp(24px,3vw,34px) 0 0;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:14.5px;color:var(--soft);line-height:1.6;max-width:80ch}
+  .em-micro b{color:var(--ink);font-weight:600}
+  .em-micro a{color:var(--brand);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent)}
+  .em-micro a:hover{border-bottom-color:var(--brand)}
+  .archive-link{display:inline-flex;align-items:center;gap:8px;margin-top:clamp(24px,3vw,34px);
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--soft);text-decoration:none;transition:color .15s}
+  .archive-link:hover{color:var(--brand)}
+  .archive-link .arr{transition:transform .18s}
+  .archive-link:hover .arr{transform:translateX(4px)}
+  .archive-collapse{margin-top:clamp(14px,2vw,20px)}
+  .archive-collapse>summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--soft);transition:color .15s}
+  .archive-collapse>summary::-webkit-details-marker{display:none}
+  .archive-collapse>summary::marker{content:""}
+  .archive-collapse>summary:hover{color:var(--brand)}
+  .archive-collapse>summary .chev{transition:transform .2s;color:var(--accent);font-size:11px}
+  .archive-collapse[open]>summary .chev{transform:rotate(90deg)}
+  .archive-list{list-style:none;margin:16px 0 0;padding:16px 0 2px;border-top:1px solid var(--rule);display:grid;gap:11px}
+  .archive-list li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.5;color:var(--soft)}
+  .archive-list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .archive-list a{color:var(--brand);text-decoration:none;font-weight:500;border-bottom:1px solid color-mix(in srgb,var(--brand) 30%,transparent)}
+  .archive-list a:hover{border-bottom-color:var(--brand)}
+  .archive-list .src2{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--faint);text-transform:uppercase;white-space:nowrap}
+
+  /* ---------- selected writing (cards) ---------- */
+  .wcards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,28px)}
+  .wcard{border-top:2px solid color-mix(in srgb,var(--ink) 42%,var(--paper));padding:18px 2px 0;display:flex;flex-direction:column}
+  .wcard .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:16px}
+  .wcard a.t{font-family:var(--display);font-weight:500;font-size:clamp(19px,1.7vw,22px);line-height:1.16;
+    letter-spacing:-.01em;color:var(--ink);text-decoration:none;transition:color .15s}
+  .wcard a.t:hover{color:var(--brand)}
+  .wcard .cred{margin:12px 0 0;font-size:13.5px;color:var(--soft);line-height:1.5}
+  .wcard .cred .src{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+    color:var(--faint);text-transform:uppercase}
+  @media(max-width:760px){.wcards{grid-template-columns:1fr;gap:0}.wcard{padding:18px 2px}}
+
+  /* ---------- education ---------- */
+  .email-plain{user-select:all;-webkit-user-select:all;cursor:text}
+  .contact .acts .email-plain:hover{background:#fff;color:var(--brand);transform:none}
 
   /* ---------- contact ---------- */
   .contact{background:var(--brand);color:#fff;padding-block:clamp(64px,8vw,120px);
@@ -330,6 +441,12 @@
   footer.foot a{color:#cdbfb6;text-decoration:none}
   footer.foot a:hover{color:var(--paper)}
   footer.foot .fmono{font-family:var(--mono);font-size:12px;letter-spacing:.05em}
+  footer.foot .colophon{margin-top:18px;padding-top:16px;justify-content:flex-start;
+    border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent)}
+  footer.foot .colophon .set{font-size:12px;letter-spacing:.04em;color:var(--faint)}
+  footer.foot .colophon .set .fn-serif{font-family:var(--display);font-style:italic;font-size:15px;letter-spacing:0;color:#cdbfb6}
+  footer.foot .colophon .set .fn-sans{font-family:var(--sans);font-weight:600;font-size:13.5px;letter-spacing:0;color:#cdbfb6}
+  footer.foot .colophon .set .fn-mono{font-family:var(--mono);font-size:12.5px;color:#cdbfb6}
 
   /* tweak mount */
   #tweak-root{position:fixed;z-index:60}
@@ -344,8 +461,9 @@
     <nav class="navlinks">
       <a href="#work" class="hide-sm">Signature Work</a>
       <a href="#thinking" class="hide-sm">How I Think</a>
+      <a href="#now" class="hide-sm">Now</a>
       <a href="#career" class="hide-sm">Career</a>
-      <a class="pill" href="mailto:hello@nicoleminoza.com">Get in touch</a>
+      <a class="pill" href="#contact">Get in touch</a>
     </nav>
   </div>
 </div>
@@ -360,17 +478,14 @@
       </div>
       <h1 class="name">Nicole <em>Miñoza</em></h1>
       <div class="positioning">
-        <p class="pos editorial">I turn overlooked features into <b>revenue, retention, and reach.</b> Product and marketing leadership that moves the business.</p>
-        <p class="pos punchy">I turn overlooked features into <b>revenue, retention, and reach.</b> Product and marketing leadership that moves the business.</p>
-        <p class="pos warm">I lead teams that make the smallest details (letters, words, type) carry the <b>biggest ideas,</b> through clarity, craft, and judgment.</p>
+        <p class="pos editorial" style="font-weight: 400">I turn overlooked features into <b>revenue, retention, and reach.</b> I own <b>both the product and the story that sells it.</b></p>
       </div>
       <div class="hero-meta">
-        <a class="btn" href="mailto:hello@nicoleminoza.com">
+        <a class="btn" href="#contact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
           Email me
         </a>
         <a class="btn ghost" href="https://www.linkedin.com/in/nicoleminoza" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="meta-loc num">Seattle, WA<span class="dotsep">·</span>23 yrs at Adobe</span>
       </div>
     </div>
 
@@ -378,7 +493,7 @@
       <div class="portrait-frame">
         <img class="portrait" id="portrait" src="assets/nicole-portrait.jpg" alt="Portrait of Nicole Miñoza">
       </div>
-      <span class="portrait-tag" style="font-weight: 600"><span style="color:#5d534c;font-weight:500">DIRECTOR, PRODUCT &amp; <span style="color:#6b2c41">MARKETING</span></span></span>
+      <span class="portrait-tag" style="font-weight: 600"><span style="color:#5d534c;font-weight:500">PRODUCT &amp; PRODUCT MARKETING <span style="color:#6b2c41">LEADERSHIP</span></span></span>
     </div>
   </div>
 </header>
@@ -388,19 +503,19 @@
   <div class="inner">
     <div class="metric">
       <span class="fig num">23<small>yrs</small></span>
-      <p class="cap">Building Adobe's fonts &amp; typography platform, from Quality Engineer to Product Director</p>
+      <p class="cap">Built and scaled Adobe's fonts and typography platform; Quality Engineer to Product Director</p>
     </div>
     <div class="metric">
       <span class="fig num">+186<small>%</small></span>
-      <p class="cap">Free-to-paid conversion lift in Adobe Express from redesigned font recommendations</p>
+      <p class="cap">Free-to-paid lift in Adobe Express from redesigned font recommendations (Q2 FY25)</p>
     </div>
     <div class="metric">
       <span class="fig num">−42<small>%</small></span>
-      <p class="cap">Lower monthly churn among subscribers who use Adobe Fonts, the retention case</p>
+      <p class="cap">Lower monthly churn among Adobe Fonts subscribers (2019–2021, reconfirmed Sept 2025)</p>
     </div>
     <div class="metric">
       <span class="fig num">12M<small>+</small></span>
-      <p class="cap">Monthly active users of Adobe Fonts, grew 3× faster than Creative Cloud (FY25)</p>
+      <p class="cap">Monthly active users of Adobe Fonts, grew 3× faster than Creative Cloud YoY (Dec 2025)</p>
     </div>
   </div>
 </section>
@@ -419,7 +534,7 @@
       </figure>
     </div>
     <div>
-      <p class="big-statement">At Adobe, the overlooked feature was <span class="hl">typography</span>. I proved it drove <b>conversion, retention, and platform growth</b>, then owned product strategy and marketing for a <b style="font-weight: 400">75-person type organization</b> to deliver it: SVP buy-in seven years running, adoption across <b>12 flagship apps won on influence alone</b>, and a roadmap I pivoted to the generative AI era.</p>
+      <p class="big-statement">At Adobe, the overlooked feature was <span class="hl">typography</span>. I proved it drove <b>conversion, retention, and platform growth</b>, then owned product strategy and marketing for a <b>75-person type organization</b> to deliver it: SVP buy-in seven years running, adoption across <b>12 flagship apps won on influence alone</b>, and a roadmap I pivoted to the <span class="hl">AI era</span>.</p>
     </div>
   </div>
 </section>
@@ -433,7 +548,7 @@
       <span class="idx num">02</span>
       <div>
         <h2 class="sec-title">Signature work</h2>
-        <p class="sec-lede">Decisions that moved the business. Each instrumented, each defensible.</p>
+        <p class="sec-lede">Five decisions I'd defend in any room.</p>
       </div>
     </div>
 
@@ -441,7 +556,7 @@
       <span class="wnum">01</span>
       <div class="wbody">
         <h3>Renamed Typekit to Adobe Fonts and repositioned fonts as a membership benefit</h3>
-        <p>Recognized the removal of activation limits as a rebrand moment, took the case to brand leadership, chose the name, directed the new site, and ran GTM on a tight Adobe MAX timeline - zero foundry-partner losses.</p>
+        <p>Recognized the removal of activation limits as a rebrand moment, took the case to brand leadership, chose the name, directed the new site, and ran GTM on a tight Adobe MAX timeline, with zero foundry-partner losses.</p>
         <p class="where">2018 · Group Product Marketing Manager</p>
       </div>
       <div class="wfig">
@@ -453,9 +568,22 @@
     <div class="win">
       <span class="wnum">02</span>
       <div class="wbody">
+        <h3>Defined Adobe's typography strategy for the AI era</h3>
+        <p>Made fonts and text core to Adobe's AI tools, not an afterthought. Shipped generative text edit in Firefly Boards at MAX 2025, took ML typography service to public beta, and built the case for exposing font discovery to AI assistants.</p>
+        <p class="where">2025–2026 · Director, Product Management</p>
+      </div>
+      <div class="wfig">
+        <span class="v">Adobe MAX</span>
+        <span class="l">Debuted 2025</span>
+      </div>
+    </div>
+
+    <div class="win">
+      <span class="wnum">03</span>
+      <div class="wbody">
         <h3>Proved typography drives revenue</h3>
-        <p>Redesigned Adobe Express font recommendations into one of its top premium drivers. Users who applied a recommended font exported at 73.7% versus 37.3% overall. turning a creative detail into a measurable conversion lever.</p>
-        <p class="where">FY25 · Director, Product Management</p>
+        <p>Redesigned Adobe Express font recommendations into one of its top premium drivers. Users who applied a recommended font exported at 73.7% versus 37.3% overall.</p>
+        <p class="where">2025 · Director, Product Management</p>
       </div>
       <div class="wfig">
         <span class="v num">+186%</span>
@@ -464,28 +592,28 @@
     </div>
 
     <div class="win">
-      <span class="wnum">03</span>
-      <div class="wbody">
-        <h3>Launched Adobe's largest font-library expansion in five years</h3>
-        <p>Built the business case from user drop-off data and owned the Monotype go-to-market, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
-        <p class="where">April 2025 · Director, Product Management</p>
-      </div>
-      <div class="wfig">
-        <span class="v num">1.2M</span>
-        <span class="l">Users in weeks</span>
-      </div>
-    </div>
-
-    <div class="win">
       <span class="wnum">04</span>
       <div class="wbody">
-        <h3>Defined Adobe's typography strategy for the generative AI era</h3>
-        <p>Repositioned fonts and text as core capabilities in AI-first workflows. Shipped generative text edit in Firefly Boards at MAX 2025, took ML typography service to public beta, and built the case for exposing font discovery to AI assistants.</p>
-        <p class="where">2025–2026 · DIRECTOR, PRODUCT MANAGEMENT</p>
+        <h3>Built Adobe's unified text engine across every flagship app</h3>
+        <p>Put every flagship app on one shared text codebase, built for the web: 40× faster, and finally fixed broken layout for CJK, Arabic, and Hebrew users.</p>
+        <p class="where">2021–2026 · Director, Product Management</p>
       </div>
       <div class="wfig">
         <span class="v num">15M</span>
         <span class="l">Text-engine users</span>
+      </div>
+    </div>
+
+    <div class="win">
+      <span class="wnum">05</span>
+      <div class="wbody">
+        <h3>Launched Adobe's largest font-library expansion in five years</h3>
+        <p>Built the business case from user drop-off data and owned the Monotype go-to-market, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
+        <p class="where">2025 · Director, Product Management</p>
+      </div>
+      <div class="wfig">
+        <span class="v num">1.2M</span>
+        <span class="l">Users in weeks</span>
       </div>
     </div>
   </div>
@@ -498,7 +626,7 @@
       <span class="idx num">03</span>
       <div>
         <h2 class="sec-title">How I think</h2>
-        <p class="sec-lede">The repeatable frameworks behind the results.</p>
+        <p class="sec-lede">The examples are fonts; the playbooks carry to any product.</p>
       </div>
     </div>
 
@@ -523,19 +651,7 @@
       </article>
 
       <article class="pb">
-        <div class="pb-kicker"><span class="n">Playbook 02</span><span class="tag">Brand</span></div>
-        <h3>The product inflection test: when to rebrand</h3>
-        <p class="essence">A rebrand without a structural moment is just a name change. Three yeses, or ship the update and protect brand equity.</p>
-        <ol>
-          <li><b>Category change:</b> does the change move the product into a new competitive category?</li>
-          <li><b>Brand friction:</b> does the old name fight the new value proposition?</li>
-          <li><b>Narrative anchor:</b> is there a clean before/after to tell?</li>
-        </ol>
-        <div class="rule-line"><span class="rk">Decision rule</span><b>All three yes → rebrand.</b> The moment is the story.</div>
-      </article>
-
-      <article class="pb">
-        <div class="pb-kicker"><span class="n">Playbook 03</span><span class="tag">Influence</span></div>
+        <div class="pb-kicker"><span class="n">Playbook 02</span><span class="tag">Influence</span></div>
         <h3>Value-led adoption: 12 app teams, no authority</h3>
         <p class="essence">You don't mandate a platform onto teams you don't own. You make integrating it their win, and you measure the number they respect.</p>
         <ol>
@@ -544,11 +660,11 @@
           <li>Standardize the surface so each new app costs less to ship.</li>
           <li>Measure usage, not installs: report unique users actually <i>using</i> the feature.</li>
         </ol>
-        <div class="rule-line"><span class="rk">Result</span><b>Adobe Fonts live across 12 apps → 11M in-app MAU.</b></div>
+        <div class="rule-line"><span class="rk">Result</span><b>Adobe Fonts live across 12 apps, every one a team I didn't manage.</b></div>
       </article>
 
       <article class="pb">
-        <div class="pb-kicker"><span class="n">Playbook 04</span><span class="tag">Positioning</span></div>
+        <div class="pb-kicker"><span class="n">Playbook 03</span><span class="tag">Positioning</span></div>
         <h3>Dual-audience positioning</h3>
         <p class="essence">Same capability, two true positions. Never average two audiences into one generic message.</p>
         <ol>
@@ -558,19 +674,44 @@
         </ol>
         <div class="rule-line"><span class="rk">Decision rule</span><b>One capability can carry two messages; it must never carry an average of them.</b></div>
       </article>
+    </div>
+  </div>
+</section>
 
-      <article class="pb">
-        <div class="pb-kicker"><span class="n">Playbook 05</span><span class="tag">Partnership</span></div>
-        <h3>Co-branded launch with an equal-veto partner</h3>
-        <p class="essence">From the five-company, Adobe × Google launch of Source Han Sans, the first open-source Pan-CJK typeface, addressing 1.5 billion users.</p>
-        <ol>
-          <li>Governance first: settle veto rights before GTM planning.</li>
-          <li>Separate the contribution map from the release map: five contributed, two released.</li>
-          <li>Brand compromise beats brand victory: a two-name release let both sides own the story.</li>
-          <li>Lead the press cycle with the technical superlative.</li>
-        </ol>
-        <div class="rule-line"><span class="rk">Outcome</span><b>OS-default status across East Asia; 16K+ GitHub stars.</b></div>
-      </article>
+<!-- ============================ NOW / BOARD ============================ -->
+<section class="blk now band" id="now">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="idx num">04</span>
+      <div>
+        <h2 class="sec-title">Now</h2>
+        <p class="sec-lede" style="color:#cdbfb6">Independent product, marketing, and brand work, plus executive nonprofit leadership. March 2026 to present.</p>
+      </div>
+    </div>
+    <div class="now-grid">
+      <div class="now-card">
+        <div class="nk">Building</div>
+        <h3>Shipped Ramón, an AI styling app, end-to-end</h3>
+        <p>Wrote the PRD from real user needs, shaped the onboarding narrative and UX copy, and owned the technical trade-offs from server-side security to model selection. <b>Prompt-as-product, implemented.</b> Live with a limited user base.</p>
+        <ul>
+          <li>Built a second working React app: a curated executive prompt library.</li>
+          <li>Hands-on AI fluency as a demonstrated pattern, not a one-off.</li>
+        </ul>
+      </div>
+      <div class="now-card">
+        <div class="nk">Board</div>
+        <h3>Board of Directors, Bainbridge Island Museum of Art</h3>
+        <p class="when-since">Since December 2025</p>
+        <p>Co-chair of BIMA Bash! 2026, the museum's flagship fundraiser, with an $895K goal. The campaign signed its first Platinum sponsor.</p>
+        <ul>
+          <li>Authored a case for modernizing the museum brand, benchmarked against nine peer institutions.</li>
+        </ul>
+        <div class="subdiv"><span>Advisory</span></div>
+        <ul>
+          <li><b>Global Advisor, How Women Lead</b> · since 2026.</li>
+          <li>Member, Chief · since 2026.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -579,10 +720,10 @@
 <section class="blk career band" id="career">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">04</span>
+      <span class="idx num">05</span>
       <div>
         <h2 class="sec-title">Career</h2>
-        <p class="sec-lede">23 years inside Adobe's Digital Media business.</p>
+        <p class="sec-lede">Every role inside Adobe's Digital Media business.</p>
       </div>
     </div>
 
@@ -596,11 +737,11 @@
         <div class="what">
           <p class="company">Adobe</p>
           <h3>Director, Product Management</h3>
-          <p class="scope">First Product Director for the business. Led 6 PMs and set direction for a ~75-person cross-functional type org; owned the foundry royalty budget. Charter: scale typography across Creative Cloud, Express, and Acrobat while pivoting the roadmap to generative AI.</p>
+          <p class="scope">First Product Director for the business. Led 6 PMs and set direction for a ~75-person org spanning product, design, and engineering; owned the foundry royalty budget. Charter: scale typography across Creative Cloud, Express, and Acrobat while pivoting the roadmap to generative AI.</p>
           <ul>
             <li><b>+186% Express free-to-paid conversion</b> from redesigned font recommendations; one of Express's top premium drivers.</li>
             <li>Shipped a usage-based foundry compensation model: <b>saved $1M in year-one royalties</b>, no user backlash.</li>
-            <li>Grew Adobe Fonts to <b>12M+ MAU, outpacing Creative Cloud 3×;</b> scaled the unified text engine to 15M users with 40× performance gains.</li>
+            <li>Grew Adobe Fonts to <b>12M+ MAU, outpacing Creative Cloud 3×;</b> scaled Adobe's unified text engine to <b>15M</b> users with <b>40× performance gains</b> on web.</li>
           </ul>
         </div>
       </div>
@@ -617,7 +758,7 @@
           <p class="scope">Pitched for and won expanded leadership over both product strategy and product marketing for the fonts business; led a team of 8. Presented strategy to the SVP annually.</p>
           <ul>
             <li>Won approval for Adobe's <b>first unified text engine</b>: every app on a shared codebase, today serving 15M users.</li>
-            <li>Shipped the Adobe Fonts platform across Adobe.com and <b>12 Creative Cloud apps → 11M in-app MAU.</b></li>
+            <li>Shipped the Adobe Fonts platform across Adobe.com and <b>12 Creative Cloud apps</b>.</li>
             <li>Architected the usage-based royalty initiative that controlled cost so the business could keep scaling.</li>
           </ul>
         </div>
@@ -652,8 +793,9 @@
           <h3>Senior Product Marketing Manager: Head of Marketing, Typekit + Adobe Type</h3>
           <p class="scope">Sole senior marketer for the full typography portfolio after the Typekit acquisition; ran a ~$1M annual budget across PR, sponsorships, and Adobe MAX.</p>
           <ul>
-            <li>Architected the GTM and press strategy for <b>Source Han Sans</b>, the first open-source Pan-CJK typeface, addressing <b>1.5 billion users.</b></li>
-            <li>Won the naming case in a five-company negotiation; built Typekit's community-driven marketing model.</li>
+            <li>Architected the GTM and press strategy for <b>Source Han Sans</b>, the first open-source Pan-CJK typeface, addressing <b>1.5 billion users</b>; won the naming case in a five-company negotiation.</li>
+            <li>Created, funded, and led the <a href="#adobe-originals"><b>Adobe Originals 25th Anniversary</b></a> campaign: a 10-part editorial series and the open-source launch of <b>Source Serif, Adobe's 100th Original.</b></li>
+            <li>Built Typekit's community-driven marketing model and produced its <a href="#microsites">immersive launch microsites</a>.</li>
           </ul>
         </div>
       </div>
@@ -667,49 +809,71 @@
         <div class="what">
           <p class="company">Adobe</p>
           <h3>Quality Engineer → Lead Quality Engineer → Senior Program Manager</h3>
-          <p class="scope">Joined as roughly employee #6,000. Started in font testing; advanced to QE Lead in the type design group, then program management through Adobe's hyper-growth years.</p>
-          <ul>
-            <li>Tested and shipped releases for <b>Photoshop, Illustrator, InDesign, and Acrobat.</b></li>
-            <li><b>Eleven years inside the type org before marketing it</b> provided the technical credibility that later underwrote authority in deeply technical rooms.</li>
-          </ul>
+          <p class="scope">Joined as roughly employee #6,000. Started in font testing and shipped releases for Photoshop, Illustrator, InDesign, and Acrobat, then advanced to QE Lead in the type design group and into program management through Adobe's hyper-growth years. <b>Eleven years inside the type org before marketing it</b> provided the technical credibility that later underwrote authority in deeply technical rooms.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ NOW / BOARD ============================ -->
-<section class="blk now band" id="now">
+<!-- ============================ EARNED MEDIA ============================ -->
+<section class="blk earned band" id="earned-media">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">05</span>
+      <span class="idx num">06</span>
       <div>
-        <h2 class="sec-title">Now</h2>
-        <p class="sec-lede" style="color:#cdbfb6">Independent AI product work and executive nonprofit leadership, March 2026 to present.</p>
+        <h2 class="sec-title">Earned media</h2>
       </div>
     </div>
-    <div class="now-grid">
-      <div class="now-card">
-        <div class="nk">Building</div>
-        <h3>Shipped Ramón, an AI styling app, end-to-end</h3>
-        <p>Wrote the PRD from real user needs, rewrote onboarding into a six-screen narrative, ran a full UX-copy audit, and owned the technical trade-offs: server-side API security, model selection, structured outputs as interactive UI, and a user-editable persona. <b>Prompt-as-product, implemented.</b> In daily use.</p>
-        <ul>
-          <li>Built a second working React app: a curated executive prompt library.</li>
-          <li>Hands-on AI fluency as a demonstrated pattern, not a one-off.</li>
-        </ul>
+
+    <p class="frame">Campaigns covered by <b>CNET, Forbes, Fast Company &amp; Wired</b>, and more</p>
+
+    <div class="em-lead">
+      <div class="lh">
+        <h3>Source Han Sans</h3>
+        <span class="yr">2014</span>
+        <p class="outlets"><a href="https://thenextweb.com/news/adobe-google-debut-open-source-typeface-family-spanning-chinese-japanese-korean-serve-one-quarter-worlds-population" target="_blank" rel="noopener">The Next Web</a> · <a href="https://www.cnet.com/tech/services-and-software/adobe-google-release-first-pan-cjk-open-source-font/" target="_blank" rel="noopener">CNET</a></p>
       </div>
-      <div class="now-card">
-        <div class="nk">Board &amp; advisory</div>
-        <h3>Board of Directors, Bainbridge Island Museum of Art</h3>
-        <p class="when-since">Since December 2025</p>
-        <p>As co-chair of BIMA Bash! 2026, the museum's flagship fundraiser, I'm driving toward an $895K revenue goal. During the campaign, the gala landed its first-ever Platinum-tier sponsor. I led procurement of the non-art auction items, packaged them into experiences, and authored their catalog copy, then presented the development report to the board.</p>
-        <ul>
-          <li>Authored a board brand-modernization brief: a nine-institution benchmark.</li>
-          <li><b style="font-weight: 600">Global Advisor, How Women Lead</b> · since 2026.</li>
-          <li>Member, Chief · since 2026.</li>
-        </ul>
-      </div>
+      <figure class="pull">
+        <p>“The design is relatively modern in style, but it has simple strokes and is monolinear so it makes text clear and readable on small devices.”</p>
+        <cite>Nicole Miñoza, quoted in <b>The Next Web</b> on the launch of Source Han Sans<span class="sub">The open-source typeface serving 1.5 billion people</span></cite>
+      </figure>
     </div>
+
+    <div class="em-cards">
+      <article class="em-card" id="adobe-originals">
+        <span class="kick">Campaign · 2014</span>
+        <h3>The Adobe Originals 25th Anniversary</h3>
+        <p>Created, funded, and led a year-long integrated campaign bringing Adobe Type's legacy into the Typekit brand: a 10-part editorial series with the original 1989 Originals team, the launch of Source Serif (Adobe's 100th typeface, released open source), a limited-edition poster, and a 172-page commemorative book produced for Adobe MAX. Covered by CNET.</p>
+        <div class="cov">
+          <p class="cov-links"><span class="clab">Coverage:</span> <a href="https://www.cnet.com/tech/tech-industry/adobe-offers-free-font-to-celebrate-25-years-of-type-design/" target="_blank" rel="noopener">CNET</a> · <a href="https://blog.typekit.com/25-years-of-adobe-originals/" target="_blank" rel="noopener">Series hub</a> · <a href="https://www.amazon.com/Adobe-Originals-Silver-Anniversary-Story/dp/B01MUB0KZL" target="_blank" rel="noopener">The book</a></p>
+        </div>
+      </article>
+      <article class="em-card">
+        <span class="kick">Campaign · 2016–2021</span>
+        <h3>The campaign behind Adobe's gender-inclusive emoji</h3>
+        <p>Created the marketing strategy and funded the PR behind designer Paul D. Hunt's gender-inclusive emoji work. The campaign landed coverage in Forbes, Wired, Fast Company, and MIT Technology Review; now archived in a Computer History Museum exhibition.</p>
+        <div class="cov">
+          <p class="cov-links"><span class="clab">Coverage:</span> <a href="https://www.forbes.com/sites/jamiewareham/2020/10/11/how-an-adobe-employee-made-every-device-in-the-world-more-queer-with-just-emojis/" target="_blank" rel="noopener">Forbes</a> · <a href="https://mashable.com/article/gender-inclusive-emoji-designer" target="_blank" rel="noopener">Mashable</a> · <a href="https://computerhistory.org/exhibits/little-emoji-big-story/" target="_blank" rel="noopener">Computer History Museum</a></p>
+          <details class="archive-collapse">
+            <summary>Full coverage archive <span class="chev">▸</span></summary>
+            <ul class="archive-list">
+              <li><a href="https://www.vice.com/en/article/we-talked-to-a-typeface-designer-about-creating-emojis-for-unicode/" target="_blank" rel="noopener">We Talked to a Typeface Designer About Creating Emojis for Unicode</a> <span class="src2">Vice · Jul 2016</span></li>
+              <li><a href="https://medium.com/type-thursday/gender-legibility-in-emoji-e07c0f97a5bd" target="_blank" rel="noopener">Gender Legibility in Emoji</a> <span class="src2">TypeThursday · Oct 2016</span></li>
+              <li><a href="https://www.fastcompany.com/40432698/breastfeeding-to-gender-neutrality-unicodes-69-new-emojis-signs-of-the-times" target="_blank" rel="noopener">From Breastfeeding to Gender Neutrality: Unicode's New Emojis Are Signs of the Times</a> <span class="src2">Fast Company · Jun 2017</span></li>
+              <li><a href="https://www.popsci.com/why-we-have-ginger-emoji/" target="_blank" rel="noopener">The winding, heated, and absurdly technical oral history of the ginger emoji</a> <span class="src2">Popular Science · Jul 2018</span></li>
+              <li><a href="https://mashable.com/article/gender-inclusive-emoji-designer" target="_blank" rel="noopener">The designer behind Unicode's first gender-inclusive emoji talks about what's next</a> <span class="src2">Mashable · May 2020</span></li>
+              <li><a href="https://www.forbes.com/sites/jamiewareham/2020/10/11/how-an-adobe-employee-made-every-device-in-the-world-more-queer-with-just-emojis/" target="_blank" rel="noopener">How an Adobe employee made every device in the world more queer, with just emojis</a> <span class="src2">Forbes · Oct 2020</span></li>
+              <li><a href="https://9to5mac.com/2021/07/15/study-shows-most-popular-emoji/" target="_blank" rel="noopener">Study highlights most popular emoji for 2021, and more for World Emoji Day</a> <span class="src2">9to5Mac · Jul 2021</span></li>
+              <li><a href="https://www.commarts.com/columns/hunt" target="_blank" rel="noopener">The Potential of Emoji</a> <span class="src2">Communication Arts · Jul 2021</span></li>
+              <li><a href="https://computerhistory.org/exhibits/little-emoji-big-story/" target="_blank" rel="noopener">Little Emoji, Big Story</a> <span class="src2">Computer History Museum</span></li>
+            </ul>
+          </details>
+        </div>
+      </article>
+    </div>
+
+    <p class="em-micro" id="microsites"><b>Launch microsites</b>, immersive go-to-market sites I produced for flagship typeface releases, all still live a decade later: <a href="https://acumin.typekit.com/" target="_blank" rel="noopener">Acumin</a> (2015) · <a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">Source Han Serif</a> (2017) · <a href="https://minion.typekit.com/" target="_blank" rel="noopener">Minion 3</a> (2018)</p>
   </div>
 </section>
 
@@ -717,46 +881,62 @@
 <section class="blk writing band" id="writing">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">06</span>
+      <span class="idx num">07</span>
       <div>
         <h2 class="sec-title">Selected writing</h2>
-        <p class="sec-lede">Selected from 20+ posts authored for the Typekit / Adobe Fonts blog: launch announcements, designer interviews, and community storytelling from the GTM work above.</p>
+        <p class="sec-lede">I was the editorial voice of Adobe's type business: launch narrative, designer storytelling, and making deeply technical work legible. Selected from 20+ posts.</p>
       </div>
     </div>
-    <ul class="writing-list">
-      <li><a href="https://blog.typekit.com/2016/11/17/introducing-trajan-color-concept-a-new-opentype-svg-font-by-adobe/" target="_blank" rel="noopener">Introducing Trajan Color Concept, a new OpenType-SVG font by Adobe</a><span class="meta"><span class="yr">Nov 2016</span> · Launch announcement for Adobe's first color font.</span></li>
-      <li><a href="https://blog.typekit.com/2014/08/22/interview-dr-ken-lunde/" target="_blank" rel="noopener">Catching up with Ken Lunde on Source Han Sans</a><span class="meta"><span class="yr">Aug 2014</span> · Interview with the architect of the Pan-CJK collaboration.</span></li>
-      <li><a href="https://blog.typekit.com/2014/08/14/interview-with-ryoko-nishizuka/" target="_blank" rel="noopener">Interview with Ryoko Nishizuka, lead designer for Source Han Sans</a><span class="meta"><span class="yr">Aug 2014</span></span></li>
-      <li><a href="https://blog.typekit.com/2014/11/20/pan-cjk-partner-profile-iwata-corporation/" target="_blank" rel="noopener">Pan-CJK Partner Profile: Iwata Corporation</a><span class="meta"><span class="yr">Nov 2014</span> · Part of the sustained Source Han Sans launch campaign.</span></li>
-      <li><a href="https://blog.typekit.com/2014/05/20/celebrating-twenty-five-years-of-original-type-at-adobe/" target="_blank" rel="noopener">Celebrating Twenty-Five Years of Original Type at Adobe</a><span class="meta"><span class="yr">May 2014</span></span></li>
-      <li><a href="https://blog.typekit.com/2014/05/20/source-serif-pro/" target="_blank" rel="noopener">Introducing Source Serif: a new open source typeface from Adobe</a><span class="meta"><span class="yr">May 2014</span> · Adobe's 100th Original typeface.</span></li>
-      <li><a href="https://blog.typekit.com/2013/10/30/the-almost-forgotten-but-always-awesome-typography-primer/" target="_blank" rel="noopener">The almost-forgotten (but always-awesome) Typography Primer</a><span class="meta"><span class="yr">Oct 2013</span> · Community storytelling for the Typekit blog.</span></li>
-    </ul>
+    <div class="wcards">
+      <article class="wcard">
+        <span class="lab">Launch announcement</span>
+        <a class="t" href="https://blog.typekit.com/2014/05/20/source-serif-pro/" target="_blank" rel="noopener">Introducing Source Serif: A new open source typeface from Adobe</a>
+        <p class="cred"><span class="src">Typekit Blog · May 2014</span> · Adobe's 100th Original, anchor of the 25th Anniversary campaign.</p>
+      </article>
+      <article class="wcard">
+        <span class="lab">Designer storytelling</span>
+        <a class="t" href="https://blog.typekit.com/2014/08/14/interview-with-ryoko-nishizuka/" target="_blank" rel="noopener">Interview with Ryoko Nishizuka, lead designer for Source Han Sans</a>
+        <p class="cred"><span class="src">Typekit Blog · August 2014</span> · Campaign content for the Source Han Sans launch.</p>
+      </article>
+      <article class="wcard">
+        <span class="lab">Technical translation</span>
+        <a class="t" href="https://blog.typekit.com/2016/11/17/introducing-trajan-color-concept-a-new-opentype-svg-font-by-adobe/" target="_blank" rel="noopener">Introducing Trajan Color Concept, a new OpenType-SVG font by Adobe</a>
+        <p class="cred"><span class="src">Typekit Blog · November 2016</span> · Announcing Adobe's first color font and a new font format.</p>
+      </article>
+    </div>
+    <details class="archive-collapse">
+      <summary>More from the archive <span class="chev">▸</span></summary>
+      <ul class="archive-list">
+        <li><a href="https://blog.typekit.com/2013/10/30/the-almost-forgotten-but-always-awesome-typography-primer/" target="_blank" rel="noopener">The almost-forgotten (but always-awesome) Typography Primer</a> <span class="src2">Oct 2013</span></li>
+        <li><a href="https://blog.typekit.com/2014/05/20/celebrating-twenty-five-years-of-original-type-at-adobe/" target="_blank" rel="noopener">Celebrating Twenty-Five Years of Original Type at Adobe</a> <span class="src2">May 2014</span></li>
+        <li><a href="https://blog.typekit.com/2014/05/20/source-serif-pro/" target="_blank" rel="noopener">Introducing Source Serif: A new open source typeface from Adobe</a> <span class="src2">MAY 2014</span></li>
+        <li><a href="https://blog.typekit.com/2014/08/14/interview-with-ryoko-nishizuka/" target="_blank" rel="noopener">Interview with Ryoko Nishizuka, lead designer for Source Han Sans</a> <span class="src2">Aug 2014</span></li>
+        <li><a href="https://blog.typekit.com/2014/08/22/interview-dr-ken-lunde/" target="_blank" rel="noopener">Catching up with Ken Lunde on Source Han Sans</a> <span class="src2">Aug 2014</span></li>
+        <li><a href="https://blog.typekit.com/2014/11/20/pan-cjk-partner-profile-iwata-corporation/" target="_blank" rel="noopener">Pan-CJK Partner Profile: Iwata Corporation</a> <span class="src2">Nov 2014</span></li>
+        <li><a href="https://blog.typekit.com/2016/11/17/introducing-trajan-color-concept-a-new-opentype-svg-font-by-adobe/" target="_blank" rel="noopener">Introducing Trajan Color Concept, a new OpenType-SVG font by Adobe</a> <span class="src2">Nov 2016</span></li>
+      </ul>
+    </details>
   </div>
 </section>
 
 <!-- ============================ CREDENTIALS ============================ -->
-<section class="blk creds band" id="creds" style="font-weight: 600">
+<section class="blk creds band" id="creds">
   <div class="inner">
     <div>
-      <h3 class="sub">Education &amp; development</h3>
+      <h3 class="sub">Education</h3>
       <ul class="edu">
         <li><b>MBA, Marketing</b> · Santa Clara University <span>(2013)</span></li>
         <li><b>BA, Political Science</b> · UCLA</li>
-        <li><b>AI-Driven Leadership</b> · Stanford Online Certificate <span>(2025)</span></li>
-        <li><b>Strategic Data Storytelling</b> · University of Chicago <span>(2025)</span></li>
-        <li><b>Hispanic Executive Leadership</b> · McKinsey <span>(2024)</span></li>
-        <li><span style="font-size:16px;color:#241f1d">Leadership Circles · Adobe </span><span>(2023)</span></li>
-        <li style="font-weight: 400"><span style="font-size: 16px; color: #241f1d; font-weight: 600">Women Unlimited LEAD · AscentPoint Leadership </span><span>(2016–17)</span></li>
       </ul>
     </div>
     <div>
-      <h3 class="sub">Selected public references</h3>
-      <ul class="refs">
-        <li><a href="https://blog.typekit.com/2014/07/15/introducing-source-han-sans/" target="_blank" rel="noopener">Introducing Source Han Sans</a><span class="meta">The launch announcement she drafted. Typekit blog, July 2014</span></li>
-        <li><a href="https://www.cnet.com/tech/services-and-software/adobe-google-release-first-pan-cjk-open-source-font/" target="_blank" rel="noopener">Adobe, Google release first Pan-CJK open-source font</a><span class="meta">CNET launch coverage</span></li>
-        <li><a href="https://www.forbes.com/sites/jamiewareham/2020/10/11/how-an-adobe-employee-made-every-device-in-the-world-more-queer-with-just-emojis/" target="_blank" rel="noopener">How an Adobe employee made every device more inclusive, with emoji</a><span class="meta">Forbes, on the gender-inclusive emoji work she marketed</span></li>
-        <li><a href="https://helpx.adobe.com/firefly/web/create-mood-boards/firefly-boards/generative-text-edit.html" target="_blank" rel="noopener">Generative Text Edit in Firefly Boards</a><span class="meta">Adobe Help Center, the shipped feature</span></li>
+      <h3 class="sub">Executive development</h3>
+      <ul class="edu">
+        <li><b>AI-Driven Leadership</b> · Stanford Online Certificate <span>(2025)</span></li>
+        <li><b>Strategic Data Storytelling</b> · University of Chicago <span>(2025)</span></li>
+        <li><b>Hispanic Executive Leadership</b> · McKinsey <span>(2024)</span></li>
+        <li><b>Leadership Circles</b> · Adobe <span>(2023)</span></li>
+        <li><b>Women Unlimited LEAD</b> · AscentPoint Leadership <span>(2016–17)</span></li>
       </ul>
     </div>
   </div>
@@ -769,10 +949,10 @@
     <h2>Open to the<br>next chapter.</h2>
     <p class="sub">If you're building something where craft and judgment matter, I'd like to hear about it. Open to Senior Director and VP roles across product and product marketing, board seats, and advisory work.</p>
     <div class="acts">
-      <a class="btn" href="mailto:hello@nicoleminoza.com">
+      <span class="btn email-plain">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
         hello@nicoleminoza.com
-      </a>
+      </span>
       <a class="btn ghost" href="https://www.linkedin.com/in/nicoleminoza" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
@@ -783,14 +963,10 @@
     <span class="fmono">Nicole Miñoza</span>
     <span class="fmono"><a href="https://nicoleminoza.com" target="_blank" rel="noopener">nicoleminoza.com</a> · Seattle, WA · Updated June 2026</span>
   </div>
+  <div class="inner colophon">
+    <span class="set">Typeset in <span class="fn-serif">Newsreader</span>, <span class="fn-sans">Hanken Grotesk</span>, and <span class="fn-mono">Spline Sans Mono</span>.</span>
+  </div>
 </footer>
 
-<!-- ============================ TWEAKS ============================ -->
-<div id="tweak-root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel" src="tweaks-app.jsx"></script>
 </body>
 </html>
