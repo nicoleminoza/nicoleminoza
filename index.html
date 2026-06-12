@@ -399,6 +399,30 @@
   .archive-collapse>summary:hover{color:var(--brand)}
   .archive-collapse>summary .chev{transition:transform .2s;color:var(--accent);font-size:11px}
   .archive-collapse[open]>summary .chev{transform:rotate(90deg)}
+  /* ---------- credibility folds ---------- */
+  .cred-fold{border-top:1px solid var(--rule)}
+  .cred-fold:last-of-type{border-bottom:1px solid var(--rule)}
+  .cred-fold>summary{display:flex;align-items:baseline;gap:16px;cursor:pointer;list-style:none;
+    padding:20px 0;font-family:var(--mono);font-size:13px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--brand);transition:color .15s}
+  .cred-fold>summary::-webkit-details-marker{display:none}
+  .cred-fold>summary::marker{content:""}
+  .cred-fold>summary:hover{color:var(--accent)}
+  .cred-fold>summary .tease{font-size:11.5px;letter-spacing:.06em;color:var(--faint);
+    text-transform:none;letter-spacing:.04em}
+  .cred-fold>summary .chev{margin-left:auto;transition:transform .2s;color:var(--accent);font-size:12px}
+  .cred-fold[open]>summary .chev{transform:rotate(90deg)}
+  .cred-fold .fold-body{padding:8px 0 32px}
+  .cred-master>summary{display:flex;align-items:baseline;gap:18px;cursor:pointer;list-style:none;
+    font-family:var(--display);font-weight:400;font-size:clamp(19px,2vw,24px);line-height:1.4;
+    color:var(--ink);max-width:none;transition:color .15s}
+  .cred-master>summary b{font-weight:600}
+  .cred-master>summary::-webkit-details-marker{display:none}
+  .cred-master>summary::marker{content:""}
+  .cred-master>summary:hover{color:var(--brand)}
+  .cred-master>summary .chev{transition:transform .2s;color:var(--accent);font-size:14px;align-self:center}
+  .cred-master[open]>summary .chev{transform:rotate(90deg)}
+  .cred-master>.master-body{margin-top:clamp(26px,3.5vw,40px)}
   .archive-list{list-style:none;margin:16px 0 0;padding:16px 0 2px;border-top:1px solid var(--rule);display:grid;gap:11px}
   .archive-list li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.5;color:var(--soft)}
   .archive-list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
@@ -503,7 +527,7 @@
   <div class="inner">
     <div class="metric">
       <span class="fig num">23<small>yrs</small></span>
-      <p class="cap">Built and scaled Adobe's fonts and typography platform; Quality Engineer to Product Director</p>
+      <p class="cap">Built and scaled a platform business inside Adobe's $17.65B Digital Media segment — Quality Engineer to first-ever Product Director</p>
     </div>
     <div class="metric">
       <span class="fig num">+186<small>%</small></span>
@@ -511,7 +535,7 @@
     </div>
     <div class="metric">
       <span class="fig num">−42<small>%</small></span>
-      <p class="cap">Lower monthly churn among Adobe Fonts subscribers (2019–2021, reconfirmed Sept 2025)</p>
+      <p class="cap">Lower monthly churn among subscribers who adopted the service (2019–2021, reconfirmed Sept 2025)</p>
     </div>
     <div class="metric">
       <span class="fig num">12M<small>+</small></span>
@@ -529,12 +553,12 @@
         <h2 class="sec-title">The work</h2>
       </div>
       <figure class="quote">
-        <p>"The best annual strategy presentation I've ever seen."</p>
+        <p>Praised as the best annual strategy presentation they'd ever seen.</p>
         <cite>Senior director of marketing, Adobe</cite>
       </figure>
     </div>
     <div>
-      <p class="big-statement">At Adobe, the overlooked feature was <span class="hl">typography</span>. I proved it drove <b>conversion, retention, and platform growth</b>, then owned product strategy and marketing for a <b>75-person type organization</b> to deliver it: SVP buy-in seven years running, adoption across <b>12 flagship apps won on influence alone</b>, and a roadmap I pivoted to the <span class="hl">AI era</span>.</p>
+      <p class="big-statement">At Adobe, I took a service everyone used and no one measured, and proved it drove <b>conversion, retention, and platform growth</b> across the ecosystem. The service was typography. I owned product strategy and marketing for a <b>75-person organization</b> to deliver it: SVP buy-in seven years running, adoption across <b>12 flagship apps won on influence alone</b>, and a roadmap I pivoted to the <span class="hl">AI era</span>.</p>
     </div>
   </div>
 </section>
@@ -555,7 +579,7 @@
     <div class="win">
       <span class="wnum">01</span>
       <div class="wbody">
-        <h3>Renamed Typekit to Adobe Fonts and repositioned fonts as a membership benefit</h3>
+        <h3>Led the brand and business-model transformation of an acquired product into a core subscription benefit</h3>
         <p>Recognized the removal of activation limits as a rebrand moment, took the case to brand leadership, chose the name, directed the new site, and ran GTM on a tight Adobe MAX timeline, with zero foundry-partner losses.</p>
         <p class="where">2018 · Group Product Marketing Manager</p>
       </div>
@@ -594,9 +618,9 @@
     <div class="win">
       <span class="wnum">04</span>
       <div class="wbody">
-        <h3>Built Adobe's unified text engine across every flagship app</h3>
-        <p>Put every flagship app on one shared text codebase, built for the web: 40× faster, and finally fixed broken layout for CJK, Arabic, and Hebrew users.</p>
-        <p class="where">2021–2026 · Director, Product Management</p>
+        <h3>Consolidated 11 app-specific engines into one shared platform infrastructure</h3>
+        <p>Put every flagship app on one shared text codebase — won on influence across teams I didn't manage — built for the web: 40× faster, and finally fixed broken layout for CJK, Arabic, and Hebrew users.</p>
+        <p class="where">2021–2026 · Group Manager → Director</p>
       </div>
       <div class="wfig">
         <span class="v num">15M</span>
@@ -607,8 +631,8 @@
     <div class="win">
       <span class="wnum">05</span>
       <div class="wbody">
-        <h3>Launched Adobe's largest font-library expansion in five years</h3>
-        <p>Built the business case from user drop-off data and owned the Monotype go-to-market, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
+        <h3>Built the data case for Adobe's largest content-licensing partnership in five years</h3>
+        <p>Spotted the opportunity in user drop-off data and owned the Monotype go-to-market, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
         <p class="where">2025 · Director, Product Management</p>
       </div>
       <div class="wfig">
@@ -692,7 +716,7 @@
       <div class="now-card">
         <div class="nk">Building</div>
         <h3>Shipped Ramón, an AI styling app, end-to-end</h3>
-        <p>Wrote the PRD from real user needs, shaped the onboarding narrative and UX copy, and owned the technical trade-offs from server-side security to model selection. <b>Prompt-as-product, implemented.</b> Live with a limited user base.</p>
+        <p>Wrote the PRD from real user needs, shaped the onboarding narrative and UX copy, and owned the technical trade-offs from server-side security to model selection. <b>Prompt-as-product, implemented.</b> Built to learn the medium; in daily use.</p>
         <ul>
           <li>Built a second working React app: a curated executive prompt library.</li>
           <li>Hands-on AI fluency as a demonstrated pattern, not a one-off.</li>
@@ -791,7 +815,7 @@
         <div class="what">
           <p class="company">Adobe</p>
           <h3>Senior Product Marketing Manager: Head of Marketing, Typekit + Adobe Type</h3>
-          <p class="scope">Sole senior marketer for the full typography portfolio after the Typekit acquisition; ran a ~$1M annual budget across PR, sponsorships, and Adobe MAX.</p>
+          <p class="scope">Sole senior marketer for the full typography portfolio after the Typekit acquisition; owned the full go-to-market engine — PR, partnerships, and the Adobe MAX presence.</p>
           <ul>
             <li>Architected the GTM and press strategy for <b>Source Han Sans</b>, the first open-source Pan-CJK typeface, addressing <b>1.5 billion users</b>; won the naming case in a five-company negotiation.</li>
             <li>Created, funded, and led the <a href="#adobe-originals"><b>Adobe Originals 25th Anniversary</b></a> campaign: a 10-part editorial series and the open-source launch of <b>Source Serif, Adobe's 100th Original.</b></li>
@@ -822,13 +846,17 @@
     <div class="sec-head">
       <span class="idx num">06</span>
       <div>
-        <h2 class="sec-title">Earned media</h2>
+        <h2 class="sec-title">Credibility</h2>
       </div>
     </div>
 
-    <p class="frame">Campaigns covered by <b>CNET, Forbes, Fast Company &amp; Wired</b>, and more</p>
-
-    <div class="em-lead">
+    <details class="cred-master">
+      <summary><span>Coverage in <b>CNET, Forbes, Fast Company &amp; Wired</b>, plus 20+ bylined posts and launch sites still live a decade later</span> <span class="chev">▸</span></summary>
+      <div class="master-body">
+        <details class="cred-fold" id="earned" open>
+      <summary>Earned media <span class="tease">Source Han Sans · The Originals 25th Anniversary · Gender-inclusive emoji</span> <span class="chev">▸</span></summary>
+      <div class="fold-body">
+        <div class="em-lead">
       <div class="lh">
         <h3>Source Han Sans</h3>
         <span class="yr">2014</span>
@@ -841,14 +869,6 @@
     </div>
 
     <div class="em-cards">
-      <article class="em-card" id="adobe-originals">
-        <span class="kick">Campaign · 2014</span>
-        <h3>The Adobe Originals 25th Anniversary</h3>
-        <p>Created, funded, and led a year-long integrated campaign bringing Adobe Type's legacy into the Typekit brand: a 10-part editorial series with the original 1989 Originals team, the launch of Source Serif (Adobe's 100th typeface, released open source), a limited-edition poster, and a 172-page commemorative book produced for Adobe MAX. Covered by CNET.</p>
-        <div class="cov">
-          <p class="cov-links"><span class="clab">Coverage:</span> <a href="https://www.cnet.com/tech/tech-industry/adobe-offers-free-font-to-celebrate-25-years-of-type-design/" target="_blank" rel="noopener">CNET</a> · <a href="https://blog.typekit.com/25-years-of-adobe-originals/" target="_blank" rel="noopener">Series hub</a> · <a href="https://www.amazon.com/Adobe-Originals-Silver-Anniversary-Story/dp/B01MUB0KZL" target="_blank" rel="noopener">The book</a></p>
-        </div>
-      </article>
       <article class="em-card">
         <span class="kick">Campaign · 2016–2021</span>
         <h3>The campaign behind Adobe's gender-inclusive emoji</h3>
@@ -871,22 +891,22 @@
           </details>
         </div>
       </article>
+      <article class="em-card" id="adobe-originals">
+        <span class="kick">Campaign · 2014</span>
+        <h3>The Adobe Originals 25th Anniversary</h3>
+        <p>Created, funded, and led a year-long integrated campaign bringing Adobe Type's legacy into the Typekit brand: a 10-part editorial series with the original 1989 Originals team, the launch of Source Serif (Adobe's 100th typeface, released open source), a limited-edition poster, and a 172-page commemorative book produced for Adobe MAX. Covered by CNET.</p>
+        <div class="cov">
+          <p class="cov-links"><span class="clab">Coverage:</span> <a href="https://www.cnet.com/tech/tech-industry/adobe-offers-free-font-to-celebrate-25-years-of-type-design/" target="_blank" rel="noopener">CNET</a> · <a href="https://blog.typekit.com/25-years-of-adobe-originals/" target="_blank" rel="noopener">Series hub</a> · <a href="https://www.amazon.com/Adobe-Originals-Silver-Anniversary-Story/dp/B01MUB0KZL" target="_blank" rel="noopener">The book</a></p>
+        </div>
+      </article>
     </div>
-
-    <p class="em-micro" id="microsites"><b>Launch microsites</b>, immersive go-to-market sites I produced for flagship typeface releases, all still live a decade later: <a href="https://acumin.typekit.com/" target="_blank" rel="noopener">Acumin</a> (2015) · <a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">Source Han Serif</a> (2017) · <a href="https://minion.typekit.com/" target="_blank" rel="noopener">Minion 3</a> (2018)</p>
-  </div>
-</section>
-
-<!-- ============================ SELECTED WRITING ============================ -->
-<section class="blk writing band" id="writing">
-  <div class="inner">
-    <div class="sec-head">
-      <span class="idx num">07</span>
-      <div>
-        <h2 class="sec-title">Selected writing</h2>
-        <p class="sec-lede">I was the editorial voice of Adobe's type business: launch narrative, designer storytelling, and making deeply technical work legible. Selected from 20+ posts.</p>
       </div>
-    </div>
+    </details>
+
+        <details class="cred-fold" id="writing">
+      <summary>Selected writing <span class="tease">From 20+ posts for the Typekit / Adobe Fonts blog</span> <span class="chev">▸</span></summary>
+      <div class="fold-body">
+        <p class="frame">I was the editorial voice of the business: launch narratives, expert storytelling, and making deeply technical work legible to mainstream press. Selected from 20+ posts.</p>
     <div class="wcards">
       <article class="wcard">
         <span class="lab">Launch announcement</span>
@@ -916,8 +936,21 @@
         <li><a href="https://blog.typekit.com/2016/11/17/introducing-trajan-color-concept-a-new-opentype-svg-font-by-adobe/" target="_blank" rel="noopener">Introducing Trajan Color Concept, a new OpenType-SVG font by Adobe</a> <span class="src2">Nov 2016</span></li>
       </ul>
     </details>
+      </div>
+    </details>
+
+        <details class="cred-fold" id="microsites">
+      <summary>Launch microsites <span class="tease">Acumin · Source Han Serif · Minion 3 — all still live</span> <span class="chev">▸</span></summary>
+      <div class="fold-body">
+        <p class="em-micro">Immersive go-to-market sites I produced for flagship typeface releases — all still live a decade later: <a href="https://acumin.typekit.com/" target="_blank" rel="noopener">Acumin</a> (2015) · <a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">Source Han Serif</a> (2017) · <a href="https://minion.typekit.com/" target="_blank" rel="noopener">Minion 3</a> (2018)</p>
+      </div>
+    </details>
+      </div>
+    </details>
   </div>
 </section>
+
+
 
 <!-- ============================ CREDENTIALS ============================ -->
 <section class="blk creds band" id="creds">
