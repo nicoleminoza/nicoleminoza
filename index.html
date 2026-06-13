@@ -154,6 +154,8 @@
   .metric .fig small{font-size:.5em;font-weight:500;color:var(--accent);margin-left:2px}
   .metric .cap{font-family:var(--sans);font-size:13.5px;line-height:1.4;color:#d9ccc4;
     margin-top:12px;max-width:23ch;text-wrap:balance}
+  .metric .mlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
   @media(max-width:760px){.metrics .inner{grid-template-columns:1fr 1fr;gap:30px 24px}}
   @media(max-width:430px){.metrics .inner{grid-template-columns:1fr}}
 
@@ -165,6 +167,28 @@
   h2.sec-title{font-family:var(--display);font-weight:500;letter-spacing:-.02em;
     font-size:clamp(30px,4.2vw,50px);line-height:1.04;margin:0}
   .sec-lede{font-size:18px;color:var(--soft);max-width:60ch;margin:14px 0 0;line-height:1.55}
+  /* ---------- how I lead ---------- */
+  .lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .lead-item{position:relative;display:flex;flex-direction:column;
+    padding:clamp(22px,2.4vw,30px) clamp(20px,2.2vw,30px) clamp(26px,2.8vw,36px) 0;
+    border-top:2px solid var(--ink);transition:border-color .25s ease}
+  .lead-item + .lead-item{padding-left:clamp(22px,2.4vw,34px);border-left:1px solid var(--rule)}
+  .lead-item:hover{border-top-color:var(--accent)}
+  .lead-item .lnum{font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:clamp(30px,3.3vw,40px);line-height:1;letter-spacing:-.02em;
+    color:var(--faint);margin-bottom:clamp(16px,1.8vw,22px)}
+  .lead-item h3{font-family:var(--display);font-weight:500;
+    font-size:clamp(21px,2.45vw,29px);line-height:1.14;letter-spacing:-.018em;
+    margin:0 0 13px;color:var(--ink);text-wrap:balance}
+  .lead-item p{margin:0;font-size:14.5px;line-height:1.62;
+    color:color-mix(in srgb,var(--soft) 82%,var(--paper));max-width:32ch}
+  @media(max-width:720px){
+    .lead-grid{grid-template-columns:1fr}
+    .lead-item{padding:clamp(20px,5vw,26px) 0}
+    .lead-item + .lead-item{padding-left:0;border-left:0}
+    .lead-item .lnum{margin-bottom:10px;font-size:30px}
+    .lead-item p{max-width:60ch}
+  }
 
   /* ---------- approach / narrative ---------- */
   .approach .inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,72px);
@@ -502,7 +526,7 @@
       </div>
       <h1 class="name">Nicole <em>Miñoza</em></h1>
       <div class="positioning">
-        <p class="pos editorial" style="font-weight: 400">I turn overlooked features into <b>revenue, retention, and reach.</b> I own <b>both the product and the story that sells it.</b></p>
+        <p class="pos editorial" style="font-weight: 400">I turn undervalued features into <b>revenue, retention, and reach.</b> I own <b>both the product and the story that sells it.</b></p>
       </div>
       <div class="hero-meta">
         <a class="btn" href="#contact">
@@ -526,18 +550,22 @@
 <section class="metrics band" aria-label="Career impact at a glance">
   <div class="inner">
     <div class="metric">
-      <span class="fig num">23<small>yrs</small></span>
-      <p class="cap">Built and scaled a platform business inside Adobe's $17.65B Digital Media segment — Quality Engineer to first-ever Product Director</p>
-    </div>
-    <div class="metric">
+      <span class="mlabel">CONVERSION</span>
       <span class="fig num">+186<small>%</small></span>
-      <p class="cap">Free-to-paid lift in Adobe Express from redesigned font recommendations (Q2 FY25)</p>
+      <p class="cap">Free-to-paid lift in Adobe Express from redesigned font recommendations (2025)</p>
     </div>
     <div class="metric">
+      <span class="mlabel">ADOPTION</span>
+      <span class="fig num">1.2M<small>+</small></span>
+      <p class="cap">Uptake of newly licensed Monotype and Microsoft fonts within weeks of launch (2025)</p>
+    </div>
+    <div class="metric">
+      <span class="mlabel">RETENTION</span>
       <span class="fig num">−42<small>%</small></span>
-      <p class="cap">Lower monthly churn among subscribers who adopted the service (2019–2021, reconfirmed Sept 2025)</p>
+      <p class="cap">Lower monthly churn among subscribers who adopted the service (2019–2021, 2025)</p>
     </div>
     <div class="metric">
+      <span class="mlabel">SCALE</span>
       <span class="fig num">12M<small>+</small></span>
       <p class="cap">Monthly active users of Adobe Fonts, grew 3× faster than Creative Cloud YoY (Dec 2025)</p>
     </div>
@@ -572,7 +600,7 @@
       <span class="idx num">02</span>
       <div>
         <h2 class="sec-title">Signature work</h2>
-        <p class="sec-lede">Five decisions I'd defend in any room.</p>
+        <p class="sec-lede">Five calls I'd defend in any room.</p>
       </div>
     </div>
 
@@ -618,8 +646,8 @@
     <div class="win">
       <span class="wnum">04</span>
       <div class="wbody">
-        <h3>Consolidated 11 app-specific engines into one shared platform infrastructure</h3>
-        <p>Put every flagship app on one shared text codebase — won on influence across teams I didn't manage — built for the web: 40× faster, and finally fixed broken layout for CJK, Arabic, and Hebrew users.</p>
+        <h3>Consolidated two text engines into one platform, then scaled it across 11 apps</h3>
+        <p>Put every flagship app on one shared text codebase, won on influence across teams I didn't manage, built for the web: 40× faster, and finally fixed broken layout for CJK, Arabic, and Hebrew users.</p>
         <p class="where">2021–2026 · Group Manager → Director</p>
       </div>
       <div class="wfig">
@@ -632,7 +660,7 @@
       <span class="wnum">05</span>
       <div class="wbody">
         <h3>Built the data case for Adobe's largest content-licensing partnership in five years</h3>
-        <p>Spotted the opportunity in user drop-off data and owned the Monotype go-to-market, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
+        <p>Spotted the opportunity in user drop-off data and owned the Monotype and Microsoft go-to-market, bringing fonts like Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud. Failed searches fell 91%; 21.1M missing-font events eliminated.</p>
         <p class="where">2025 · Director, Product Management</p>
       </div>
       <div class="wfig">
@@ -643,11 +671,41 @@
   </div>
 </section>
 
+<!-- ============================ HOW I LEAD ============================ -->
+<section class="blk lead band" id="leading">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="idx num">03</span>
+      <div>
+        <h2 class="sec-title">How I lead</h2>
+        <p class="sec-lede">The principles behind the numbers.</p>
+      </div>
+    </div>
+    <div class="lead-grid">
+      <div class="lead-item">
+        <span class="lnum">01</span>
+        <h3>I lead through influence, not authority.</h3>
+        <p>Persuaded every Head of Product to commit their app to one shared text platform.</p>
+      </div>
+      <div class="lead-item">
+        <span class="lnum">02</span>
+        <h3>I build the team the strategy needs.</h3>
+        <p>Led 6 product managers and set direction for a ~75-person org across product, design, and engineering.</p>
+      </div>
+      <div class="lead-item">
+        <span class="lnum">03</span>
+        <h3>I kill roadmap conflicts before they escalate.</h3>
+        <p>Stood up the Type Working Group, a standing forum where app teams worked out roadmap collisions directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ HOW I THINK ============================ -->
 <section class="blk playbooks band" id="thinking">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">03</span>
+      <span class="idx num">04</span>
       <div>
         <h2 class="sec-title">How I think</h2>
         <p class="sec-lede">The examples are fonts; the playbooks carry to any product.</p>
@@ -676,7 +734,7 @@
 
       <article class="pb">
         <div class="pb-kicker"><span class="n">Playbook 02</span><span class="tag">Influence</span></div>
-        <h3>Value-led adoption: 12 app teams, no authority</h3>
+        <h3>Adoption without a mandate</h3>
         <p class="essence">You don't mandate a platform onto teams you don't own. You make integrating it their win, and you measure the number they respect.</p>
         <ol>
           <li>Make the integration the app team's win, not yours.</li>
@@ -706,7 +764,7 @@
 <section class="blk now band" id="now">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">04</span>
+      <span class="idx num">05</span>
       <div>
         <h2 class="sec-title">Now</h2>
         <p class="sec-lede" style="color:#cdbfb6;max-width:none">Independent product, marketing, and brand work, plus executive nonprofit leadership.<br>March 2026 to present.</p>
@@ -744,7 +802,7 @@
 <section class="blk career band" id="career">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">05</span>
+      <span class="idx num">06</span>
       <div>
         <h2 class="sec-title">Career</h2>
         <p class="sec-lede">Every role inside Adobe's Digital Media business.</p>
@@ -815,7 +873,7 @@
         <div class="what">
           <p class="company">Adobe</p>
           <h3>Senior Product Marketing Manager: Head of Marketing, Typekit + Adobe Type</h3>
-          <p class="scope">Sole senior marketer for the full typography portfolio after the Typekit acquisition; owned the full go-to-market engine — PR, partnerships, and the Adobe MAX presence.</p>
+          <p class="scope">Sole senior marketer for the full typography portfolio after the Typekit acquisition; owned the full go-to-market engine: PR, partnerships, and the Adobe MAX presence.</p>
           <ul>
             <li>Architected the GTM and press strategy for <b>Source Han Sans</b>, the first open-source Pan-CJK typeface, addressing <b>1.5 billion users</b>; won the naming case in a five-company negotiation.</li>
             <li>Created, funded, and led the <a href="#adobe-originals"><b>Adobe Originals 25th Anniversary</b></a> campaign: a 10-part editorial series and the open-source launch of <b>Source Serif, Adobe's 100th Original.</b></li>
@@ -844,7 +902,7 @@
 <section class="blk earned band" id="earned-media">
   <div class="inner">
     <div class="sec-head">
-      <span class="idx num">06</span>
+      <span class="idx num">07</span>
       <div>
         <h2 class="sec-title">Credibility</h2>
       </div>
@@ -940,9 +998,9 @@
     </details>
 
         <details class="cred-fold" id="microsites">
-      <summary>Launch microsites <span class="tease">Acumin · Source Han Serif · Minion 3 — all still live</span> <span class="chev">▸</span></summary>
+      <summary>Launch microsites <span class="tease">Acumin · Source Han Serif · Minion 3, all still live</span> <span class="chev">▸</span></summary>
       <div class="fold-body">
-        <p class="em-micro">Immersive go-to-market sites I produced for flagship typeface releases — all still live a decade later: <a href="https://acumin.typekit.com/" target="_blank" rel="noopener">Acumin</a> (2015) · <a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">Source Han Serif</a> (2017) · <a href="https://minion.typekit.com/" target="_blank" rel="noopener">Minion 3</a> (2018)</p>
+        <p class="em-micro">Immersive go-to-market sites I produced for flagship typeface releases, all still live a decade later: <a href="https://acumin.typekit.com/" target="_blank" rel="noopener">Acumin</a> (2015) · <a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">Source Han Serif</a> (2017) · <a href="https://minion.typekit.com/" target="_blank" rel="noopener">Minion 3</a> (2018)</p>
       </div>
     </details>
       </div>
@@ -958,7 +1016,7 @@
     <div>
       <h3 class="sub">Education</h3>
       <ul class="edu">
-        <li><b>MBA, Marketing</b> · Santa Clara University <span>(2013)</span></li>
+        <li><b>MBA, Marketing</b> · Santa Clara University</li>
         <li><b>BA, Political Science</b> · UCLA</li>
       </ul>
     </div>
@@ -980,7 +1038,7 @@
   <div class="inner">
     <span class="label">Let's talk</span>
     <h2>Open to the<br>next chapter.</h2>
-    <p class="sub">If you're building something where craft and judgment matter, I'd like to hear about it. Open to Senior Director and VP roles across product and product marketing, board seats, and advisory work.</p>
+    <p class="sub">If you're building something where craft and judgment matter, I'd like to hear about it. Open to Senior Director and VP roles across product and product marketing, plus board seats and select advisory and consulting work.</p>
     <div class="acts">
       <a href="mailto:hello@nicoleminoza.com" class="btn email-plain">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
