@@ -30,12 +30,31 @@
   ::selection{background:var(--accent);color:#fff}
   .wrap{max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,30px) 110px}
 
+  .topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .topbar-inner{max-width:880px;margin:0 auto;padding:13px clamp(20px,5vw,30px);
+    display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .topbar .brandmark{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.01em;
+    color:var(--ink);text-decoration:none;white-space:nowrap}
+  .topbar .brandmark .dot{color:var(--accent)}
+  .navlinks{display:flex;gap:24px;align-items:center}
+  .navlinks a{font-size:13.5px;text-decoration:none;color:var(--soft);font-weight:500;
+    letter-spacing:.01em;transition:color .15s;white-space:nowrap}
+  .navlinks a:hover{color:var(--brand)}
+  .navlinks .pill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#fff;
+    background:var(--brand);padding:9px 17px;border-radius:100px;white-space:nowrap;
+    transition:background .18s,transform .18s}
+  .navlinks .pill:hover{background:var(--ink);transform:translateY(-1px)}
+  section[id]{scroll-margin-top:78px}
+  @media(max-width:820px){.navlinks .hide-sm{display:none}}
+
   header.masthead{border-bottom:1px solid var(--ink);padding-bottom:clamp(28px,4vw,38px);margin-bottom:clamp(34px,5vw,48px)}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;
     color:var(--accent);font-weight:500;margin:0 0 22px;display:flex;align-items:center;gap:14px}
   .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent);flex:none}
   h1{font-family:var(--display);font-size:clamp(46px,8.5vw,84px);line-height:.94;
     font-weight:500;letter-spacing:-.025em;margin:0 0 22px}
+  h1 .dot{color:var(--accent)}
   .masthead p.lede{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.1vw,23px);
     color:var(--ink);margin:0 0 24px;max-width:52ch;line-height:1.4}
   .masthead .meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--soft)}
@@ -48,21 +67,21 @@
     letter-spacing:-.02em;margin:0 0 6px;line-height:1.04}
   .orgline{font-size:14px;color:var(--soft);font-style:normal;margin:0 0 16px;line-height:1.5;max-width:64ch}
   .roleline{font-size:16px;margin:0 0 6px;color:var(--ink);line-height:1.5}
-  .roleline strong{font-weight:700;font-size:17px}
+  .roleline strong{font-weight:600;font-size:17px}
   .roleline .dates{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.03em;
     color:var(--soft);font-weight:400;margin-top:9px}
   .roleline .sep{display:none}
 
   h3.block{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
     color:var(--faint);font-weight:500;margin:26px 0 10px}
-  .scope{background:var(--paper-2);border-left:3px solid var(--accent);
-    padding:16px 20px;margin:0 0 8px;font-size:16px;color:var(--soft);border-radius:0 4px 4px 0;line-height:1.55}
+  .scope{background:var(--paper);border:1px solid var(--rule);
+    padding:18px 22px;margin:0 0 8px;font-size:16px;color:var(--soft);border-radius:8px;line-height:1.55}
   ul.hl{margin:10px 0 0;padding:0;list-style:none}
   ul.hl li{margin:0 0 13px;padding-left:24px;position:relative;line-height:1.55}
   ul.hl li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   ul.hl a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--brand) 32%,transparent);transition:border-color .15s}
   ul.hl a:hover{border-bottom-color:var(--brand)}
-  b,strong{font-weight:700}
+  b,strong{font-weight:600}
 
   .playbook{background:var(--paper-2);border:1px solid var(--rule);
     padding:clamp(20px,2.5vw,28px);margin:26px 0 6px;border-radius:8px}
@@ -85,23 +104,40 @@
   @media print{
     body{background:#fff;font-size:11pt}
     .wrap{max-width:100%;padding:0}
+    .topnav{display:none}
     .playbook,.scope{background:#f7f4ef}
     a{color:inherit}
+    .topbar{display:none}
   }
 </style>
 </head>
 <body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brandmark">Nicole Miñoza<span class="dot">.</span></a>
+    <nav class="navlinks">
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#education" class="hide-sm">Education</a>
+      <a href="#writing" class="hide-sm">Writing</a>
+      <a href="#microsites" class="hide-sm">Microsites</a>
+      <a href="#earned-media" class="hide-sm">Press</a>
+      <a class="pill" href="index.html">Back to site</a>
+    </nav>
+  </div>
+</div>
+
 <div class="wrap">
 
 <header class="masthead">
   <p class="eyebrow">Professional Timeline</p>
-  <h1>Nicole Miñoza</h1>
+  <h1>Nicole Miñoza<span class="dot">.</span></h1>
   <p class="lede">Product &amp; product marketing executive. 23 years at Adobe building the fonts and typography platform used by millions of creative professionals. From the Typekit acquisition through the rebrand to Adobe Fonts to typography strategy for the generative AI era.</p>
   <p class="meta">Seattle, WA &nbsp;·&nbsp; <a href="https://nicoleminoza.com">nicoleminoza.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/nicoleminoza">LinkedIn</a> &nbsp;·&nbsp; Updated June 2026</p>
 </header>
 
 <!-- ============================================================ -->
-<section class="role">
+<section class="role" id="experience">
   <h2 class="company">Adobe</h2>
   <p class="orgline">Fonts &amp; Typography · Digital Media ($17.65B segment)</p>
   <p class="roleline"><strong>Director, Product Management</strong>, first Product Director for the business<span class="sep">|</span><span class="dates">June 2023 – February 2026 · Seattle, WA</span></p>
@@ -113,7 +149,7 @@
   <ul class="hl">
     <li><b>Proved typography drives revenue (FY25):</b> redesigned Adobe Express font recommendations, lifting free-to-paid conversion <b>186% (0.5% → 1.42%)</b> and making typography one of Express's top premium drivers; users who applied recommended fonts exported at <b>73.7% vs. 37.3% overall</b>.</li>
     <li><b>Shipped a new usage-based foundry compensation model (2023):</b> won executive approval and wrote the Creative Cloud–wide communications for a change that removed font entitlements from users. Shipped without backlash, <b>saving $1M in royalty costs in year one</b> and stabilizing royalty growth at 10% YoY while MAU grew 12%.</li>
-    <li><b>Built the business case for Adobe's largest font library expansion in five years (Monotype and Microsoft partnership, April 2025)</b> from observed user drop-off data; owned the go-to-market, timed to Adobe MAX London. Pre-instrumented launch KPIs: <b>1.2M users adopted fonts from the new library within weeks, failed searches fell 91%, and 21.1M missing-font events were eliminated</b>, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova to Adobe's flagship apps.</li>
+    <li><b>Built the business case for Adobe's largest font library expansion in five years (Monotype partnership, April 2025)</b> from observed user drop-off data; owned the go-to-market. Pre-instrumented launch KPIs: <b>1.2M users adopted fonts from the new library within weeks, failed searches fell 91%, and 21.1M missing-font events were eliminated</b>, bringing Helvetica, Gotham, Avenir, DIN, and Proxima Nova natively into Creative Cloud.</li>
     <li><b>Scaled Adobe's unified text engine across 11 flagship applications to 15M monthly users with 40x performance gains</b> in core typographic actions; grew Adobe Fonts to <b>12M+ MAU (2025), outpacing Creative Cloud 3x (11% YoY vs. 3%)</b>.</li>
     <li><b>Shipped <a href="https://helpx.adobe.com/firefly/web/create-mood-boards/firefly-boards/generative-text-edit.html">Generative Text Edit</a> (raster text editing) in Adobe Firefly Boards at MAX 2025.</b> Owned product vision, strategy, and messaging; secured Photoshop and Express commitments to integrate in FY26.</li>
     <li><b>Took TyCo (codename) from concept past a go/no-go review with a dozen principal scientists to public beta</b>, with a committed Express Assistant launch. Owned vision, strategy, and messaging; discontinued in Adobe's 2026 restructuring.</li>
@@ -147,14 +183,14 @@
   <h3 class="block">Positive Highlights</h3>
   <ul class="hl">
     <li><b>Set the annual strategy for the type organization for seven years (2019–2026).</b> Won SVP buy-in annually, led execution of the resulting product roadmap, and approved mid-year reprioritizations across an organization that grew to 75.</li>
-    <li><b>Won approval for Adobe's first unified text engine (2020):</b> took it from concept to pitch to approval by an SVP and all Heads of Product, securing agreement that every application would adopt one shared text engine instead of building its own. Enabled the text engine for Adobe Express and made Adobe's text behavior globally consistent, today serving <b>15M monthly users</b>. Team grew to 15.</li>
+    <li><b>Won approval for Adobe's first unified text engine (2020):</b> took it from concept to pitch to approval by an SVP and all Heads of Product, securing agreement that every application would replace its own text engine with a shared codebase. Enabled the text engine for Adobe Express and made Adobe's text behavior globally consistent, today serving <b>15M monthly users</b>. Team grew to 15.</li>
     <li><b>Shipped the Adobe Fonts platform across Adobe.com and 12 Creative Cloud applications → 11M in-app MAU</b> (unique users actively using fonts). App teams shipped the integration because it made their products better: fonts free with membership, automatic missing-font resolution, the library inside the canvas.</li>
     <li><b>Architected the usage-based royalty initiative (2019–2022):</b> specified the usage-logging requirements for every app integration plus expiration and deactivation workflows, the activation-to-usage pivot that controlled royalty costs so the business could keep scaling.</li>
     <li><b>Shipped Express templates and "open in Express" on the Adobe Fonts website (2022)</b>, generating <b>~200K unique referrals to Adobe Express per quarter</b>.</li>
     <li><b>Ran Adobe's global emoji consumer study (World Emoji Day, 2021):</b> her team's research on how emoji bridge communication gaps, with coverage including <a href="https://9to5mac.com/2021/07/15/study-shows-most-popular-emoji/">9to5Mac</a>.</li>
     <li><b>Launched Add Your Own Fonts and Custom Fonts</b> with dual-audience positioning: <b>millions of user fonts</b> brought onto the platform; added variable fonts to the service (2022).</li>
     <li><b>Formed and ran the Type Working Group (2020, ~2 years)</b>: a standing forum where client-app product owners resolved type roadmap collisions before they hit escalation.</li>
-    <li><b>Inherited and reshaped two teams; developed talent through change:</b> rebuilt the product team around new strategic pillars, and as the support function moved to Adobe's central org, redeveloped its people into higher-value roles: converting a customer support manager into a product manager (later leading the variable fonts launch), coaching a senior domain expert to Principal Product Manager, and building a content producer role whose livestream series became one of Adobe's most-viewed.</li>
+    <li><b>Developed non-traditional talent:</b> converted a customer support manager into a product manager (later leading the variable fonts launch), coached a senior domain expert to Principal Product Manager, and built a content producer role whose livestream series became one of Adobe's most-viewed.</li>
     <li>Earned executive recognition for annual strategy presentations (“the best APS I've ever seen”, senior design executive).</li>
   </ul>
 
@@ -278,7 +314,7 @@
 </section>
 
 <!-- ============================================================ -->
-<section class="role edu">
+<section class="role edu" id="education">
   <h2 class="company">Education &amp; Leadership Development</h2>
   <ul>
     <li><b>MBA, Marketing</b> · Santa Clara University (2013)</li>
