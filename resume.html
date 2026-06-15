@@ -148,7 +148,7 @@
 </head>
 <body>
 
-<a class="dl" href="#" role="button" onclick="window.print();return false;" aria-label="Download résumé as PDF">
+<a class="dl" href="R%C3%A9sum%C3%A9%20%C2%B7%20Nicole%20Mi%C3%B1oza%20%C2%B7%20Product%20%26%20Marketing%20Executive.pdf" download="Résumé · Nicole Miñoza · Product & Marketing Executive.pdf" aria-label="Download résumé as PDF">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 11 5 5 5-5"></path><path d="M5 21h14"></path></svg>
   Download PDF
 </a>
@@ -161,7 +161,7 @@
       <h1>Nicole Miñoza</h1>
     </div>
     <div class="contact">
-      <div><a href="/cdn-cgi/l/email-protection#472f222b2b2807292e24282b222a2e29283d266924282a"><span class="__cf_email__" data-cfemail="dfb7bab3b3b09fb1b6bcb0b3bab2b6b1b0a5bef1bcb0b2">[email&#160;protected]</span></a> · <a href="https://nicoleminoza.com">nicoleminoza.com</a></div>
+      <div><a class="email-js" href="https://nicoleminoza.com" data-u="hello" data-d="nicoleminoza.com">hello [at] nicoleminoza.com</a> · <a href="https://nicoleminoza.com">nicoleminoza.com</a></div>
       <div class="row2"><a href="https://www.linkedin.com/in/nicoleminoza" target="_blank" rel="noopener">linkedin.com/in/nicoleminoza</a> · Seattle, WA</div>
     </div>
   </div>
@@ -246,7 +246,7 @@
       <ul class="duties">
         <li>Won executive approval for the usage-based royalty model and specified the usage logging across every app.</li>
         <li>Shipped the Adobe Fonts platform across Adobe.com and <b>12 Creative Cloud apps</b>.</li>
-        <li>Rebuilt two teams, converting a support manager into a PM and a content role into one of Adobe's most-viewed livestream series.</li>
+        <li>Rebuilt three teams and grew the people on them, promoting a support manager to PM, a support person to community manager, and a content hire into the producer behind one of Adobe's top livestream series.</li>
       </ul>
     </div>
 
@@ -274,6 +274,7 @@
       <ul class="duties">
         <li>Architected GTM and press strategy for <b>Source Han Sans</b>, the first open-source Pan-CJK typeface, addressing <b>1.5B users</b>; won the naming case in a five-company negotiation.</li>
         <li>Created, funded, and led the Adobe Originals 25th Anniversary campaign, anchored by the open-source launch of Source Serif.</li>
+        <li>Built Typekit's community-driven marketing model and produced immersive launch microsites.</li>
       </ul>
     </div>
 
@@ -304,5 +305,15 @@
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+  /* Assemble the email at runtime so the raw address never appears in the
+     served HTML — Cloudflare's email obfuscator can't rewrite what it can't find. */
+  document.querySelectorAll('.email-js').forEach(function(a){
+    var e = a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+    a.href = 'mailto:' + e;
+    a.textContent = e;
+  });
+</script>
+
+</body>
 </html>
