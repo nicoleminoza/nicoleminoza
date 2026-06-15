@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Signature · Nicole Miñoza</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6f1;--paper-2:#f2eadf;--ink:#241f1d;--soft:#5d534c;
+    --faint:#a99d90;--rule:#e6dccf;--plum:#6b2c41;--terra:#c07a44;
+    --brand:var(--plum);--accent:var(--terra);
+    --display:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"Spline Sans Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:var(--accent);color:#fff}
+  .wrap{max-width:760px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,30px) 90px}
+
+  header.head{border-bottom:1px solid var(--ink);padding-bottom:clamp(22px,3vw,30px);margin-bottom:clamp(30px,4vw,42px)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent);font-weight:500;margin:0 0 18px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--accent);flex:none}
+  h1{font-family:var(--display);font-size:clamp(38px,6.5vw,60px);line-height:.96;
+    font-weight:500;letter-spacing:-.025em;margin:0 0 16px}
+  h1 .dot{color:var(--accent)}
+  .head p{font-family:var(--display);font-weight:400;font-size:clamp(17px,2vw,20px);
+    color:var(--soft);margin:0;max-width:54ch;line-height:1.4}
+
+  .block-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--faint);font-weight:500;margin:0 0 16px}
+
+  /* preview canvas */
+  .stage{background:#ffffff;border:1px solid var(--rule);border-radius:10px;
+    padding:clamp(26px,4vw,44px);margin:0 0 14px;
+    background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:18px 18px;background-position:-9px -9px}
+  .stage .mailbg{background:#fff;border-radius:6px;padding:clamp(20px,3vw,32px);
+    box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .stage .sample{font-family:var(--sans);font-size:15px;color:var(--soft);margin:0 0 22px;line-height:1.5}
+  .stage .sample .si{color:var(--faint)}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 clamp(36px,5vw,52px)}
+  .btn{font-family:var(--sans);font-size:14.5px;font-weight:600;text-decoration:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:100px;border:0;
+    background:var(--brand);color:#fff;transition:background .18s,transform .18s}
+  .btn:hover{background:var(--ink);transform:translateY(-1px)}
+  .btn svg{width:15px;height:15px}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule);padding:11px 20px}
+  .btn.ghost:hover{background:var(--paper-2);border-color:var(--faint)}
+  .copied-note{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--brand);
+    opacity:0;transition:opacity .2s}
+  .copied-note.show{opacity:1}
+
+  section.doc{padding-top:clamp(30px,4vw,40px);border-top:1px solid var(--rule);margin-top:clamp(30px,4vw,40px)}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,28px);letter-spacing:-.015em;margin:0 0 18px}
+  ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+  ol.steps li{position:relative;padding-left:42px;margin-bottom:18px;counter-increment:s;line-height:1.55;color:var(--soft);max-width:62ch}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;
+    font-family:var(--mono);font-size:12px;color:var(--brand);width:26px;height:26px;
+    border:1px solid var(--rule);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  ol.steps li b{color:var(--ink);font-weight:600}
+  ol.steps li .c{font-family:var(--mono);font-size:13px;background:var(--paper-2);padding:1px 7px;border-radius:4px;color:var(--ink)}
+  .clients{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 0}
+  .client{border:1px solid var(--rule);border-radius:8px;padding:16px 18px;background:#fff}
+  .client h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+  .client p{margin:0;font-size:13.5px;color:var(--soft);line-height:1.5}
+  @media(max-width:640px){.clients{grid-template-columns:1fr}}
+
+  .code{margin-top:18px}
+  .code pre{background:var(--ink);color:#e9ddd3;border-radius:10px;padding:22px 24px;overflow:auto;
+    font-family:var(--mono);font-size:12.5px;line-height:1.7;letter-spacing:.01em;margin:0;
+    max-height:340px;-webkit-overflow-scrolling:touch}
+  .note{font-size:14px;color:var(--soft);line-height:1.6;margin:16px 0 0;
+    padding:14px 18px;background:var(--paper-2);border-radius:8px}
+  .note b{color:var(--ink);font-weight:600}
+  .note code{font-family:var(--mono);font-size:13px;background:#fff;padding:1px 6px;border-radius:4px;border:1px solid var(--rule)}
+
+  footer{margin-top:54px;padding-top:22px;border-top:1px solid var(--ink);
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint)}
+  footer a{color:var(--brand);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <p class="eyebrow">Brand System · Email Signature</p>
+    <h1>Email signature<span class="dot">.</span></h1>
+    <p>A typographic signature in the brand voice: Newsreader name, a mono role label, and plum links. Built as table-based HTML so it holds up in Gmail, Apple Mail, and Outlook.</p>
+  </header>
+
+  <p class="block-label">Live preview</p>
+  <div class="stage">
+    <div class="mailbg">
+      <p class="sample">Looking forward to connecting.<br><span class="si">Best,</span></p>
+      <!-- ============ SIGNATURE PREVIEW (mounted by JS) ============ -->
+      <div id="preview"></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn" id="copyBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      Copy signature
+    </button>
+    <button class="btn ghost" id="codeBtn" type="button">View HTML</button>
+    <span class="copied-note" id="copiedNote">Copied to clipboard ✓</span>
+  </div>
+
+  <section class="doc">
+    <h2>How to install it</h2>
+    <ol class="steps">
+      <li>Click <b>Copy signature</b> above. It copies the formatted signature (not code) to your clipboard.</li>
+      <li>Open your email client's signature settings and <b>paste directly</b> into the signature box.</li>
+      <li>Set it as the default for new messages and replies. Send yourself a test to confirm the photo and links render.</li>
+    </ol>
+    <div class="clients">
+      <div class="client"><h3>Gmail</h3><p>Settings → See all settings → General → Signature → Create new, then paste.</p></div>
+      <div class="client"><h3>Apple Mail</h3><p>Settings → Signatures → add one, uncheck "match default font," then paste.</p></div>
+      <div class="client"><h3>Outlook</h3><p>Settings → Mail → Compose and reply → Email signature, then paste.</p></div>
+    </div>
+    <div class="note" id="hostNote"><b>One setup step:</b> the photo loads from your live site at <code>nicoleminoza.com/assets/signature-photo.png</code>. Push <code>assets/signature-photo.png</code> to your repo first so the image resolves in everyone's inbox.</div>
+
+    <div class="code" id="codeWrap" style="display:none">
+      <p class="block-label" style="margin-top:26px">Raw HTML — for a signature tool or manual paste</p>
+      <pre id="codeBlock"></pre>
+    </div>
+  </section>
+
+  <footer>Nicole Miñoza · <a href="index.html">Back to site</a> · Updated June 2026</footer>
+
+</div>
+
+<script>
+  // Canonical signature markup. {{PHOTO}} is swapped for relative (preview) vs absolute (copy/code).
+  var SIG =
+  '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;background:#faf6f1;border:1px solid #e6dccf;border-radius:16px;">'+
+    '<tr><td style="padding:20px 28px 20px 22px;">'+
+      '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">'+
+        '<tr>'+
+          '<td valign="top" style="padding-right:22px;">'+
+            '<img src="{{PHOTO}}" width="112" height="112" alt="Nicole Mi\u00f1oza" style="display:block;width:112px;height:112px;border:0;outline:none;border-radius:16px;" />'+
+          '</td>'+
+          '<td valign="middle" style="vertical-align:middle;">'+
+            '<div style="font-family:\'Newsreader\',Georgia,\'Times New Roman\',serif;font-size:27px;font-weight:600;color:#241f1d;letter-spacing:-0.01em;line-height:1.05;">Nicole Mi\u00f1oza<span style="color:#c07a44;">.</span></div>'+
+            '<div style="font-family:\'Spline Sans Mono\',\'SFMono-Regular\',Consolas,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#5d534c;padding-top:10px;line-height:1.5;">Product &amp; Product Marketing Executive</div>'+
+            '<div style="border-top:1px solid #e6dccf;margin-top:14px;padding-top:13px;font-family:\'Hanken Grotesk\',Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;line-height:1.4;">'+
+              '<a href="https://nicoleminoza.com" style="color:#6b2c41;text-decoration:underline;">nicoleminoza.com</a>'+
+              '<span style="color:#a99d90;padding:0 9px;">&middot;</span>'+
+              '<a href="https://www.linkedin.com/in/nicoleminoza" style="color:#6b2c41;text-decoration:underline;">LinkedIn</a>'+
+            '</div>'+
+          '</td>'+
+        '</tr>'+
+      '</table>'+
+    '</td></tr>'+
+  '</table>';
+
+  var REL = 'assets/signature-photo.png';
+  var ABS = 'https://nicoleminoza.com/assets/signature-photo.png';
+
+  document.getElementById('preview').innerHTML = SIG.replace('{{PHOTO}}', REL);
+  document.getElementById('codeBlock').textContent = SIG.replace('{{PHOTO}}', ABS);
+
+  // copy as rich HTML
+  var copyBtn = document.getElementById('copyBtn');
+  var note = document.getElementById('copiedNote');
+  copyBtn.addEventListener('click', function(){
+    var html = SIG.replace('{{PHOTO}}', ABS);
+    function flash(){ note.classList.add('show'); setTimeout(function(){ note.classList.remove('show'); }, 2200); }
+    if(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write){
+      var item = new ClipboardItem({
+        'text/html': new Blob([html], {type:'text/html'}),
+        'text/plain': new Blob([html], {type:'text/plain'})
+      });
+      navigator.clipboard.write([item]).then(flash).catch(fallback);
+    } else { fallback(); }
+    function fallback(){
+      var sel = window.getSelection(); var range = document.createRange();
+      var tmp = document.createElement('div');
+      tmp.innerHTML = SIG.replace('{{PHOTO}}', ABS);
+      tmp.style.position='fixed'; tmp.style.left='-9999px';
+      document.body.appendChild(tmp);
+      range.selectNodeContents(tmp); sel.removeAllRanges(); sel.addRange(range);
+      try{ document.execCommand('copy'); flash(); }catch(e){}
+      sel.removeAllRanges(); document.body.removeChild(tmp);
+    }
+  });
+
+  // toggle code
+  var codeBtn = document.getElementById('codeBtn');
+  var codeWrap = document.getElementById('codeWrap');
+  codeBtn.addEventListener('click', function(){
+    var open = codeWrap.style.display !== 'none';
+    codeWrap.style.display = open ? 'none' : 'block';
+    codeBtn.textContent = open ? 'View HTML' : 'Hide HTML';
+  });
+</script>
+</body>
+</html>
