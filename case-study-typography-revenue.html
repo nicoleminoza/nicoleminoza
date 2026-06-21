@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Nicole Miñoza">
+<meta name="description" content="Executive case study: Proving Typography Drives Revenue. Nicole Miñoza, Product &amp; Product Marketing Executive.">
+<title>Case Study · Proving Typography Drives Revenue · Nicole Miñoza</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6f1;--paper-2:#f2eadf;--ink:#241f1d;--soft:#5d534c;--faint:#a99d90;
+    --rule:#e6dccf;--plum:#6b2c41;--terra:#c07a44;--crimson:#9d2235;
+    --brand:var(--plum);--accent:var(--terra);
+    --display:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"Spline Sans Mono",ui-monospace,Menlo,monospace;
+    --pagew:8.5in;--pad:0.72in;
+  }
+  *{box-sizing:border-box}
+  html{background:#dcd3c6}
+  body{margin:0;color:var(--ink);font-family:var(--sans);font-size:11pt;line-height:1.6;
+    font-feature-settings:"ss01";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--accent);color:#fff}
+  .num{font-variant-numeric:tabular-nums lining-nums}
+  .label{font-family:var(--mono);font-size:8.5pt;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:500}
+
+  .toolbar{position:fixed;top:18px;right:18px;z-index:50;display:flex;gap:10px;align-items:center}
+  .dl{font-family:var(--sans);font-size:13.5px;font-weight:600;text-decoration:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:100px;border:0;
+    background:var(--brand);color:#fff;box-shadow:0 14px 34px -14px rgba(43,20,30,.6);
+    transition:background .18s,transform .18s}
+  .dl:hover{background:var(--ink);transform:translateY(-1px)}
+  .dl svg{width:15px;height:15px}
+  .dl.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--rule);box-shadow:0 14px 34px -20px rgba(43,20,30,.4)}
+  .dl.ghost:hover{background:#fff}
+
+  .page{width:var(--pagew);margin:26px auto;background:var(--paper);
+    position:relative;padding:var(--pad);box-shadow:0 30px 80px -40px rgba(43,20,30,.45)}
+
+  /* top line */
+  .topline{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+  .glyph{width:44px;height:44px;border-radius:22%;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -18px rgba(43,20,30,.5);flex:none}
+  .glyph span{font-family:Georgia,serif;font-weight:600;color:var(--paper);font-size:26px;line-height:1}
+  .topmeta{text-align:right;font-family:var(--mono);font-size:8pt;letter-spacing:.06em;color:var(--soft);line-height:1.7}
+  .topmeta b{display:block;color:var(--ink);font-family:var(--display);font-size:11.5pt;letter-spacing:-.01em;font-weight:600;margin-bottom:2px}
+
+  /* title block */
+  .eyebrow{display:flex;align-items:center;gap:13px;margin:30px 0 0}
+  .eyebrow .line{height:1px;width:42px;background:var(--accent)}
+  h1{font-family:var(--display);font-weight:500;margin:14px 0 0;font-size:33pt;line-height:1.0;
+    letter-spacing:-.024em;max-width:17ch}
+  .subhead{font-family:var(--display);font-style:italic;font-weight:400;font-size:14pt;line-height:1.34;
+    color:var(--soft);margin:14px 0 0;max-width:54ch}
+
+  /* HERO band: giant number + scope */
+  .hero{display:grid;grid-template-columns:auto 1fr;gap:38px;align-items:center;
+    margin:34px 0 0;padding:30px 0 0;border-top:2px solid var(--ink)}
+  .hero .figure{display:flex;flex-direction:column}
+  .hero .fig{font-family:var(--display);font-weight:600;color:var(--brand);
+    font-size:104pt;line-height:.82;letter-spacing:-.03em}
+  .hero .fig small{font-size:54pt;font-weight:500}
+  .hero .figcap{font-family:var(--mono);font-size:9pt;letter-spacing:.04em;color:var(--soft);
+    line-height:1.5;margin:16px 0 0;max-width:34ch}
+  .hero .figcap b{color:var(--ink);font-weight:500}
+  .hero .pull{font-family:var(--display);font-style:italic;font-weight:400;font-size:18pt;
+    line-height:1.32;color:var(--ink);letter-spacing:-.006em;padding-left:34px;border-left:2px solid var(--accent)}
+  .hero .pull b{font-style:normal;font-weight:600}
+
+  /* support stats: causal proof */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:26px 0 0;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .stat{padding:17px 26px 17px;border-left:1px solid var(--rule)}
+  .stat:first-child{border-left:0;padding-left:0}
+  .stat .v{font-family:var(--display);font-weight:600;font-size:25pt;line-height:1;color:var(--ink);letter-spacing:-.02em}
+  .stat .v em{font-style:normal;color:var(--accent)}
+  .stat .v .vs{font-family:var(--sans);font-weight:500;font-size:12pt;color:var(--faint);letter-spacing:0;margin-left:6px}
+  .stat .k{font-family:var(--mono);font-size:8pt;letter-spacing:.03em;color:var(--soft);line-height:1.5;margin:10px 0 0;max-width:38ch}
+  .stat .k b{color:var(--ink);font-weight:500}
+
+  /* section heads */
+  .sec-h{font-family:var(--mono);font-size:9pt;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 16px;display:flex;align-items:center;gap:12px}
+  .sec-h::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+  /* story */
+  .story{margin:36px 0 0}
+  .story .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .story .item .t{font-family:var(--sans);font-weight:700;font-size:13pt;color:var(--ink);
+    line-height:1.22;margin:0 0 9px;letter-spacing:-.01em}
+  .story .item .t span{display:block;font-family:var(--mono);font-weight:500;font-size:8pt;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  .story .item p{margin:0;font-size:10.5pt;line-height:1.62;color:var(--soft);text-wrap:pretty}
+  .story .item p b{color:var(--ink);font-weight:600}
+
+  /* playbook */
+  .play{margin:34px 0 0;background:var(--paper-2);border-radius:10px;padding:26px 30px 28px}
+  .play .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .play .step .n{font-family:var(--display);font-style:italic;font-weight:400;font-size:24pt;
+    color:var(--accent);line-height:1;display:block;margin:0 0 10px}
+  .play .step .h{font-family:var(--sans);font-weight:700;font-size:11.5pt;color:var(--ink);
+    line-height:1.26;display:block;margin:0 0 5px;letter-spacing:-.01em}
+  .play .step .d{font-size:9.5pt;line-height:1.52;color:var(--soft)}
+
+  /* footer */
+  .pfoot{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    border-top:1px solid var(--rule);padding-top:14px;
+    font-family:var(--mono);font-size:8pt;letter-spacing:.05em;color:var(--faint)}
+  .pfoot .mk{display:flex;align-items:center;gap:8px;color:var(--soft)}
+  .pfoot .mk .g{width:15px;height:15px;border-radius:22%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center}
+  .pfoot .mk .g span{font-family:Georgia,serif;font-weight:600;color:var(--paper);font-size:10px;line-height:1}
+  .pfoot .mk b{font-family:var(--display);font-weight:600;font-size:10pt;letter-spacing:-.01em;color:var(--ink)}
+  .pfoot .xref{color:var(--soft)}
+
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:Letter portrait;margin:0}
+  @media print{
+    html{background:#fff}
+    .toolbar{display:none !important}
+    .page{margin:0;box-shadow:none;width:100%;padding:0.55in 0.6in 0.5in}
+    h1{font-size:30pt}
+    .hero{margin-top:26px;padding-top:24px}
+    .hero .fig{font-size:88pt}
+    .hero .fig small{font-size:46pt}
+    .story,.play{margin-top:26px}
+  }
+  @media screen and (max-width:880px){
+    .page{width:100%;margin:0;padding:32px 22px 54px;box-shadow:none}
+    h1{font-size:26pt}
+    .hero{grid-template-columns:1fr;gap:22px}
+    .hero .fig{font-size:80pt}
+    .hero .fig small{font-size:42pt}
+    .hero .pull{padding-left:20px;font-size:15pt}
+    .stats,.story .grid,.play .grid{grid-template-columns:1fr;gap:18px}
+    .stat{border-left:0;border-top:1px solid var(--rule);padding:14px 0}
+    .stat:first-child{border-top:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="dl ghost" href="index.html">&larr; Site</a>
+  <a class="dl" id="downloadBtn" href="case-study-typography-revenue.pdf" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+    Download PDF
+  </a>
+</div>
+
+<section class="page" data-screen-label="Executive Case Study">
+
+  <div class="topline">
+    <span class="glyph"><span>N</span></span>
+    <div class="topmeta">
+      <b>Nicole Miñoza</b>
+      Product &amp; Product Marketing Executive<br>
+      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157d7079797a557b7c767a7970787c7b7a6f743b767a78">[email&#160;protected]</a> · nicoleminoza.com
+    </div>
+  </div>
+
+  <div class="eyebrow"><span class="line"></span><span class="label">Executive Case Study</span></div>
+  <h1>Proving Typography Drives Revenue</h1>
+  <p class="subhead">How I rebuilt font discovery into one of the top premium-conversion drivers inside Adobe Express, Adobe's freemium design app.</p>
+
+  <div class="hero">
+    <div class="figure">
+      <div class="fig num">+186<small>%</small></div>
+      <p class="figcap"><b>Free-to-paid conversion lift</b> in Adobe Express (0.5% → 1.42%), from a font-recommendation redesign I drove across product, design, and engineering.</p>
+    </div>
+    <p class="pull">Everyone saw font discovery as a commodity feature. I saw an <b>under-monetized conversion lever</b>, and the data proved me right.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="v num">73.7<em>%</em> <span class="vs">vs. 37.3%</span></div>
+      <p class="k"><b>Export rate</b> for users who applied a recommended font, versus all Express users. Nearly 2× more likely to finish and keep their work.</p>
+    </div>
+    <div class="stat">
+      <div class="v num">6.3<em>&times;</em></div>
+      <p class="k"><b>More trial conversions</b> in matched 45-day windows, before versus after launch.</p>
+    </div>
+  </div>
+
+  <div class="story">
+    <p class="sec-h">The Story</p>
+    <div class="grid">
+      <div class="item">
+        <p class="t"><span>Challenge</span> Friction, not revenue.</p>
+        <p>Font discovery was a dead end. Recommendations and the font menu were <b>two separate experiences</b>, and the legacy suggestions ignored what the user was actually making. Users defaulted instead of choosing, and premium fonts looked <b>arbitrary, not worth paying for</b>.</p>
+      </div>
+      <div class="item">
+        <p class="t"><span>Approach</span> A lab to de-risk the bet.</p>
+        <p>Designated Adobe Express as the flagship launch partner for contextual font recommendations, surfacing the right font at the right moment. Validated first on Adobe's font website, <b>millions of unique users every month</b>, then rolled it out in-app after aligning Express leadership behind the results.</p>
+      </div>
+      <div class="item">
+        <p class="t"><span>Result</span> Conversion nearly tripled.</p>
+        <p>I turned typography from an unmeasured feature into one of Express's top premium-conversion drivers.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="play">
+    <p class="sec-h">The Playbook</p>
+    <div class="grid">
+      <div class="step">
+        <span class="n">01</span>
+        <span class="h">Find the undervalued asset.</span>
+        <span class="d">Typography: used by everyone, bundled into a subscription, credited to no one.</span>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <span class="h">Prove its worth.</span>
+        <span class="d">Instrument the behavior, test on the website lab, validate with A/B data.</span>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <span class="h">Scale it through influence.</span>
+        <span class="d">Win alignment from teams you don't manage by making the result theirs.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>nicoleminoza.com · June 2026</span>
+  </div>
+
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</script>
+
+</body>
+</html>
