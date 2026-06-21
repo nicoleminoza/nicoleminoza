@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Nicole Miñoza">
+<meta name="description" content="Operating playbooks by Nicole Miñoza: the repeatable decisions behind the work. Measurement, influence, and positioning, carried to any product.">
+<title>Playbooks · Nicole Miñoza</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Playbooks · Nicole Miñoza">
+<meta property="og:description" content="The examples are fonts. The decisions carry to any product.">
+<meta property="og:image" content="https://nicoleminoza.com/og-card-playbooks.png">
+<meta property="og:url" content="https://nicoleminoza.com/playbooks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Playbooks · Nicole Miñoza">
+<meta name="twitter:description" content="The examples are fonts. The decisions carry to any product.">
+<meta name="twitter:image" content="https://nicoleminoza.com/og-card-playbooks.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6f1;
+    --paper-2:#f2eadf;
+    --ink:#241f1d;
+    --soft:#5d534c;
+    --faint:#a99d90;
+    --rule:#e6dccf;
+    --plum:#6b2c41;
+    --terra:#c07a44;
+    --crimson:#9d2235;
+    --brand:var(--plum);
+    --accent:var(--terra);
+    --display:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"Spline Sans Mono",ui-monospace,Menlo,monospace;
+    --pagew:8.5in;
+    --pageh:11in;
+    --pad:0.82in;
+  }
+  *{box-sizing:border-box}
+  html{background:#dcd3c6}
+  body{
+    margin:0;color:var(--ink);
+    font-family:var(--sans);font-size:11.5pt;line-height:1.6;
+    font-feature-settings:"ss01";
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  .num{font-variant-numeric:tabular-nums lining-nums}
+  .mono{font-family:var(--mono)}
+  .label{
+    font-family:var(--mono);font-size:8.5pt;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);font-weight:500;
+  }
+
+  /* ---------- download bar (screen only) ---------- */
+  .toolbar{
+    position:fixed;top:18px;right:18px;z-index:50;display:flex;gap:10px;align-items:center;
+  }
+  .dl{
+    font-family:var(--sans);font-size:13.5px;font-weight:600;text-decoration:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:100px;border:0;
+    background:var(--brand);color:#fff;box-shadow:0 14px 34px -14px rgba(43,20,30,.6);
+    transition:background .18s,transform .18s;
+  }
+  .dl:hover{background:var(--ink);transform:translateY(-1px)}
+  .dl svg{width:15px;height:15px}
+  .dl.ghost{background:var(--paper);color:var(--ink);border:1px solid var(--rule);box-shadow:0 14px 34px -20px rgba(43,20,30,.4)}
+  .dl.ghost:hover{background:#fff;color:var(--ink)}
+
+  /* ---------- the page ---------- */
+  .page{
+    width:var(--pagew);min-height:var(--pageh);margin:26px auto;background:var(--paper);
+    position:relative;padding:var(--pad);
+    box-shadow:0 30px 80px -40px rgba(43,20,30,.45);
+    display:flex;flex-direction:column;
+  }
+  .page::after{ /* running footer */
+    content:"";
+  }
+  .pfoot{
+    position:absolute;left:var(--pad);right:var(--pad);bottom:0.5in;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    border-top:1px solid var(--rule);padding-top:9px;
+    font-family:var(--mono);font-size:8pt;letter-spacing:.05em;color:var(--faint);
+  }
+  .pfoot .mk{display:flex;align-items:center;gap:8px;color:var(--soft)}
+  .pfoot .mk .g{width:15px;height:15px;border-radius:22%;background:var(--brand);display:inline-flex;align-items:center;justify-content:center}
+  .pfoot .mk .g span{font-family:Georgia,serif;font-weight:600;color:var(--paper);font-size:10px;line-height:1}
+  .pfoot .mk b{font-family:var(--display);font-weight:600;font-size:10pt;letter-spacing:-.01em;color:var(--ink)}
+
+  /* ---------- cover ---------- */
+  .cover{justify-content:space-between}
+  .cover .topline{display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .cover .glyph-lg{width:62px;height:62px;border-radius:22%;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px -22px rgba(43,20,30,.5)}
+  .cover .glyph-lg span{font-family:Georgia,serif;font-weight:600;color:var(--paper);font-size:40px;line-height:1}
+  .cover .topmeta{text-align:right;font-family:var(--mono);font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.9}
+  .cover .topmeta b{display:block;color:var(--ink);font-family:var(--display);font-size:13pt;letter-spacing:-.01em;text-transform:none}
+
+  .cover .mid{margin-top:auto;margin-bottom:auto;padding-block:8px}
+  .cover .eyebrow{display:flex;align-items:center;gap:13px;margin-bottom:24px}
+  .cover .eyebrow .line{height:1px;width:42px;background:var(--accent)}
+  .cover h1{
+    font-family:var(--display);font-weight:500;margin:0;
+    font-size:78pt;line-height:.9;letter-spacing:-.025em;
+  }
+  .cover h1 em{font-style:italic;font-weight:400}
+  .cover .stand{font-family:var(--display);font-weight:400;font-size:17pt;line-height:1.38;
+    color:var(--ink);max-width:30ch;margin:26px 0 0}
+  .cover .stand b{font-weight:600}
+
+  .cover .index{margin-top:34px;border-top:2px solid var(--ink)}
+  .cover .index .row{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:baseline;
+    padding:13px 0;border-bottom:1px solid var(--rule)}
+  .cover .index .row .pn{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .cover .index .row .ti{font-family:var(--display);font-size:16pt;letter-spacing:-.01em;color:var(--ink)}
+  .cover .index .row .tg{font-family:var(--mono);font-size:8.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+  /* ---------- intro block under cover index ---------- */
+  .cover .note{margin-top:26px;font-size:11pt;line-height:1.6;color:var(--soft);max-width:64ch}
+  .cover .note b{color:var(--ink);font-weight:600}
+
+  /* ---------- playbook page ---------- */
+  .pb-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+    border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:26px}
+  .pb-head .lhs{max-width:46ch}
+  .pb-head .kicker{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .pb-head .kicker .pn{font-family:var(--mono);font-size:9pt;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .pb-head .kicker .tg{font-family:var(--mono);font-size:9pt;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+    border-left:1px solid var(--rule);padding-left:12px}
+  .pb-head h2{font-family:var(--display);font-weight:500;font-size:34pt;line-height:1.02;letter-spacing:-.022em;margin:0}
+  .pb-head .bignum{font-family:var(--display);font-style:italic;font-weight:400;font-size:54pt;line-height:.8;
+    color:var(--faint);letter-spacing:-.02em;flex:none}
+
+  .essence{font-family:var(--display);font-weight:400;font-size:16pt;line-height:1.36;letter-spacing:-.005em;
+    color:var(--ink);max-width:52ch;margin:0 0 28px}
+  .essence b{font-weight:600}
+
+  .pb-body{display:grid;grid-template-columns:1fr;gap:24px}
+
+  .steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:0}
+  .steps li{position:relative;padding:16px 0 16px 52px;border-top:1px solid var(--rule);
+    font-size:11.5pt;line-height:1.52;color:var(--ink)}
+  .steps li:last-child{border-bottom:1px solid var(--rule)}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:16px;font-family:var(--mono);font-size:10pt;letter-spacing:.06em;
+    color:var(--accent);font-weight:500}
+  .steps li b{font-weight:600}
+  .steps li i{font-style:italic}
+
+  .callout{border-left:2px solid var(--accent);padding:4px 0 4px 20px;margin:0}
+  .callout .ck{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);display:block;margin-bottom:9px}
+  .callout p{margin:0;font-family:var(--display);font-size:14.5pt;line-height:1.34;letter-spacing:-.005em;color:var(--ink)}
+  .callout p b{font-weight:600}
+
+  .resultband{margin-top:4px;background:var(--ink);color:var(--paper);border-radius:8px;
+    padding:22px 26px;display:flex;align-items:baseline;gap:18px}
+  .resultband .rk{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex:none}
+  .resultband p{margin:0;font-family:var(--display);font-size:15pt;line-height:1.3;letter-spacing:-.01em}
+  .resultband p b{font-weight:600}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .twocol .ch{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+
+  /* situation lead-in */
+  .situation{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;
+    margin:0 0 24px;border-left:2px solid var(--rule);padding-left:18px}
+  .situation .sk{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);flex:none;padding-top:2px}
+  .situation p{margin:0;font-size:11.5pt;line-height:1.55;color:var(--soft)}
+  .situation p b{color:var(--ink);font-weight:600}
+
+  /* audience cards (playbook 03) */
+  .audcards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .audcard{border:1px solid var(--rule);border-radius:8px;background:var(--paper);padding:24px 24px 22px;
+    display:flex;flex-direction:column}
+  .audcard .al{font-family:var(--mono);font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+  .audcard .lead{font-family:var(--display);font-size:17pt;line-height:1.22;letter-spacing:-.01em;margin:0 0 auto;color:var(--ink)}
+  .audcard .lead b{font-weight:600}
+  .audcard .prod{font-family:var(--mono);font-size:9pt;letter-spacing:.04em;color:var(--soft);margin-top:18px;
+    padding-top:13px;border-top:1px solid var(--rule)}
+  .audcard .prod .ar{color:var(--accent);margin-right:8px}
+
+  /* ---------- closing page ---------- */
+  .closing{justify-content:flex-start}
+  .closing .inner-c{margin-top:1in}
+  .closing .signoff{display:flex;align-items:center;gap:13px;margin:30px 0 28px}
+  .closing .signoff .g{width:34px;height:34px;border-radius:22%;background:var(--brand);
+    display:flex;align-items:center;justify-content:center;flex:none}
+  .closing .signoff .g span{font-family:Georgia,serif;font-weight:600;color:var(--paper);font-size:21px;line-height:1}
+  .closing .signoff .wm{font-family:var(--display);font-weight:600;font-size:19pt;letter-spacing:-.01em}
+  .closing .signoff .wm .dot{color:var(--accent)}
+  .closing .eyebrow{display:flex;align-items:center;gap:13px;margin-bottom:22px}
+  .closing .eyebrow .line{height:1px;width:42px;background:var(--accent)}
+  .closing h2{font-family:var(--display);font-weight:500;font-size:40pt;line-height:1.02;letter-spacing:-.022em;margin:0 0 20px}
+  .closing h2 em{font-style:italic;font-weight:400}
+  .closing .lede{font-size:13pt;line-height:1.6;color:var(--soft);max-width:54ch;margin:0 0 34px}
+  .closing .lede b{color:var(--ink);font-weight:600}
+  .contact{border-top:2px solid var(--ink)}
+  .contact .crow{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:baseline;
+    padding:14px 0;border-bottom:1px solid var(--rule)}
+  .contact .crow .k{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .contact .crow .v{font-family:var(--display);font-size:15pt;letter-spacing:-.01em;color:var(--ink)}
+  .contact .crow .v a{color:inherit;text-decoration:none}
+
+  /* ---------- print ---------- */
+  @page{size:Letter;margin:0}
+  @media print{
+    html{background:#fff}
+    .toolbar{display:none !important}
+    .page{margin:0;box-shadow:none;width:var(--pagew);min-height:var(--pageh);
+      page-break-after:always;break-after:page}
+    .page:last-child{page-break-after:auto;break-after:auto}
+    .pb-head,.steps li,.resultband,.callout{break-inside:avoid}
+  }
+
+  @media(max-width:920px){
+    .page{width:100%;min-height:0;margin:0;padding:30px 22px 70px;box-shadow:none;border-bottom:8px solid var(--paper-2)}
+    .cover h1{font-size:56px}
+    .pb-head{flex-direction:column}
+    .pb-head .bignum{display:none}
+    .twocol{grid-template-columns:1fr}
+    .pfoot{position:static;margin-top:30px}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="dl ghost" href="index.html">&larr; Site</a>
+</div>
+
+<!-- ============================ COVER ============================ -->
+<section class="page cover" data-screen-label="Cover">
+  <div class="topline">
+    <span class="glyph-lg"><span>N</span></span>
+    <div class="topmeta">
+      Operating Playbooks
+      <b>Nicole Miñoza</b>
+      Edition · June 2026
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="eyebrow"><span class="line"></span><span class="label">The repeatable decisions</span></div>
+    <h1>Play<em>books</em></h1>
+    <p class="stand">The examples are fonts. The <b>decisions</b> carry to any product.</p>
+
+    <div class="index">
+      <div class="row"><span class="pn num">01</span><span class="ti">Adoption without a mandate</span><span class="tg">Influence</span></div>
+      <div class="row"><span class="pn num">02</span><span class="ti">Unimpeachable by design</span><span class="tg">Measurement</span></div>
+      <div class="row"><span class="pn num">03</span><span class="ti">Two buyers, one capability</span><span class="tg">Positioning</span></div>
+    </div>
+
+    <p class="note">Three operating principles from scaling Adobe Fonts &amp; Typography to 15M users and setting product strategy for a 75-person cross-functional org. Each is a decision I'd defend in any room, written so it transfers. <b>Not a case study, a method</b>.</p>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>nicoleminoza.com</span>
+  </div>
+</section>
+
+<!-- ============================ PLAYBOOK 01 ============================ -->
+<section class="page" data-screen-label="Playbook 01">
+  <div class="pb-head">
+    <div class="lhs">
+      <div class="kicker"><span class="pn">Playbook 01</span><span class="tg">Influence</span></div>
+      <h2>Adoption without a mandate</h2>
+    </div>
+    <span class="bignum num">01</span>
+  </div>
+
+  <div class="situation">
+    <span class="sk">Situation</span>
+    <p>Adobe Fonts had to ship inside a dozen Creative Cloud apps (Adobe's creative software suite). <b>Every one run by a team I couldn't direct</b>, each with its own roadmap and priorities.</p>
+  </div>
+
+  <p class="essence">You don't mandate a platform onto teams you don't manage. You make integrating it <b>their win</b>, and you measure the number they respect.</p>
+
+  <div class="pb-body">
+    <ol class="steps">
+      <li>Make the integration <b>the app team's win</b>, not yours. Frame it as their roadmap goal, delivered by the shared component you build once.</li>
+      <li>Start where you're wanted: <b>flagship anchors first</b>, then the smaller apps follow the proof.</li>
+      <li>Standardize that component so <b>each new app costs less to ship</b> than the one before it.</li>
+      <li>Measure usage, not installs: report unique users actually <i>using</i> the feature.</li>
+    </ol>
+
+    <div class="resultband">
+      <span class="rk">Result</span>
+      <p>One font platform now <b>powers 12 flagship apps and 15M users</b>, built entirely by persuading teams I didn't manage. The same play won Photoshop and Express commitments to ship generative text edit in Firefly Boards, Adobe's AI canvas.</p>
+    </div>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>Playbooks · 01 / 03</span>
+  </div>
+</section>
+
+<!-- ============================ PLAYBOOK 02 ============================ -->
+<section class="page" data-screen-label="Playbook 02">
+  <div class="pb-head">
+    <div class="lhs">
+      <div class="kicker"><span class="pn">Playbook 02</span><span class="tg">Measurement</span></div>
+      <h2>Unimpeachable by design</h2>
+    </div>
+    <span class="bignum num">02</span>
+  </div>
+
+  <div class="situation">
+    <span class="sk">Situation</span>
+    <p>Font features shipped across a dozen Creative Cloud apps, and their business impact kept getting <b>argued in executive rooms after the fact</b>. Each result was reconstructed from whatever data could be found later.</p>
+  </div>
+
+  <p class="essence">A number is only as strong as where it came from. <b>Provenance</b>, not precision, is what lets a result survive an executive room.</p>
+
+  <div class="pb-body">
+    <div class="callout">
+      <span class="ck">Decision rule</span>
+      <p>If you can't read the result the day you ship, <b>you launched blind.</b> The launch numbers come from dashboards built before launch.</p>
+    </div>
+
+    <ol class="steps">
+      <li>Define success metrics <b>with the data team before launch</b>: adoption, failed-search rate, missing-font events. Agree on what each one proves.</li>
+      <li>Build the dashboards pre-launch so impact is <b>read, not reconstructed.</b></li>
+      <li>Tie each metric back to the original business-case claim: drop-off pattern &rarr; search failure &rarr; adoption. Every number traces to a promise you made.</li>
+    </ol>
+
+    <div class="resultband">
+      <span class="rk">Result</span>
+      <p>Instrumented from day one, the Adobe Express redesign (Adobe's freemium design app) read out at <b>+186% free-to-paid conversion</b> the day it shipped. Same play, run again on Adobe's first AI typography service: concept to public beta.</p>
+    </div>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>Playbooks · 02 / 03</span>
+  </div>
+</section>
+
+<!-- ============================ PLAYBOOK 03 ============================ -->
+<section class="page" data-screen-label="Playbook 03">
+  <div class="pb-head">
+    <div class="lhs">
+      <div class="kicker"><span class="pn">Playbook 03</span><span class="tg">Positioning</span></div>
+      <h2>Two buyers, one capability</h2>
+    </div>
+    <span class="bignum num">03</span>
+  </div>
+
+  <div class="situation">
+    <span class="sk">Situation</span>
+    <p>One font capability had to win <b>two buyers at once</b>: individual designers who wanted freedom, and enterprise teams who wanted control, without a generic message that served neither.</p>
+  </div>
+
+  <p class="essence">Same capability, two true positions. <b>Never average two audiences</b> into one generic message.</p>
+
+  <div class="pb-body">
+    <div class="audcards">
+      <div class="audcard">
+        <p class="al">Audience A · Individuals</p>
+        <p class="lead">Led with <b>creative freedom</b>: use any font you already own.</p>
+        <p class="prod"><span class="ar">&rarr;</span>Bring Your Own Fonts</p>
+      </div>
+      <div class="audcard">
+        <p class="al">Audience B · Enterprise</p>
+        <p class="lead">Led with <b>governance and control</b>: manage fonts across the org.</p>
+        <p class="prod"><span class="ar">&rarr;</span>Custom Fonts</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="ck">Decision rule</span>
+      <p>One capability can carry two messages; it must <b>never carry an average</b> of them.</p>
+    </div>
+
+    <div class="resultband">
+      <span class="rk">Result</span>
+      <p>Both shipped under their own name and reached millions on their own terms: individuals won on freedom, enterprise on control, neither position averaged into the other.</p>
+    </div>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>Playbooks · 03 / 03</span>
+  </div>
+</section>
+
+<!-- ============================ CLOSING ============================ -->
+<section class="page closing" data-screen-label="Closing">
+  <div class="inner-c">
+    <div class="eyebrow"><span class="line"></span><span class="label">What I want next</span></div>
+    <h2>Point me at the <em>undervalued asset</em></h2>
+    <p class="lede">Every one of these started the same way: a capability everyone used and no one measured. That's the work I want next. A platform or AI capability worth more than the org treats it as, with the mandate to prove it, then scale it. If that's the problem on your desk, let's talk.</p>
+
+    <div class="signoff">
+      <span class="g"><span>N</span></span>
+      <span class="wm">Nicole Miñoza<span class="dot">.</span></span>
+    </div>
+
+    <div class="contact">
+      <div class="crow"><span class="k">Email</span><span class="v"><a href="/cdn-cgi/l/email-protection#751d1019191a351b1c161a1910181c1b1a0f145b161a18"><span class="__cf_email__" data-cfemail="58303d3434371836313b37343d353136372239763b3735">[email&#160;protected]</span></a></span></div>
+      <div class="crow"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/nicoleminoza">linkedin.com/in/nicoleminoza</a></span></div>
+      <div class="crow"><span class="k">Site</span><span class="v"><a href="https://nicoleminoza.com">nicoleminoza.com</a></span></div>
+    </div>
+  </div>
+
+  <div class="pfoot">
+    <span class="mk"><span class="g"><span>N</span></span><b>Nicole Miñoza</b></span>
+    <span>Operating Playbooks · June 2026</span>
+  </div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
