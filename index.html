@@ -194,12 +194,22 @@
     margin:0 0 13px;color:var(--ink);text-wrap:balance}
   .lead-item p{margin:0;font-size:14.5px;line-height:1.62;
     color:color-mix(in srgb,var(--soft) 82%,var(--paper));max-width:32ch}
+  .lead-item .lead-quote{margin-top:clamp(16px,1.9vw,22px);padding-left:15px;
+    border-left:2px solid var(--accent);border-radius:0}
+  .lead-item .lead-quote .q{font-family:var(--display);font-style:italic;font-weight:400;
+    font-size:15px;line-height:1.5;letter-spacing:-.003em;
+    color:color-mix(in srgb,var(--ink) 86%,var(--paper));margin:0;max-width:34ch}
+  .lead-item .lead-quote .attr{display:block;margin-top:10px;font-size:12.5px;line-height:1.55;color:var(--faint)}
+  .lead-item .lead-quote .attr .nm{color:var(--soft);font-weight:600;text-decoration:none;
+    border-bottom:1px solid transparent;transition:border-color .15s ease}
+  .lead-item .lead-quote .attr .nm:hover{border-bottom-color:var(--soft)}
   @media(max-width:720px){
     .lead-grid{grid-template-columns:1fr}
     .lead-item{padding:clamp(20px,5vw,26px) 0}
     .lead-item + .lead-item{padding-left:0;border-left:0}
     .lead-item .lnum{margin-bottom:10px;font-size:30px}
     .lead-item p{max-width:60ch}
+    .lead-item .lead-quote .q{max-width:60ch}
   }
 
   /* ---------- approach / narrative ---------- */
@@ -714,16 +724,28 @@
         <span class="lnum">01</span>
         <h3>I lead through influence, not authority.</h3>
         <p>Persuaded every Head of Product to commit their app to one shared text platform rather than build their own.</p>
+        <div class="lead-quote">
+          <p class="q">&ldquo;She doesn't just manage a workstream, she builds trust across the teams and keeps everyone moving in the same direction.&rdquo;</p>
+          <span class="attr"><a class="nm" href="https://www.linkedin.com/in/yukiishioka/" target="_blank" rel="noopener noreferrer">Yuki Ishioka</a>, Director, International Product Strategy, Adobe</span>
+        </div>
       </div>
       <div class="lead-item">
         <span class="lnum">02</span>
         <h3>I build the team the strategy needs.</h3>
         <p>Led 6 product managers and set direction for a ~75-person org across product, design, and engineering.</p>
+        <div class="lead-quote">
+          <p class="q">&ldquo;She orchestrated a team of product managers while continually growing multiple areas of our business.&rdquo;</p>
+          <span class="attr"><a class="nm" href="https://www.linkedin.com/in/tbrowntype/" target="_blank" rel="noopener noreferrer">Tim Brown</a>, Head of Typography, Adobe (former direct report)</span>
+        </div>
       </div>
       <div class="lead-item">
         <span class="lnum">03</span>
         <h3>I develop talent through change.</h3>
         <p>Inherited two teams: rebuilt a product group and redeployed a support team into marketing and product roles.</p>
+        <div class="lead-quote">
+          <p class="q">&ldquo;An adept leader, shepherding her team through reorgs and leadership changes. She leads by example and develops her people.&rdquo;</p>
+          <span class="attr"><a class="nm" href="https://www.linkedin.com/in/meghancarnold/" target="_blank" rel="noopener noreferrer">Meghan Arnold</a>, Senior Community Events Manager, Adobe (former direct report)</span>
+        </div>
       </div>
     </div>
   </div>
