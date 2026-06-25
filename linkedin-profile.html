@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Nicole Miñoza">
+<meta name="description" content="LinkedIn profile for Nicole Miñoza — positioned for VP / Sr. Director, Product & Product Marketing.">
+<title>LinkedIn Profile · Nicole Miñoza</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6f1;--paper-2:#f2eadf;--ink:#241f1d;--soft:#5d534c;
+    --faint:#a99d90;--rule:#e6dccf;--plum:#6b2c41;--terra:#c07a44;
+    --display:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"Spline Sans Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#cabfae}
+  body{
+    color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.6;
+    font-feature-settings:"ss01";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    padding:40px 0;
+  }
+  ::selection{background:var(--terra);color:#fff}
+  .num{font-variant-numeric:tabular-nums lining-nums}
+
+  .sheet{
+    width:8.5in;margin:0 auto;background:var(--paper);
+    padding:0.7in 0.78in 0.6in;
+    box-shadow:0 30px 70px -34px rgba(43,20,30,.55);
+    position:relative;
+  }
+  .sheet + .sheet{margin-top:34px}
+
+  /* masthead */
+  .top{border-bottom:2px solid var(--ink);padding-bottom:15px;margin-bottom:26px}
+  .top .label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--terra);font-weight:500;margin:0 0 11px}
+  .top h1{font-family:var(--display);font-weight:600;font-size:40px;line-height:.92;
+    letter-spacing:-.025em;margin:0}
+  .top .sub{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--soft);
+    margin:13px 0 0;line-height:1.7}
+  .top .sub b{color:var(--ink);font-weight:500}
+
+  /* section header */
+  .sec{margin:30px 0 0}
+  .sec:first-of-type{margin-top:0}
+  .sec-h{display:flex;align-items:baseline;gap:13px;margin:0 0 15px}
+  .sec-h .n{font-family:var(--mono);font-size:12px;color:var(--terra);letter-spacing:.06em}
+  .sec-h .t{font-family:var(--display);font-weight:500;font-size:23px;letter-spacing:-.015em;margin:0;line-height:1}
+  .sec-h .line{flex:1;height:1px;background:var(--rule)}
+  .sec-note{font-size:12.5px;color:var(--soft);margin:-7px 0 16px;line-height:1.5;max-width:66ch}
+
+  /* headline cards */
+  .hl{display:grid;gap:11px}
+  .hopt{border:1px solid var(--rule);border-radius:9px;padding:15px 17px;background:#fff;position:relative}
+  .hopt.pick{border-color:var(--terra);background:color-mix(in srgb,var(--terra) 6%,#fff)}
+  .hopt .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 7px;display:flex;align-items:center;gap:9px}
+  .hopt.pick .k{color:var(--terra)}
+  .hopt .k .star{font-size:9px}
+  .hopt p{margin:0;font-size:15px;line-height:1.42;color:var(--ink)}
+  .hopt.pick p{font-weight:500}
+
+  /* generic prose */
+  .prose p{margin:0 0 11px;color:var(--ink)}
+  .prose p:last-child{margin-bottom:0}
+  .lede-line{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.4;
+    color:var(--plum);margin:0 0 14px}
+
+  .pillars{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .pillars li{position:relative;padding-left:20px;font-size:14px;line-height:1.5;color:var(--soft)}
+  .pillars li::before{content:"";position:absolute;left:3px;top:8px;width:6px;height:6px;
+    border-radius:50%;background:var(--terra)}
+  .pillars li b{color:var(--ink);font-weight:600}
+
+  .focus{margin:15px 0 0;padding:14px 16px;border-left:2px solid var(--terra);
+    background:var(--paper-2);border-radius:0 7px 7px 0}
+  .focus .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--terra);margin:0 0 6px}
+  .focus p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink)}
+
+  /* live pill */
+  .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;
+    font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1f7a44;
+    background:color-mix(in srgb,#1f7a44 9%,#fff);border:1px solid color-mix(in srgb,#1f7a44 30%,transparent);
+    border-radius:999px;padding:3px 9px}
+  .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#1f7a44}
+
+  /* banner mini */
+  .banner-mini{background:var(--ink);border-radius:10px;padding:26px 30px;color:var(--paper);
+    display:flex;flex-direction:column;align-items:flex-end;text-align:right;position:relative;overflow:hidden}
+  .banner-mini .bm-eyebrow{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+  .banner-mini .bm-name{font-family:var(--display);font-weight:600;font-size:34px;letter-spacing:-.02em;
+    color:var(--paper);margin:0;line-height:1}
+  .banner-mini .bm-vp{font-family:var(--display);font-style:italic;font-size:14px;
+    color:color-mix(in srgb,var(--paper) 80%,transparent);margin:13px 0 14px}
+  .banner-mini .bm-line{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--terra);margin:0}
+  .banner-mini .bm-sub{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:color-mix(in srgb,var(--paper) 55%,transparent);margin:7px 0 0}
+
+  /* keyword grid */
+  .kw{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:4px 0 0}
+  .kw .kwcard{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:#fff}
+  .kw .kwcard.warn{border-color:color-mix(in srgb,var(--terra) 50%,transparent);background:color-mix(in srgb,var(--terra) 5%,#fff)}
+  .kw .kwcard .h{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--terra);margin:0 0 5px}
+  .kw .kwcard p{margin:0;font-size:12px;line-height:1.5;color:var(--soft)}
+  .kw .kwcard p b{color:var(--ink)}
+
+  /* experience */
+  .role-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 3px}
+  .role-h h3{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em;margin:0}
+  .role-h .dates{font-family:var(--mono);font-size:10.5px;color:var(--soft);white-space:nowrap;flex:none}
+  .role-org{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--terra);margin:0 0 9px}
+  .scope{font-size:13.5px;color:var(--soft);margin:0 0 14px;line-height:1.5}
+  .scope b{color:var(--ink);font-weight:600}
+  .subhead{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--terra);margin:16px 0 9px}
+  .role-block{border-top:1px solid var(--rule);margin-top:20px;padding-top:17px}
+  .media-row{margin:11px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--terra)}
+  .media-row b{color:var(--ink);font-weight:600}
+  .rskills{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .rskills .lab{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);margin-right:4px}
+  .rskills .s{font-family:var(--mono);font-size:10.5px;color:var(--soft);
+    border:1px solid var(--rule);border-radius:999px;padding:4px 10px;white-space:nowrap}
+  ul.duties{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+  ul.duties li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.46;color:var(--soft)}
+  ul.duties li::before{content:"";position:absolute;left:3px;top:7px;width:5px;height:5px;
+    border-radius:50%;background:var(--terra)}
+  ul.duties li b{color:var(--ink);font-weight:600}
+
+  .formula{margin:15px 0 0;padding:14px 16px;background:var(--ink);border-radius:8px;color:var(--paper)}
+  .formula .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--terra);margin:0 0 8px}
+  .formula code{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--paper);display:block;white-space:normal}
+  .formula .eg{font-family:var(--display);font-style:italic;font-size:13px;color:color-mix(in srgb,var(--paper) 78%,transparent);
+    margin:9px 0 0;line-height:1.45}
+
+  /* skills */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--ink);
+    border:1px solid var(--rule);border-radius:999px;padding:6px 12px;background:#fff}
+  .chip.lead{border-color:var(--terra);color:var(--plum);background:color-mix(in srgb,var(--terra) 7%,#fff);font-weight:500}
+  .featured{margin:16px 0 0;display:grid;gap:9px}
+  .feat{display:flex;gap:13px;align-items:baseline;border-top:1px solid var(--rule);padding-top:10px}
+  .feat:first-child{border-top:0;padding-top:0}
+  .feat .fn{font-family:var(--mono);font-size:11px;color:var(--terra);flex:none;width:18px}
+  .feat .ft b{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
+  .feat .ft p{margin:3px 0 0;font-size:12.5px;color:var(--soft);line-height:1.45}
+
+  /* outreach */
+  .dm{border:1px solid var(--rule);border-radius:9px;padding:18px 20px;background:#fff;position:relative}
+  .dm::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:2px;background:var(--plum);border-radius:2px}
+  .dm p{margin:0;font-size:14px;line-height:1.6;color:var(--ink)}
+  .dm .meta{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+
+  .foot{margin-top:26px;padding-top:13px;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot a{color:var(--plum);text-decoration:none}
+
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @media print{
+    @page{size:letter;margin:0}
+    html,body{background:#fff}
+    body{padding:0}
+    .sheet{width:8.5in;margin:0;box-shadow:none;padding:0.5in 0.6in}
+    .sheet + .sheet{margin-top:0;break-before:page}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet" data-screen-label="LinkedIn Profile page 1">
+
+  <div class="top">
+    <p class="label">LinkedIn Profile · VP / Sr. Director · Product &amp; Product Marketing</p>
+    <h1>Nicole Miñoza</h1>
+    <p class="sub">Mirrors the <b>live profile as of June 17, 2026</b>, with keyword evaluation. Positioned as one integrated leader who owns both the product and the story that sells it. Seattle, WA · linkedin.com/in/nicoleminoza</p>
+  </div>
+
+  <!-- 00 BANNER -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">00</span><h2 class="t">Profile banner</h2><span class="line"></span><span class="live">Live</span></div>
+    <p class="sec-note">The banner does the un-searchable visual work, so the headline never repeats its numbers. Copy currently live:</p>
+    <div class="banner-mini">
+      <p class="bm-eyebrow">Product &times; Marketing</p>
+      <p class="bm-name">Nicole Miñoza</p>
+      <p class="bm-vp">Turning undervalued features into revenue, retention, and reach.</p>
+      <p class="bm-line">Shipping AI &middot; Shaping Narrative &middot; Advising Founders</p>
+      <p class="bm-sub">Scaled Adobe Fonts to 12M+ users</p>
+    </div>
+  </div>
+
+  <!-- 01 HEADLINE -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">01</span><h2 class="t">Headline</h2><span class="line"></span></div>
+    <p class="sec-note">The live headline complements the banner — it carries both disciplines, a thesis, and the forward AI signal, without repeating the banner's numbers.</p>
+    <div class="hl">
+      <div class="hopt pick">
+        <p class="k"><span class="star">★</span> Live &nbsp;<span class="live">Live</span></p>
+        <p>Product &amp; Product Marketing Leader · I make the overlooked measurable, then monetize it · Now building and shipping AI products.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 ABOUT -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">02</span><h2 class="t">About</h2><span class="line"></span></div>
+    <div class="prose">
+      <p class="lede-line">I own both the product and the story that sells it.</p>
+      <p>For more than a decade, I led product strategy and marketing for Adobe's fonts and typography business, a service everyone used but no one measured. I made the case that typography drives business, then proved it: conversion, retention, and platform growth, with the numbers to defend every claim.</p>
+      <p style="font-weight:600;color:var(--ink);margin-bottom:9px">What I do:</p>
+      <ul class="pillars">
+        <li><b>Platform strategy at scale.</b> I led product strategy and marketing for a <span class="num">75-person</span> cross-functional organization inside Adobe's <span class="num">$17.65B</span> Digital Media segment. I grew Adobe Fonts to <span class="num">12M+</span> monthly active users (MAU) and unified fragmented per-app text engines into one platform now serving <span class="num">15M</span> MAU across 12 flagship apps. Every integration was secured by persuading teams I didn't manage.</li>
+        <li><b>Product marketing that moves revenue.</b> Redesigned font recommendations in Adobe Express, Adobe's freemium design app, lifting free-to-paid conversion <span class="num">+186%</span>; led the rebrand of Typekit, an acquired web-font service, into Adobe Fonts to <span class="num">+40%</span> MAU in year one with zero losses among the type foundries that license fonts to Adobe.</li>
+        <li><b>Business model and partnerships.</b> Shipped a usage-based royalty model that saved <span class="num">$1M</span> in year-one royalties; launched Adobe's largest licensing partnership in five years (Monotype and Microsoft), <span class="num">1.2M</span> users in weeks.</li>
+        <li><b>AI, hands-on.</b> Defined Adobe's AI product strategy for fonts and typography and shipped generative text edit in Firefly Boards, Adobe's AI-powered infinite canvas, at Adobe MAX, Adobe's flagship creativity conference. Independently, I built and shipped Ramón, an AI styling app, end-to-end on the Claude API, from product requirements to UX copy to server-side security.</li>
+      </ul>
+      <p style="margin-top:14px">I lead at the intersection of product, marketing, and AI, and leverage the same playbooks whether the work is a platform, a creative or developer tool, or an AI-native product: start with what a technology is <i>for</i>, then build the system and the narrative to get it there.</p>
+      <div class="focus">
+        <p class="k">What I'm focused on next</p>
+        <p>Vice president or senior director roles in product or product marketing where a platform or AI capability is undervalued, and the work is to prove what it's worth, then scale it.</p>
+      </div>
+      <p style="margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--soft)">More at <a href="https://nicoleminoza.com" style="color:var(--plum);text-decoration:none">nicoleminoza.com</a></p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Nicole Miñoza · LinkedIn Profile</span>
+    <span><a href="https://nicoleminoza.com">nicoleminoza.com</a> · June 17, 2026 · Page 1 / 2</span>
+  </div>
+</div>
+
+<div class="sheet" data-screen-label="LinkedIn Profile page 2">
+
+  <!-- 03 EXPERIENCE -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">03</span><h2 class="t">Experience</h2><span class="line"></span></div>
+    <p class="sec-note">Full Adobe arc, rewritten to executive altitude: each role opens with scope, then bullets that pair a platform / technical move with a business result.</p>
+
+    <div class="role-h">
+      <h3>Builder &middot; Advisor &middot; Board Executive</h3>
+      <span class="dates">Mar 2026 – Present</span>
+    </div>
+    <p class="role-org">Independent · Seattle, WA</p>
+    <p class="scope">Independent product and AI work alongside nonprofit board leadership.</p>
+    <p class="subhead">Building</p>
+    <ul class="duties">
+      <li>Shipped <b>Ramón</b>, an AI styling app, end-to-end on the Claude API: wrote the product requirements, designed a six-screen onboarding narrative, and conducted a full user-experience copy audit. Made the technical trade-off calls: server-side API security, model selection, AI responses that render as interactive screens rather than plain text, and a user-editable persona. In daily use.</li>
+      <li>Built a second React app, a <b>curated executive prompt library</b>, making hands-on AI fluency a demonstrated pattern, not a one-off.</li>
+    </ul>
+    <p class="subhead">Board &amp; Advisory</p>
+    <ul class="duties">
+      <li><b>Executive Board member and co-chair of BIMA Bash! 2026,</b> the Bainbridge Island Museum of Art's flagship fundraiser. The campaign raised <b>$1.175M</b>, 31% over its <b>$895K goal</b>.</li>
+      <li>Authored a case for <b>modernizing the museum brand</b>, benchmarked against nine peer institutions.</li>
+      <li>Global Advisor, How Women Lead.</li>
+    </ul>
+    <p class="scope" style="margin-top:11px"><b>Open to VP / Senior Director roles</b> in Product or Product Marketing, across platforms, creative/developer tools, and AI-native products, where an undervalued capability needs someone to prove its worth, then scale it.</p>
+    <p class="media-row">Media attached &middot; <b>Ramón app card</b> (graphic) &nbsp;·&nbsp; <b>Co-Chair, BIMA Bash! 2026</b> (link)</p>
+    <div class="rskills"><span class="lab">Skills</span><span class="s">AI Strategy</span><span class="s">AI Product Development</span><span class="s">Generative AI</span><span class="s">Product Strategy</span><span class="s">Go-to-Market Strategy</span><span class="s">Brand Strategy</span></div>
+
+    <div class="role-block">
+      <div class="role-h"><h3>Director, Product Management</h3><span class="dates">Jun 2023 – Feb 2026</span></div>
+    <p class="role-org">Adobe · Seattle, WA</p>
+    <p class="scope">First product director for the <b>fonts &amp; typography business</b>, a service used across every product in Adobe's <b>$17.65B Digital Media segment</b>. Led 6 product managers and set direction for a <b>75-person cross-functional organization</b> with the charter to scale the platform across Creative Cloud, Adobe Express, and Acrobat while pivoting the roadmap to generative and agentic AI. Reported to the general manager, Fonts &amp; Typography.</p>
+
+    <p class="subhead">AI &amp; Typography</p>
+    <ul class="duties">
+      <li>Defined Adobe's <b>product strategy for fonts and typography</b> in the AI era, repositioned them as first-class inputs to AI workflows across Adobe Firefly, its generative AI platform, and Adobe Express, including the business case for exposing discovery APIs to AI assistants.</li>
+      <li>Shipped <b>generative text edit</b> in Firefly Boards, Adobe's AI-powered infinite canvas, at <b>Adobe MAX 2025</b>; defined the vision, strategy, and messaging, and secured Photoshop and Express commitments to integrate in FY26.</li>
+    </ul>
+
+    <p class="subhead">Platform &amp; Growth</p>
+    <ul class="duties">
+      <li><b>Proved typography drives revenue.</b> Redesigned Adobe Express font recommendations to lift free-to-paid conversion <b>+186%</b> (0.5% → 1.42%), making it one of Express's top premium drivers.</li>
+      <li><b>Scaled Adobe's shared text platform across 12 flagship apps to 15M monthly users</b>, with <b>40× performance gains</b>, consolidating fragmented per-app engines into one infrastructure.</li>
+      <li><b>Grew Adobe Fonts to 12M+ MAU, 11% year over year (YoY).</b> A 2025 causal analysis of 3.25M Creative Cloud Complete (all-app) subscribers showed that those who adopted Adobe Fonts churned <b>66% less</b> the following month.</li>
+      <li>Shipped a usage-based foundry compensation model that <b>saved $1M</b> in year-one royalty costs with zero user backlash, holding royalty growth to 10% YoY while MAU grew 12%.</li>
+      <li><b>Launched Adobe's largest content-licensing partnership in five years</b> (Monotype and Microsoft). Spotted the opportunity in user drop-off data and timed the go-to-market to Adobe MAX London, Adobe's flagship conference; <b>1.2M users adopted within weeks</b>.</li>
+    </ul>
+    <div class="rskills"><span class="lab">Skills</span><span class="s">AI Strategy</span><span class="s">Product Strategy</span><span class="s">Product Marketing</span><span class="s">Platform Strategy</span><span class="s">Go-to-Market Strategy</span></div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-h"><h3>Group Product &amp; Product Marketing Manager</h3><span class="dates">Mar 2019 – Jun 2023</span></div>
+      <p class="role-org">Adobe · Seattle, WA</p>
+      <p class="scope">Pitched for and won expanded leadership over <b>both product strategy and product marketing</b> for the fonts business; obtained executive approval for strategy every year; led a team of 8.</p>
+      <ul class="duties">
+        <li>Unified the separate text-rendering systems behind each app into one platform now serving <b>15M MAU across 12 flagship apps</b>.</li>
+        <li>Shipped the Adobe Fonts platform across Adobe.com and <b>12 Creative Cloud apps to 11M in-app MAU</b>, secured by persuading teams I didn't manage.</li>
+        <li>Drove the <b>usage-based royalty initiative</b> that specified usage logging across every app integration, plus activation and lifecycle controls that let the business keep scaling.</li>
+        <li>Rebuilt 3 teams and grew the people on them, promoting a support manager to PM, a support person to community manager, and a content hire into the producer behind one of Adobe's top livestream series.</li>
+      </ul>
+      <div class="rskills"><span class="lab">Skills</span><span class="s">Product Strategy</span><span class="s">Product Marketing</span><span class="s">Platform Strategy</span><span class="s">Team Leadership</span><span class="s">Go-to-Market Strategy</span></div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-h"><h3>Group Product Marketing Manager</h3><span class="dates">Mar 2016 – Mar 2019</span></div>
+      <p class="role-org">Adobe · Seattle, WA</p>
+      <p class="scope">Led marketing, customer experience, and go-to-market for the fonts business. Reported to the general manager, Fonts &amp; Typography.</p>
+      <ul class="duties">
+        <li>Initiated and drove the <b>Typekit to Adobe Fonts rebrand</b>: recognized the removal of activation limits as the rebrand moment, chose the name, directed the site build, and drove go-to-market on a tight timeline for Adobe MAX. <b>40% MAU growth year one, zero foundry losses</b>, and the highest self-reported membership value of any Adobe service.</li>
+        <li>Quantified the retention case for typography. A 2019 causal analysis of Creative Cloud Complete (all-app) subscribers showed that those who adopted Adobe Fonts churned <b>42% less</b> the following month. This held in future years and became the business case behind every later platform investment.</li>
+        <li>Created and led the marketing behind Adobe's <b>gender-inclusive emoji advocacy</b>, with coverage in Forbes, MIT Technology Review, Wired, Slate, and more.</li>
+      </ul>
+      <div class="rskills"><span class="lab">Skills</span><span class="s">Product Marketing</span><span class="s">Go-to-Market Strategy</span><span class="s">Brand Strategy</span><span class="s">Public Relations</span></div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-h"><h3>Senior Product Marketing Manager</h3><span class="dates">Jan 2012 – Mar 2016</span></div>
+      <p class="role-org">Adobe · Head of Marketing, Typekit + Adobe Type · San Jose, CA</p>
+      <p class="scope">Sole senior marketer for the <b>fonts &amp; typography business</b> after the acquisition of a popular web font service (Typekit); deployed a <b>$1M budget</b> across PR, partnerships, and Adobe MAX.</p>
+      <ul class="duties">
+        <li>Built go-to-market and press strategy for <b>Source Han Sans</b>, the first open-source typeface spanning Chinese, Japanese, and Korean scripts, addressing <b>1.5 billion users</b>; won the naming case in a five-company negotiation.</li>
+        <li>Created, funded, and led the <b>Adobe Originals 25th Anniversary</b> campaign, anchored by the open-source launch of Source Serif.</li>
+        <li>Designed Typekit's community-driven marketing model and produced immersive launch microsites.</li>
+      </ul>
+      <div class="rskills"><span class="lab">Skills</span><span class="s">Product Marketing</span><span class="s">Go-to-Market Strategy</span><span class="s">Public Relations</span><span class="s">Strategic Partnerships</span><span class="s">Marketing Campaign Management</span></div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-h"><h3>Quality Engineer → Lead Quality Engineer → Senior Program Manager</h3><span class="dates">Jul 2002 – Jan 2012</span></div>
+      <p class="role-org">Adobe · San Jose, CA</p>
+      <p class="scope">Joined as employee ~6,000; shipped releases for <b>Photoshop, Illustrator, InDesign, and Acrobat</b> before moving into program management.</p>
+      <ul class="duties">
+        <li>Eleven years inside the type organization before marketing it. Foundries and engineers knew my work before I pitched them. That technical credibility later underwrote a marketer's authority in deeply technical rooms.</li>
+      </ul>
+    </div>
+
+    <div class="formula">
+      <p class="k">Reusable bullet formula</p>
+      <code>[Active verb] + [platform / technical move] → [business metric with number] + [scope or constraint that proves difficulty].</code>
+      <p class="eg">e.g. "Architected Adobe's first unified text platform across 12 apps → 15M users, 40× faster, won on influence across teams I didn't manage."</p>
+    </div>
+  </div>
+
+  <!-- 04 SKILLS + FEATURED -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">04</span><h2 class="t">Skills &amp; Featured</h2><span class="line"></span></div>
+    <p class="sec-note">Top 5 shown first, matching what's <b>live</b> (pinned, highest-weight search keywords). <b style="color:var(--terra)">★ = the three I'm actively collecting endorsements on.</b></p>
+    <div class="chips">
+      <span class="chip lead">★ AI Strategy</span>
+      <span class="chip lead">★ Product Strategy</span>
+      <span class="chip lead">★ Product Marketing</span>
+      <span class="chip lead">Go-to-Market Strategy</span>
+      <span class="chip lead">Platform Strategy</span>
+      <span class="chip">AI Product Development</span>
+      <span class="chip">Generative AI</span>
+      <span class="chip">Product Management</span>
+      <span class="chip">Brand Strategy</span>
+      <span class="chip">Team Leadership</span>
+      <span class="chip">Strategic Partnerships</span>
+      <span class="chip">Public Relations</span>
+      <span class="chip">Marketing Campaign Management</span>
+      <span class="chip">Executive Leadership</span>
+      <span class="chip">Responsible AI</span>
+    </div>
+    <p class="sec-note" style="margin:16px 0 0">Attach to the Stanford <i>AI-Driven Leadership</i> certificate (these also live in the list above, so LinkedIn weights them across both places): <b>AI Strategy &middot; Generative AI &middot; Executive Leadership &middot; Responsible AI</b>.</p>
+
+    <p class="sec-note" style="margin:0 0 12px"><span class="live">Live</span>&nbsp; Featured row, in current order:</p>
+    <div class="featured">
+      <div class="feat">
+        <span class="fn">01</span>
+        <div class="ft"><b>Nicole Miñoza · Portfolio <span style="color:var(--faint);font-weight:400">(link → nicoleminoza.com)</span></b>
+          <p>Portfolio, résumé, and selected work. The product, brand, and AI projects behind the numbers.</p></div>
+      </div>
+      <div class="feat">
+        <span class="fn">02</span>
+        <div class="ft"><b>Director, Product Management · Adobe Fonts &amp; Typography <span style="color:var(--faint);font-weight:400">(branded card)</span></b>
+          <p>12M+ / +186% / 15M stat card. Adobe's first Product Director for the business, $17.65B segment.</p></div>
+      </div>
+      <div class="feat">
+        <span class="fn">03</span>
+        <div class="ft"><b>Generative Text Edit in Firefly · Adobe MAX 2025 <span style="color:var(--faint);font-weight:400">(branded card)</span></b>
+          <p>Vision, strategy, and messaging for editing text directly on images (raster text editing), shipped on the keynote stage.</p></div>
+      </div>
+      <div class="feat">
+        <span class="fn">04</span>
+        <div class="ft"><b>AI-Driven Leadership · Stanford Online <span style="color:var(--faint);font-weight:400">(branded card)</span></b>
+          <p>Executive education, 2026. The strategy behind shipping generative AI products, not just advising on them.</p></div>
+      </div>
+      <div class="feat">
+        <span class="fn">05</span>
+        <div class="ft"><b>Ramón · an AI styling app, shipped solo <span style="color:var(--faint);font-weight:400">(branded card)</span></b>
+          <p>Built and shipped end-to-end on the Claude API: product requirements, user experience, and server-side security. Proof I ship AI, not just advise on it. Closes the row on a build.</p></div>
+      </div>
+    </div>
+    <p class="sec-note" style="margin:13px 0 0"><b>Order note:</b> strong sequence — Portfolio (the hub) → biggest proof (Director stats) → enterprise AI (Firefly) → AI credential (Stanford) → and closing on <b>Ramón</b>, a shipped AI product. The row now ends on “I build and ship AI,” which reinforces the headline better than ending on a certificate.</p>
+  </div>
+
+  <!-- 05 KEYWORD EVALUATION -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">05</span><h2 class="t">Keyword evaluation</h2><span class="line"></span></div>
+    <p class="sec-note">How the live copy reads to a recruiter's search filters. Green = covered well; terracotta = a gap worth closing.</p>
+    <div class="kw">
+      <div class="kwcard"><p class="h">Strong &middot; role titles</p><p><b>Product</b>, <b>Product Marketing</b>, <b>Platform Strategy</b>, <b>Go-to-Market</b> all appear in the headline, skills, and experience — the exact terms recruiters filter on. Well covered.</p></div>
+      <div class="kwcard"><p class="h">Strong &middot; AI</p><p><b>AI Strategy</b>, <b>generative AI</b>, <b>shipping AI</b> recur across banner, headline, skills, and the Firefly + Ramón bullets. This is your sharpest forward keyword and it's reinforced everywhere.</p></div>
+      <div class="kwcard"><p class="h">Strong &middot; seniority</p><p><b>Director</b>, <b>$17.65B segment</b>, <b>75-person org</b>, <b>VP / Senior Director</b> (in the close). The proof carries the altitude rather than self-applied labels. Good.</p></div>
+      <div class="kwcard"><p class="h">Strong &middot; title-field keywords</p><p>Renaming role 2 to <b>Group Product &amp; Product Marketing Manager</b> was a smart move: it puts <b>“Product Marketing”</b> in a searchable <b>title field</b> (recruiters filter title text hard), not just the body. Both disciplines now appear in two job titles.</p></div>
+      <div class="kwcard"><p class="h">Strong &middot; “VP” signal</p><p><b>Closed.</b> “VP / Senior Director” now lives in the <b>Open-to-work</b> setting (the field recruiters filter on), the <b>Builder role</b> target line, and the About close. As much VP signal as you can add without reading job-seeker-desperate.</p></div>
+      <div class="kwcard"><p class="h">Strong &middot; leadership terms</p><p><b>Addressed.</b> “Led 6 PMs,” “75-person cross-functional organization,” “won approval from a senior vice president and all Heads of Product,” and “set direction” now carry the leadership signal in prose, not just the skills list.</p></div>
+      <div class="kwcard"><p class="h">Addressed &middot; typography niche</p><p><b>Defended.</b> Every scope and bullet now leads with the transferable move (platform, conversion, retention, GTM, content-licensing) and lets “fonts / type” arrive as the proof. The first screen (headline, banner, Featured) is type-free, and adjacent domains are named in the About and Builder line. Now maintain the discipline on new content.</p></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Nicole Miñoza · LinkedIn Profile</span>
+    <span><a href="https://nicoleminoza.com">nicoleminoza.com</a> · June 17, 2026 · Page 2 / 2</span>
+  </div>
+</div>
+
+</body>
+</html>
