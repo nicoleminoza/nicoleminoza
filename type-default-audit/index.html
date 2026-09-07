@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An empirical study of what general-purpose language models recommend when asked for typefaces. 1,890 controlled calls across 210 design briefs, three models and three repetitions, measured against a dated Google Fonts snapshot.">
+<link rel="canonical" href="https://nicoleminoza.com/type-default-audit">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nicoleminoza.com/type-default-audit">
+<meta property="og:site_name" content="Nicole Mi&ntilde;oza">
+<meta property="og:title" content="Type Default Audit &middot; Nicole Mi&ntilde;oza">
+<meta property="og:description" content="1,890 controlled recommendation calls across 210 design briefs and three models. The models name 1,029 typefaces; forty carry half the answers. Measures recommendation behavior, not selection.">
+<meta property="og:image" content="https://nicoleminoza.com/og-card-type-default-audit.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Type Default Audit, independent research by Nicole Mi&ntilde;oza">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Type Default Audit &middot; Nicole Mi&ntilde;oza">
+<meta name="twitter:description" content="1,890 controlled recommendation calls across 210 design briefs and three models. The models name 1,029 typefaces; forty carry half the answers.">
+<meta name="twitter:image" content="https://nicoleminoza.com/og-card-type-default-audit.png">
+<title>Type Default Audit</title>
+<style>
+  :root{
+    --paper:#faf9f6; --ink:#12100e; --body:#3d3a35; --mute:#8c877e;
+    --hair:#dedad1; --hair2:#efece5; --mark:#a32a1c; --wash:#f3efe7;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --gut:clamp(1.1rem,4vw,2.4rem);
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --paper:#131211; --ink:#f4f1ea; --body:#c4bfb6; --mute:#847f76;
+    --hair:#332f2a; --hair2:#232120; --mark:#e07a68; --wash:#1c1a18;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#131211; --ink:#f4f1ea; --body:#c4bfb6; --mute:#847f76;
+    --hair:#332f2a; --hair2:#232120; --mark:#e07a68; --wash:#1c1a18;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);
+       font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  /* ---- the grid: prose is narrow, evidence is wide, turns are full ---- */
+  .page{display:grid;
+    grid-template-columns:
+      [full-s] var(--gut)
+      [wide-s] minmax(0,10rem)
+      [main-s] minmax(0,37rem) [main-e]
+      minmax(0,13rem) [wide-e]
+      var(--gut) [full-e];
+    row-gap:0; justify-content:center}
+  .page > *{grid-column:main-s / main-e; min-width:0}
+  .wide{grid-column:wide-s / wide-e}
+  .full{grid-column:full-s / full-e}
+  .aside{grid-column:main-e / wide-e; font-family:var(--mono); font-size:.67rem;
+    line-height:1.7; color:var(--mute); padding-left:1.4rem; margin:.4rem 0 1.2rem;
+    border-left:1px solid var(--hair); align-self:start}
+  @media (max-width:62rem){
+    .page{grid-template-columns:[full-s] var(--gut) [wide-s main-s] minmax(0,1fr) [main-e wide-e] var(--gut) [full-e]}
+    .aside{grid-column:main-s / main-e; border-left:2px solid var(--hair);
+      padding-left:1rem; margin:1.2rem 0 1.6rem}
+  }
+
+  /* ---- masthead ---- */
+  .mast{grid-column:full-s / full-e; padding:clamp(3rem,7vw,6rem) var(--gut) 0;
+    display:grid; justify-content:center;
+    grid-template-columns:minmax(0,min(60rem,100%))}
+  h1{font-family:var(--serif); font-weight:400; letter-spacing:-.022em;
+     font-size:clamp(3rem,10vw,6.4rem); line-height:.94; color:var(--ink); margin:0}
+  .kicker{font-family:var(--mono); font-size:.70rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--mark); margin:0 0 1.6rem}
+  .standfirst{font-family:var(--serif); font-size:clamp(1.2rem,2.6vw,1.6rem);
+    line-height:1.42; color:var(--ink); max-width:33em; margin:1.8rem 0 0; text-wrap:balance}
+  .byline{font-family:var(--mono); font-size:.70rem; letter-spacing:.06em; color:var(--mute);
+    margin:2rem 0 0; padding-top:1.2rem; border-top:1px solid var(--hair)}
+
+  /* ---- orientation strip: the fast read ---- */
+  .orient{grid-column:full-s / full-e; margin:clamp(2.5rem,6vw,4.5rem) 0 0;
+    padding:clamp(2rem,5vw,3.4rem) var(--gut); background:var(--wash);
+    border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
+    display:grid; justify-content:center; grid-template-columns:minmax(0,min(60rem,100%))}
+  .orient-in{display:grid; gap:clamp(1.6rem,3vw,2.6rem);
+    grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+  .orient h2{all:unset; font-family:var(--mono); font-size:.67rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--mark); display:block; margin:0 0 .7rem}
+  .orient p{margin:0; font-size:.95rem; line-height:1.5; color:var(--body)}
+  .orient b{color:var(--ink); font-weight:640}
+  .orient .lede{grid-column:1/-1; font-family:var(--serif); font-size:clamp(1.15rem,2.2vw,1.4rem);
+    line-height:1.45; color:var(--ink); max-width:38em; margin:0}
+
+  /* ---- sections & findings ---- */
+  section{display:contents}
+  .shead{grid-column:full-s / full-e; margin:clamp(3.4rem,8vw,6rem) 0 0;
+    padding:0 var(--gut); display:grid; justify-content:center;
+    grid-template-columns:minmax(0,min(60rem,100%))}
+  .shead-in{border-top:2px solid var(--ink); padding-top:1rem;
+    display:grid; grid-template-columns:4.2rem 1fr; gap:0 1.2rem; align-items:start}
+  .snum{font-family:var(--mono); font-size:.7rem; letter-spacing:.1em; color:var(--mark);
+    padding-top:.55rem}
+  .shead h2{font-family:var(--serif); font-weight:400; color:var(--ink); margin:0;
+    font-size:clamp(1.6rem,3.6vw,2.5rem); line-height:1.12; letter-spacing:-.015em;
+    max-width:19em; text-wrap:balance}
+  .shead .sub{grid-column:2; font-family:var(--mono); font-size:.67rem; letter-spacing:.07em;
+    color:var(--mute); margin:.7rem 0 0; text-transform:uppercase}
+  @media (max-width:36rem){ .shead-in{grid-template-columns:1fr} .snum{padding:0 0 .4rem} .shead .sub{grid-column:1} }
+
+  .shead.exp .shead-in{border-top-color:var(--mark)}
+  .shead.exp .sub{color:var(--mark)}
+  .shead{margin-bottom:1.9rem}
+  .shead + p, .shead + .interp, .shead + figure, .shead + .scroll{margin-top:0}
+  .orient + .shead{margin-top:clamp(2.6rem,6vw,4rem)}
+  .turn + .shead{margin-top:0}
+  h3{font-family:var(--mono); font-weight:500; font-size:.70rem; letter-spacing:.11em;
+     text-transform:uppercase; color:var(--mark); margin:2.6rem 0 .7rem}
+  p{margin:0 0 1.1rem; max-width:37rem}
+  .page > p:first-of-type{margin-top:1.5rem}
+  strong{color:var(--ink); font-weight:640}
+  em{font-style:italic}
+  a{color:var(--mark); text-decoration:none; border-bottom:1px solid var(--hair)}
+  code{font-family:var(--mono); font-size:.86em; color:var(--ink)}
+
+  /* the loudest voice in the document, used sparingly */
+  .turn{grid-column:full-s / full-e; margin:clamp(3rem,8vw,6rem) 0;
+    padding:clamp(2.6rem,7vw,5rem) var(--gut); background:var(--ink); color:var(--paper);
+    display:grid; justify-content:center; grid-template-columns:minmax(0,min(54rem,100%))}
+  .turn p{font-family:var(--serif); font-size:clamp(1.7rem,4.6vw,3rem); line-height:1.16;
+    letter-spacing:-.015em; margin:0; max-width:20em; color:var(--paper); text-wrap:balance}
+  .turn .lab{font-family:var(--mono); font-size:.67rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--mark); margin:0 0 1.4rem; display:block}
+  .turn .after{font-family:var(--sans); font-size:1rem; line-height:1.6; margin:1.8rem 0 0;
+    max-width:36em; color:#c9c3b8}
+  /* the turn inverts against the page, so in dark mode it cannot borrow --paper for ink */
+  :root[data-theme="dark"] .turn{background:#000}
+  :root[data-theme="dark"] .turn p{color:var(--ink)}
+  :root[data-theme="dark"] .turn .after{color:var(--body)}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .turn{background:#000}
+    :root:not([data-theme="light"]) .turn p{color:var(--ink)}
+    :root:not([data-theme="light"]) .turn .after{color:var(--body)} }
+
+  .anchor{font-family:var(--serif); font-size:clamp(1.35rem,3vw,1.9rem); line-height:1.28;
+    color:var(--ink); max-width:24em; margin:2.6rem 0; text-wrap:balance; letter-spacing:-.01em}
+
+
+  /* ---- condition comparison: three prompts on one measured axis ---- */
+  .cond{margin:2rem 0 1.4rem; border-top:2px solid var(--ink)}
+  .cond .row{display:grid; grid-template-columns:10.5rem minmax(0,1fr) 6.5rem; gap:0 1.4rem;
+    padding:1.15rem 0; border-bottom:1px solid var(--hair2); align-items:center}
+  .cond .who{font-family:var(--mono); font-size:.67rem; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--ink)}
+  .cond .who i{display:block; font-style:normal; font-family:var(--sans); font-size:.78rem;
+    letter-spacing:0; text-transform:none; color:var(--mute); margin-top:.35rem; line-height:1.4}
+  .cond .track{position:relative; height:1.5rem}
+  .cond .track::before{content:""; position:absolute; left:0; right:0; top:50%;
+    border-top:1px solid var(--hair)}
+  .cond .ci{position:absolute; top:50%; height:6px; transform:translateY(-50%);
+    background:var(--hair); border-radius:3px}
+  .cond .dot{position:absolute; top:50%; width:11px; height:11px; margin-left:-5.5px;
+    transform:translateY(-50%); border-radius:50%; background:var(--ink)}
+  .cond .mark .dot{background:var(--mark)} .cond .mark .ci{background:var(--mark); opacity:.28}
+  .cond .val{font-family:var(--mono); font-size:.82rem; color:var(--ink); text-align:right;
+    font-variant-numeric:tabular-nums}
+  .cond .val em{display:block; font-style:normal; font-size:.64rem; color:var(--mute); margin-top:.3rem}
+  .cond .axis{display:grid; grid-template-columns:10.5rem minmax(0,1fr) 6.5rem; gap:0 1.4rem;
+    font-family:var(--mono); font-size:.64rem; color:var(--mute); padding-top:.5rem}
+  .cond .axis .t{position:relative; height:1rem}
+  .cond .axis .t span{position:absolute; transform:translateX(-50%)}
+  @media (max-width:48rem){
+    .cond .row,.cond .axis{grid-template-columns:1fr; gap:.5rem}
+    .cond .val{text-align:left} .cond .axis{display:none}
+  }
+
+  /* ---- null model: where the observation sits against the simulated range ---- */
+  .nullviz{margin:2rem 0 1.4rem; border-top:2px solid var(--ink); padding-top:1.4rem}
+  .nullviz .scale{position:relative; height:5.6rem; margin:.4rem 0 .3rem}
+  .nullviz .base{position:absolute; left:0; right:0; top:3.6rem; border-top:1px solid var(--hair)}
+  .nullviz .span{position:absolute; top:3.15rem; height:10px; background:var(--hair);
+    border-radius:5px}
+  .nullviz .ci95{position:absolute; top:3.15rem; height:10px; background:var(--mute); opacity:.45;
+    border-radius:5px}
+  .nullviz .pin{position:absolute; top:2.45rem; width:2px; height:1.9rem; background:var(--ink)}
+  .nullviz .pin.obs{background:var(--mark); width:3px; height:2.6rem; top:2.05rem}
+  .nullviz .cap{position:absolute; top:0; font-family:var(--mono); font-size:.64rem;
+    letter-spacing:.05em; color:var(--mute); transform:translateX(-50%); white-space:nowrap}
+  .nullviz .cap b{display:block; font-size:.95rem; color:var(--ink); font-family:var(--serif);
+    font-weight:400; margin-bottom:.15rem}
+  .nullviz .cap.obs{color:var(--mark)} .nullviz .cap.obs b{color:var(--mark)}
+  .nullviz .ticks{position:relative; height:1rem; font-family:var(--mono); font-size:.64rem;
+    color:var(--mute)}
+  .nullviz .ticks span{position:absolute; transform:translateX(-50%)}
+  .nullviz .rdg{display:grid; grid-template-columns:6.5rem minmax(0,1fr); gap:.5rem 1.3rem;
+    margin-top:1.4rem; padding-top:1.1rem; border-top:1px solid var(--hair2)}
+  .nullviz .rdg dt{font-family:var(--mono); font-size:.64rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--mark)}
+  .nullviz .rdg dd{margin:0; font-size:.92rem; line-height:1.5}
+  @media (max-width:36rem){ .nullviz .rdg{grid-template-columns:1fr; gap:.2rem 0}
+    .nullviz .rdg dd{margin-bottom:.8rem} .nullviz .cap{font-size:.6rem} }
+
+  /* ---- evidence ---- */
+  figure{margin:2rem 0}
+  figcaption{font-family:var(--mono); font-size:.67rem; line-height:1.7; color:var(--mute); margin-top:.8rem}
+  svg{display:block; max-width:100%; height:auto}
+  .chart-txt{font-family:var(--mono); font-size:10px; fill:var(--mute)}
+  .chart-lab{font-family:var(--sans); font-size:11px; fill:var(--ink); font-weight:600}
+  .chart-val{font-family:var(--mono); font-size:10px; fill:var(--mark)}
+  .scroll{overflow-x:auto}
+  table{width:100%; border-collapse:collapse; margin:1.4rem 0; font-size:.88rem; min-width:22rem}
+  th{font-family:var(--mono); font-size:.64rem; letter-spacing:.09em; text-transform:uppercase;
+     color:var(--mute); font-weight:500; text-align:right; padding:0 0 .55rem;
+     border-bottom:1px solid var(--ink)}
+  th:first-child{text-align:left}
+  td{padding:.6rem 0; border-bottom:1px solid var(--hair2); text-align:right;
+     font-family:var(--mono); font-size:.83rem; font-variant-numeric:tabular-nums}
+  td:first-child{text-align:left; font-family:var(--sans); font-size:.9rem; color:var(--ink)}
+  .src{font-family:var(--mono); font-size:.64rem; letter-spacing:.05em; color:var(--mute);
+    margin:-.6rem 0 1.8rem}
+  .src code{font-size:1em; color:var(--mute)}
+  pre{background:var(--wash); border:1px solid var(--hair); padding:1rem 1.1rem;
+      font-family:var(--mono); font-size:.74rem; line-height:1.7; color:var(--ink);
+      overflow-x:auto; margin:1.2rem 0}
+
+  /* big numbers, used only where the number is the argument */
+  .figrow{display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));
+    gap:1.6rem 2rem; margin:1.8rem 0; border-top:1px solid var(--ink); padding-top:1.2rem}
+  .fig .n{font-family:var(--serif); font-size:clamp(2.2rem,5vw,3.4rem); line-height:.95;
+    color:var(--ink); display:block; letter-spacing:-.02em}
+  .fig .l{font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--mute); display:block; margin-top:.6rem; line-height:1.45}
+
+  /* experiment sequence + null model */
+  .seq{display:grid; gap:0; margin:1.8rem 0; border-top:1px solid var(--ink)}
+  .seq .step{display:grid; grid-template-columns:8.5rem 1fr; gap:0 1.4rem; padding:1rem 0;
+    border-bottom:1px solid var(--hair2); align-items:baseline}
+  .seq .k{font-family:var(--mono); font-size:.67rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--mark)}
+  .seq .v{margin:0; font-size:.94rem; line-height:1.5}
+  .seq .v b{color:var(--ink)}
+  .seq .out{background:var(--wash)}
+  @media (max-width:36rem){ .seq .step{grid-template-columns:1fr; gap:.25rem} }
+
+  /* generation / discovery / selection */
+  .model{margin:2rem 0; display:grid; gap:0; border-top:2px solid var(--ink)}
+  .model .lvl{display:grid; grid-template-columns:1.7rem 8.5rem minmax(0,1fr);
+    gap:0 1.3rem; padding:1.5rem 0; border-bottom:1px solid var(--hair); align-items:start}
+  .model .ix{font-family:var(--mono); font-size:.67rem; color:var(--mute); padding-top:.45rem}
+  .model .nm{font-family:var(--serif); font-size:1.32rem; color:var(--ink); line-height:1.1}
+  .model .bd{min-width:0}
+  .model .q{font-size:1rem; color:var(--ink); margin:0 0 .5rem; max-width:34em}
+  .model .d{margin:0; font-size:.9rem; line-height:1.55; max-width:34em}
+  .model .here{background:var(--wash)}
+  .model .here .nm{color:var(--mark)}
+  .model .tagline{font-family:var(--mono); font-size:.64rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--mark); display:block; margin-top:.7rem}
+  @media (max-width:48rem){
+    .model .lvl{grid-template-columns:1.7rem minmax(0,1fr); gap:.35rem 1rem}
+    .model .nm{grid-column:2} .model .bd{grid-column:2}
+  }
+
+  /* verdict columns */
+  .verdicts{display:grid; grid-template-columns:1fr 1fr; gap:0 3rem; margin:1.6rem 0}
+  @media (max-width:48rem){ .verdicts{grid-template-columns:1fr; gap:2.4rem} }
+  .verdicts h3{margin-top:0}
+  .vlist{list-style:none; padding:0; margin:0}
+  .vlist li{padding:.7rem 0; border-bottom:1px solid var(--hair2); font-size:.92rem;
+    line-height:1.5; margin:0}
+  .vlist li:first-child{border-top:1px solid var(--ink)}
+  .vlist b{color:var(--ink); font-weight:640}
+
+  .ladder{margin:1.6rem 0; border-top:1px solid var(--ink)}
+  .rung{display:grid; grid-template-columns:1.8rem 10rem 1fr; gap:0 1rem;
+        padding:.75rem 0; border-bottom:1px solid var(--hair2); align-items:baseline}
+  .rung .i{font-family:var(--mono); font-size:.67rem; color:var(--mute)}
+  .rung .n{font-size:.88rem; font-weight:640; color:var(--ink)}
+  .rung p{margin:0; font-size:.85rem; line-height:1.5; max-width:none}
+  .rung.here{background:var(--wash)} .rung.here .n{color:var(--mark)}
+  @media (max-width:36rem){ .rung{grid-template-columns:1.8rem 1fr} .rung p{grid-column:2} }
+
+  .study{border-top:2px solid var(--mark); padding:1.4rem 0 0; margin:2rem 0}
+  .study h4{font-family:var(--serif); font-weight:400; font-size:1.45rem; color:var(--ink); margin:0 0 1rem}
+  .field{display:grid; grid-template-columns:6rem 1fr; gap:1rem; margin-bottom:.9rem}
+  .field .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--mark); padding-top:.3rem}
+  .field .v p{margin:0 0 .7rem; font-size:.93rem}
+  .field .v p:last-child{margin-bottom:0}
+  @media (max-width:36rem){ .field{grid-template-columns:1fr; gap:.25rem} }
+
+
+  /* qualification note: recedes, but stays legible */
+  .flagbox{border-left:2px solid var(--hair); padding:.2rem 0 .2rem 1.1rem; margin:1.8rem 0;
+    font-size:.88rem; line-height:1.6; color:var(--mute)}
+  .flagbox .h{display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--mute); margin-bottom:.6rem}
+  .flagbox p{margin:0 0 .7rem; max-width:36rem} .flagbox p:last-child{margin-bottom:0}
+  .flagbox strong{color:var(--ink)}
+
+  /* lead statistic: the number is the sentence */
+  .pull{margin:2.2rem 0; padding-top:1.1rem; border-top:2px solid var(--ink)}
+  .pull p:first-child{font-family:var(--serif); font-size:clamp(1.25rem,2.8vw,1.7rem);
+    line-height:1.32; color:var(--ink); margin:0 0 .9rem; max-width:24em; text-wrap:balance}
+  .pull p:last-child{margin:0; font-size:.92rem; color:var(--mute); max-width:36rem}
+  .pull strong{color:var(--mark)}
+
+  .marked{list-style:none;padding:0;margin:1.2rem 0}
+  .marked li{position:relative;padding-left:1.3rem;margin-bottom:.7rem;max-width:37rem}
+  .marked li::before{content:"—";position:absolute;left:0;color:var(--mark)}
+
+  .method{grid-column:full-s / full-e; margin:clamp(3rem,7vw,5rem) 0 0;
+    padding:clamp(2rem,5vw,3rem) var(--gut) 5rem; background:var(--wash);
+    border-top:1px solid var(--hair);
+    display:grid; justify-content:center; grid-template-columns:minmax(0,min(60rem,100%))}
+  .method-in{font-size:.86rem; line-height:1.65; color:var(--mute)}
+  .method-in h2{font-family:var(--mono); font-size:.70rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--mark); margin:0 0 1.4rem}
+  .method-in h3{margin:2rem 0 .6rem}
+  .method-in p{max-width:44em}
+  .method-in strong{color:var(--ink)}
+  .method-in table{font-size:.82rem}
+  .method-cols{columns:2; column-gap:2.6rem}
+  .method-cols p{break-inside:avoid}
+  @media (max-width:48rem){ .method-cols{columns:1} }
+</style>
+</head>
+<body>
+<main class="page">
+<header class="mast"><div>
+<p class="kicker">Independent research &middot; September 2026</p>
+<h1>Type Default<br>Audit</h1>
+<p class="standfirst">What general-purpose language models actually recommend when a designer asks for type, measured against a catalog you can count.</p>
+<p class="byline">Nicole Mi&ntilde;oza &middot; 210 briefs &middot; three models &middot; three repetitions &middot; Google Fonts catalog, 1 September 2026</p>
+</div></header>
+
+<div class="orient"><div class="orient-in">
+<p class="lede">Ask three language models for typefaces across 210 design briefs and 1,890 calls, and they name 1,029 different families. Ten of them carry a quarter of every answer. Forty carry half.</p>
+<div><h2>What was tested</h2><p>210 briefs tagged by industry, tone, medium, script and length, put to Claude, ChatGPT and Gemini three times each. <b>1,890 calls, 9,558 named typeface mentions.</b></p></div>
+<div><h2>What came back</h2><p><b>1,029 distinct typefaces</b>, of which 228 are in Google Fonts. On Latin-only briefs <b>50.5 percent</b> of what returns is type you would have to license.</p></div>
+<div><h2>The pattern</h2><p>Breadth and concentration at once. Repeat an identical brief and roughly half the answer changes. Name a catalog in the prompt and the distribution moves; a placebo constraint does not move it.</p></div>
+<div><h2>The boundary</h2><p>This measures recommendation, not selection. <b>Nothing here establishes that any recommendation was good</b>, or that a designer would choose it.</p></div>
+</div></div>
+
+<div class="shead"><div class="shead-in"><div class="snum">01</div><h2>A baseline, taken before anything is put between the designer and the model</h2><p class="sub">Why the study exists</p></div></div>
+
+<p>AI-assisted font discovery is no longer hypothetical. Real type catalogs are already being put into conversational interfaces, and AI systems are beginning to mediate how designers find and evaluate type. But before deciding how those systems can be improved, it is worth establishing a baseline for what general-purpose AI does on its own.</p>
+
+<p>Designers have been consistent in saying where they want AI to help. Monotype's 2024 Global Font Use and Forecasting Survey put a 30-question instrument to 4,777 graphic designers, type designers and brand leaders across more than thirteen countries. Ninety-one percent said AI and AI tools can be useful for their work in the type industry. Asked which design applications of AI would be most valuable, respondents named visualizing typography in real-world scenarios and suggesting font pairings at 45 percent each, and improving the discovery of new fonts at 43 percent. Finding the right font was separately the single largest pain point in the same survey, at 23 percent.</p>
+
+<p>The question is not whether these systems can name plausible fonts. They clearly can. The more useful question is what the recommendation space looks like: how concentrated it is, how stable it is across repeated runs, how strongly it reflects existing popularity, how much of a defined type universe it reaches, and how recommendations change when the brief or the candidate universe changes.</p>
+
+<p>I ran 1,890 controlled recommendation calls across 210 design briefs, three models, and three repetitions, producing 9,558 named typeface mentions after normalization. That run is the baseline condition; two further conditions reported later add 1,512 calls.</p>
+
+<p>The result is a baseline for studying AI-assisted type discovery as a system rather than as a collection of individual recommendations. It does not tell us whether a typeface is right for a brief, whether a designer would choose it, or whether AI makes that decision better. Those are different questions. It does establish something more basic: a way to observe and measure the recommendation behavior that future font-discovery systems will need to change.</p>
+
+<p class="anchor">When the same broad pool of design briefs is put to language models, what properties of a brief are associated with the breadth, distribution and stability of the typeface recommendations produced?</p>
+
+<p>A second question sits behind it, and this audit deliberately does not answer it: do those differences suggest the models are responding to semantic or perceptual characteristics of a brief, or are they mostly reproducing popularity, familiarity and other priors?</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">02</div><h2>The models name a thousand typefaces. Forty of them carry half the answers.</h2><p class="sub">Finding &middot; concentration and catalog reach</p></div></div>
+
+<p>Across the full run, the three models named <strong>1,029 distinct typefaces</strong> across catalog and non-catalog sources, from 9,558 named typeface mentions. That is the pool everything below ranks.</p>
+
+<p>Of those, 228 are families in the Google Fonts catalog. This figure is <em>observed catalog reach</em>: the families that surfaced under one prompt shape, from 210 briefs, in three repetitions. A larger or differently written brief set would raise it. It is not a measure of what any model holds, and any reading of it as typographic knowledge is a reading the design cannot support.</p>
+
+<p>Within the catalog, recommendations stayed near the most-used end of it: 89.5 percent of catalog recommendations landed in the 300 most-used families, and 60.8 percent in the top hundred.</p>
+
+<p>Those two facts belong together and are easy to state separately and misleadingly. These models explore a large nominal recommendation space, 1,029 distinct names, while directing a large proportion of what they actually say toward a small part of it. Ten names take a quarter of every mention and forty take half. A wide vocabulary and a concentrated output are not in tension, they are the same distribution described at two different points, and only the second is what a designer experiences.</p>
+
+<p>Which raises a question this study poses rather than answers. A large candidate vocabulary is not the same thing as useful discovery, and nothing here establishes that the tail of that distribution contains typefaces a designer would have wanted.</p>
+
+<h3>Concentration</h3>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Most-recommended N families</th><th>Share of all recommendations</th></tr></thead>
+  <tbody>
+    <tr><td>Top 10</td><td>26.0%</td></tr>
+    <tr><td>Top 25</td><td>41.5%</td></tr>
+    <tr><td>Top 40</td><td>50.3%</td></tr>
+    <tr><td>Top 100</td><td>69.9%</td></tr>
+    <tr><td>Remaining 929</td><td>30.1%</td></tr>
+  </tbody>
+</table></div>
+<p class="src wide">source: <a href="release/concentration.csv">release/concentration.csv</a> &middot; <a href="release/rank_frequency.csv">release/rank_frequency.csv</a></p>
+
+<p>The ten most-recommended typefaces take 26.0 percent of everything said, led by Source Sans 3, IBM Plex Sans and Source Serif 4. Exactly forty names are required to reach half the total, out of 1,029. Shares are computed over the 9,558 named typeface mentions in the open condition, all three models.</p>
+
+<div class="flagbox">
+  <span class="h">Concentration on the full distribution</span>
+  <p>Across the whole rank-frequency distribution, <strong>HHI 0.0103</strong> and <strong>Gini 0.7688</strong>.</p>
+  <p>The shares depend on which population is counted, which is worth stating rather than choosing quietly. Over all 9,558 named mentions the top ten take 26.0 percent and the top hundred 69.9. Over the 9,152 resolved mentions, 27.2 and 72.9. Over the 6,210 catalog-only mentions, 40.0 and 94.6, with HHI rising to 0.0227. Every figure in this document uses the all-mentions population.</p>
+</div>
+
+<h3>Catalog and non-catalog</h3>
+
+<p>The obvious objection to measuring against a free library is that it says nothing about commercial work. That objection would hold if the models stayed inside Google Fonts. They do not.</p>
+
+<div class="pull">
+  <p>On briefs asking for nothing but Latin, <strong>50.5 percent of recommendations are confirmed to fall outside Google Fonts.</strong></p>
+  <p>Offered 1,944 free Latin families, these models routinely name something you have to license: Minion, Sabon, Graphik, Söhne, Neue Haas Grotesk. The free catalog is a useful instrument because it makes that countable. It says nothing about licensed inventory, and was never asked to.</p>
+</div>
+
+<p>That figure covers all three models across 1,908 Latin-only recommendation slots. For the two models in the restriction experiment it is 49.3 percent. Both count only names confirmed as non-catalog; unresolved names are excluded rather than assumed to be outside.</p>
+
+<p>Reach is a fraction, and a fraction needs a denominator. Google publishes one: 1,955 families on a stated date. No equivalent list exists for licensed type, so nothing here says whether the non-catalog share represents a wide reach into the commercial world or a narrow one.</p>
+
+<p>The denominator is doing more work than a denominator usually does. A language model asked for typefaces is operating over an effectively open universe with no edges, and almost nothing about that behavior can be measured, because there is nothing to measure it against. A finite, enumerable catalog converts the same question into one that has answers: what fraction of the available set was reached, which parts of it were ignored, whether a constraint moved the answer into a different region. Google Fonts is used here because it is public, enumerable and dated, not because it is the interesting catalog. The measurement is not specific to it, and the same logic runs against any defined library that someone is willing to name.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">03</div><h2>How wide the answer is depends on what the brief asks for</h2><p class="sub">Finding &middot; breadth by brief dimension</p></div></div>
+
+<p>Every figure here rests on 210 briefs written for this study, so how they were built decides what the numbers can mean.</p>
+
+<p>Each brief carries five tags, and every tag value appears an equal number of times because the grid was built that way rather than sampled. The generator sets the marginals first, so each value gets its exact share of the 210 before any brief is written.</p>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Dimension</th><th>Values</th><th>Briefs each</th></tr></thead>
+  <tbody>
+    <tr><td>Industry</td><td>10</td><td>21</td></tr>
+    <tr><td>Tone</td><td>6</td><td>35</td></tr>
+    <tr><td>Medium</td><td>6</td><td>35</td></tr>
+    <tr><td>Script requirement</td><td>5</td><td>42</td></tr>
+    <tr><td>Specificity</td><td>3</td><td>70</td></tr>
+  </tbody>
+</table></div>
+<p class="src wide">source: <a href="release/briefs.json">release/briefs.json</a> &middot; <a href="release/grid.json">release/grid.json</a> &middot; <a href="release/reweighting_weights.csv">release/reweighting_weights.csv</a></p>
+
+<p>The values are: industry across fintech, healthcare, editorial, gaming, luxury retail, public sector, nonprofit, developer tools, food and education; tone across authoritative, playful, warm, technical, elegant and brutal; medium across website, mobile UI, print editorial, packaging, presentation and long-form reading; script across Latin only, plus Cyrillic, plus Greek, plus Vietnamese and CJK adjacent; specificity across three word-count bands.</p>
+
+<p>Equal marginals do not guarantee that combinations are covered. A set can hold 35 playful briefs and 42 Vietnamese briefs and contain no brief that is both. So the assignment was reordered to spread the pairs, scored by how many pairwise cells sit empty or overloaded. That cost fell from 1297 to 55. There are 347 possible pairwise combinations of tag values across the five dimensions, and all 347 ended up occupied. That is a statement about pairs; it says nothing about whether higher-order combinations are balanced. The seed is 20260831 and is recorded, so the grid rebuilds exactly. A residual cost of 55 means the pairs are occupied rather than equal, so cross-dimension confounding is reduced here, not eliminated.</p>
+
+<p>Balance across the grid reduces structural confounding among the tagged dimensions by distributing their combinations across the brief set. It does not eliminate confounding and it does not establish statistical independence. In particular it says nothing about the semantic signals inside a brief, since one tagged elegant differs from one tagged playful in vocabulary, in register, and often in the project described. No effect below should be attributed to a single signal on the strength of the grid alone.</p>
+
+<p>The balance is deliberate and it is not representative. Latin-only work dominates the commercial practice these briefs stand in for, but every script requirement carries 42 briefs so each slice is measured with equal precision. Any pooled figure needs reweighting before it describes typical practice, and the weights are stored alongside the briefs.</p>
+
+<h3>Brief length</h3>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Band</th><th>Briefs</th><th>Words</th><th>Mean</th></tr></thead>
+  <tbody>
+    <tr><td>Vague</td><td>70</td><td>9 to 25</td><td>16.8</td></tr>
+    <tr><td>Moderate</td><td>70</td><td>24 to 44</td><td>31.0</td></tr>
+    <tr><td>Highly specific</td><td>70</td><td>42 to 67</td><td>55.6</td></tr>
+  </tbody>
+</table></div>
+
+<p>The three bands are word counts, not a separate judgment laid on top of them. Across all 210 the range is 9 to 67 words, mean 34.5. Any finding about specificity here can be restated as a finding about length with nothing lost. The bands also overlap at their edges, 24 to 25 words and 42 to 44, so they are not a clean partition. Read this dimension as brief length rather than as a validated specificity construct: word count is what this study varies, and it is narrower than specificity as a design concept, which also covers named constraints, references and prior decisions. The labels vague, moderate and highly specific are retained because the published data files use them. They describe experimental brief-length categories and are not treated as validated measures of specificity.</p>
+
+<h3>What the briefs represent, and what they do not</h3>
+
+<p>These are not briefs from practice. Each was written by me to instantiate a tag I had already chosen, which means the intended meaning and the words expressing it were produced in the same act by the same person. Nothing in this study establishes what any brief calls for independently of my own labeling.</p>
+
+<p>That limit reaches further than a vocabulary confound. A real brief sits at the end of a chain: a business situation, a person interpreting it, and language describing how the work should be perceived. This study holds only the last link, and that link was authored to match a label. So the question of whether a model responds to design intent or to vocabulary has no referent for intent that can be separated from the vocabulary. Establishing one requires independent designers reading the same briefs and agreeing on what they ask for, which is why a later study exists.</p>
+
+<h3>Two kinds of tag</h3>
+
+<p>The five dimensions are not five flavours of the same thing. Industry, medium and script describe <strong>business context</strong>: what the work is for and what it has to do. Tone describes a <strong>perceptual target</strong>: how the result should be read. Typography is expected to encode the second, mediated by the first.</p>
+
+<p>Neither is a validated representation of design intent. Both are labels I assigned.</p>
+
+<p>The chart below counts distinct catalog families named by the widest and narrowest slice of each dimension, ordered by the ratio between them.</p>
+
+<figure class="wide">
+<svg viewBox="-28 0 748 250" role="img" aria-label="Distinct catalog families named by the narrowest and widest slice of each brief dimension.">
+  <line x1="215" y1="20" x2="215" y2="215" stroke="var(--hair)" stroke-dasharray="2 3"/>
+  <line x1="355" y1="20" x2="355" y2="215" stroke="var(--hair)" stroke-dasharray="2 3"/>
+  <line x1="495" y1="20" x2="495" y2="215" stroke="var(--hair)" stroke-dasharray="2 3"/>
+  <line x1="635" y1="20" x2="635" y2="215" stroke="var(--hair)" stroke-dasharray="2 3"/>
+  <g>
+    <text class="chart-lab" x="150" y="36" text-anchor="end">Tone</text>
+    <text class="chart-txt" x="150" y="48" text-anchor="end">35 briefs/slice · 6 values</text>
+    <line x1="187" y1="32" x2="542" y2="32" stroke="var(--mark)" stroke-width="1.5"/>
+    <circle cx="187" cy="32" r="5" fill="var(--paper)" stroke="var(--mark)" stroke-width="2"/>
+    <circle cx="542" cy="32" r="5" fill="var(--mark)"/>
+    <text class="chart-txt" x="180" y="36" text-anchor="end">64</text><text class="chart-txt" x="552" y="36">140</text>
+    <text class="chart-val" x="580" y="36">×2.19</text><text class="chart-txt" x="622" y="36">playful widest</text>
+  </g>
+  <g>
+    <text class="chart-lab" x="150" y="76" text-anchor="end">Medium</text>
+    <text class="chart-txt" x="150" y="88" text-anchor="end">35 briefs/slice · 6 values</text>
+    <line x1="220" y1="72" x2="509" y2="72" stroke="var(--mark)" stroke-width="1.5"/>
+    <circle cx="220" cy="72" r="5" fill="var(--paper)" stroke="var(--mark)" stroke-width="2"/>
+    <circle cx="509" cy="72" r="5" fill="var(--mark)"/>
+    <text class="chart-txt" x="213" y="76" text-anchor="end">71</text><text class="chart-txt" x="519" y="76">133</text>
+    <text class="chart-val" x="547" y="76">×1.87</text><text class="chart-txt" x="589" y="76">packaging widest</text>
+  </g>
+  <g>
+    <text class="chart-lab" x="150" y="116" text-anchor="end">Script need</text>
+    <text class="chart-txt" x="150" y="128" text-anchor="end">42 briefs/slice · 5 values</text>
+    <line x1="267" y1="112" x2="458" y2="112" stroke="var(--mark)" stroke-width="1.5"/>
+    <circle cx="267" cy="112" r="5" fill="var(--paper)" stroke="var(--mark)" stroke-width="2"/>
+    <circle cx="458" cy="112" r="5" fill="var(--mark)"/>
+    <text class="chart-txt" x="260" y="116" text-anchor="end">81</text><text class="chart-txt" x="468" y="116">122</text>
+    <text class="chart-val" x="496" y="116">×1.51</text><text class="chart-txt" x="538" y="116">plus vietnamese widest</text>
+  </g>
+  <g>
+    <text class="chart-lab" x="150" y="156" text-anchor="end">Industry</text>
+    <text class="chart-txt" x="150" y="168" text-anchor="end">21 briefs/slice · 10 values</text>
+    <line x1="229" y1="152" x2="350" y2="152" stroke="var(--mark)" stroke-width="1.5"/>
+    <circle cx="229" cy="152" r="5" fill="var(--paper)" stroke="var(--mark)" stroke-width="2"/>
+    <circle cx="350" cy="152" r="5" fill="var(--mark)"/>
+    <text class="chart-txt" x="222" y="156" text-anchor="end">73</text><text class="chart-txt" x="360" y="156">99</text>
+    <text class="chart-val" x="384" y="156">×1.36</text><text class="chart-txt" x="426" y="156">food widest</text>
+  </g>
+  <g>
+    <text class="chart-lab" x="150" y="196" text-anchor="end">Specificity</text>
+    <text class="chart-txt" x="150" y="208" text-anchor="end">70 briefs/slice · 3 values</text>
+    <line x1="537" y1="192" x2="593" y2="192" stroke="var(--mark)" stroke-width="1.5"/>
+    <circle cx="537" cy="192" r="5" fill="var(--paper)" stroke="var(--mark)" stroke-width="2"/>
+    <circle cx="593" cy="192" r="5" fill="var(--mark)"/>
+    <text class="chart-txt" x="530" y="196" text-anchor="end">139</text><text class="chart-txt" x="603" y="196">163</text>
+    <text class="chart-val" x="627" y="196">×1.17</text>
+  </g>
+  <text class="chart-txt" x="215" y="232" text-anchor="middle">60</text>
+  <text class="chart-txt" x="355" y="232" text-anchor="middle">90</text>
+  <text class="chart-txt" x="495" y="232" text-anchor="middle">120</text>
+  <text class="chart-txt" x="635" y="232" text-anchor="middle">150</text>
+  <text class="chart-txt" x="425" y="246" text-anchor="middle">distinct catalog families named · breadth only</text>
+</svg>
+<figcaption>recommendation breadth by brief dimension, narrowest slice to<br>widest · ordered by ratio · slice sizes and value counts shown<br>because both affect the ratio</figcaption>
+</figure>
+<p class="src wide">source: <a href="release/breadth_by_slice.csv">release/breadth_by_slice.csv</a></p>
+
+<h3>Breadth is not direction</h3>
+
+<p>This exhibit counts families, and a count answers one question. A tone slice returning 140 catalog families against another returning 64 demonstrates different breadth. It does not demonstrate that the two slices reached different typefaces. In principle the 64 could sit inside the 140 and the ratio would look identical.</p>
+
+<p class="anchor">Breadth tells us how widely the model searches its recommendation space. It does not tell us where in that space it is searching.</p>
+
+<p>Two things follow. Breadth is not direction, and variation is not understanding. A dimension that moves the count further is not thereby a dimension the model handles better.</p>
+
+<p>Establishing direction requires analyzing the identities of the families, not their count, and that analysis has not been run. Two observations in this document do speak to direction, and neither came from this exhibit: elegant briefs sending 47.6 percent of their recommendations outside the catalog toward Minion, Arno and Bembo, and EB Garamond appearing under restriction and never without it. Both are incidental. Directional analysis is a next step, and the harness already stores what it needs.</p>
+
+<h3>The findings, stated at the level they support</h3>
+
+<p><strong>The tone slices span the widest range of catalog families and the industry slices the narrowest.</strong> Tone ranges 64 to 140 across its six values, a ratio of 2.19. Industry ranges 73 to 99 across its ten, a ratio of 1.36. These are descriptive spans, not comparable effect sizes: slice sizes run from 21 to 70 briefs, category counts from three to ten, and distinct-family counts accumulate on a concave curve. Ranking one dimension above another would need every slice rarefied to a common recommendation count and each ratio compared against a null built by randomly partitioning the 210 briefs into groups of the same sizes. That has not been run, and no claim here depends on it.</p>
+
+<p>This measures breadth, not direction. A broader output set does not establish that those faces are more closely aligned with the intended perceptual target, or that the model holds any particular typographic reading of the word "playful."</p>
+
+<p><strong>Script requirement moves the catalog share sharply.</strong> On briefs asking for Vietnamese support, 93.2 percent of recommendations resolved to a Google Fonts family, against 42.2 percent on Latin-only briefs. Both are catalog shares, so unresolved names count in neither direction. An earlier draft gave the Vietnamese figure as 94 percent, which was one minus the confirmed-outside share and therefore counted unresolved names as catalog faces. The constraint is visible in catalog reach as well, which is a different measure: 69 percent of the 118 Google Fonts families carrying Greek were named at least once, compared with 4 percent of the 1,944 Latin-carrying families.</p>
+
+<p><strong>Length does not move the answer in one direction.</strong> Distinct names rise with it: 446 vague, 491 moderate, 592 highly specific, as longer briefs reach further into licensed type. Catalog families do not. They fall from 163 vague to 139 moderate, then rise again to 144 highly specific, while the top-nine share climbs steadily, 21.5 to 26.5 to 28.0 percent. The catalog-family count is non-monotonic and should not be summarized as narrowing.</p>
+
+<p>These figures describe within-dimension breadth. They should not be read as a ranking of which brief dimension has the greatest effect, because the dimensions differ in slice size and in number of levels. They also pool three models with different breadth and different stability, and no dimension effect is reported per model.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">04</div><h2>Ask the same question twice and about half the answer changes</h2><p class="sub">Finding &middot; run-to-run variation and model differences</p></div></div>
+
+<p>Before asking whether a brief reliably maps to a typographic region, we need to know how much the output moves when the brief does not change at all. Each brief was sampled three times per model. Pairwise overlap between two responses to the same brief runs from 0.41 to 0.56 by Jaccard.</p>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Model</th><th>Families named</th><th>Top-5 share</th><th>Outside catalog</th><th>Retention</th></tr></thead>
+  <tbody>
+    <tr><td>Gemini</td><td>179</td><td>12.4%</td><td>35.2%</td><td>0.41</td></tr>
+    <tr><td>ChatGPT</td><td>146</td><td>20.4%</td><td>31.3%</td><td>0.50</td></tr>
+    <tr><td>Claude</td><td>133</td><td>17.6%</td><td>25.8%</td><td>0.56</td></tr>
+  </tbody>
+</table></div>
+<p class="src wide">source: <a href="release/model_breakdown.csv">release/model_breakdown.csv</a> &middot; <a href="release/null_overlap.json">release/null_overlap.json</a></p>
+
+<p><strong>Under this sampling protocol, repeated runs of the same brief do not return a fixed recommendation set.</strong> How much of that is the model and how much is the sampling configuration is not separated here, which is why the protocol is named in the claim.</p>
+
+<p>Three kinds of stability are worth keeping apart, and this study measures one. <strong>Exact-name retention</strong> is what the table reports: how often the same five names come back. <strong>Distributional stability</strong> would ask whether the underlying probabilities over typefaces hold steady even when the sampled names differ. <strong>Semantic stability</strong> would ask whether the typographic character of the answer holds even when both the names and the probabilities move. Low exact-name overlap does not by itself mean there is no stable underlying preference: a model sampling from a steady distribution over forty plausible faces will return a different five every time. Nothing here separates that case from an unstable one, and nothing here measures semantic stability at all.</p>
+
+<p>It also constrains study design. Any future test of whether two differently worded briefs produce different recommendations has to clear this noise floor first, and these numbers are what set it.</p>
+
+<h3>Defining retention</h3>
+
+<p>For three five-item responses A, B and C to the same brief from the same model, the primary stability metric is mean pairwise Jaccard similarity</p>
+
+<pre>J(A,B) = |A ∩ B| / |A ∪ B|</pre>
+
+<p>averaged across the three pairwise comparisons and then across briefs. The 0.41, 0.50 and 0.56 figures are that statistic. Intersection over five is a secondary sensitivity measure at 0.55, 0.64 and 0.66, and catalog-only Jaccard at 0.50, 0.62 and 0.65. A third statistic, the intersection of all three responses, averages 2.49 names of five; it is reported here once and used nowhere else, because pairwise Jaccard is the primary construct throughout and the two should not be mixed in one argument.</p>
+
+<h3>Model differences</h3>
+
+<p>The families-named and retention columns are not independent, and the dependence runs one way. A model that answers differently each time accumulates more distinct names over a run for that reason alone, so part of Gemini's wider range is its own instability rather than broader reach. The families-named column is uncorrected here, while the restriction analysis applies exactly the correction that would be needed. A reader is entitled to hold this column to the weaker standard.</p>
+
+<p>Sampling configuration is a second confound on this column specifically, since temperature was set explicitly for two providers and assumed for the third, and retention is the measure most sensitive to it.</p>
+
+<p><strong>Twelve of the twenty-five most-recommended typefaces are common to all three models.</strong> That sounds like agreement until it is compared against something. Pooling every recommendation the three models made and dealing it back out into three sets of the same sizes, so all three have identical taste by construction and differ only in what each happened to draw, those sets shared about twenty of their top twenty-five, and never fewer than sixteen across two thousand attempts. The real models share twelve.</p>
+
+<div class="nullviz wide">
+  <div class="scale">
+    <div class="base"></div>
+    <div class="span" style="left:40.00%;right:13.33%"></div>
+    <div class="ci95" style="left:53.33%;right:20.00%"></div>
+    <div class="pin obs" style="left:13.33%"></div>
+    <div class="pin" style="left:67.33%"></div>
+    <div class="cap obs" style="left:13.33%"><b>12</b>observed</div>
+    <div class="cap" style="left:67.33%"><b>20.1</b>null mean</div>
+  </div>
+  <div class="ticks">
+    <span style="left:13.33%">12</span><span style="left:40.00%">16</span>
+    <span style="left:53.33%">18</span><span style="left:80.00%">22</span>
+    <span style="left:86.67%">23</span>
+  </div>
+  <dl class="rdg">
+    <dt>Observed</dt><dd>Twelve typefaces appear in all three models&rsquo; top twenty-five.</dd>
+    <dt>Expected</dt><dd>Under a null in which the three draw from one pooled distribution and differ only by sampling: mean 20.1, 95 percent interval 18 to 22, full range 16 to 23 across 2,000 simulations.</dd>
+    <dt>Result</dt><dd>The observed overlap falls below every one of the 2,000 simulated values. Probability of an overlap at or below 12 under that null is under 0.0005.</dd>
+    <dt>Boundary</dt><dd>This rejects that specific null. It does not identify why the models differ.</dd>
+  </dl>
+</div>
+<p class="src wide">2,000 draws with replacement from the pooled empirical distribution, each model&rsquo;s recommendation count preserved, seed 20260902 &middot; source: <code>release/null_overlap.json</code></p>
+
+<p>Under the specified null, if the three models were drawing from the same pooled recommendation distribution and differed only through sampling, substantially higher overlap would be expected. Across 2,000 simulations the null mean was 20.1, the range 16 to 23, the 95 percent interval 18 to 22, and the probability of an overlap at or below 12 under 0.0005. The null draws with replacement from the pooled empirical distribution while preserving each model's recommendation count, seed 20260902. The result rejects the specific null of a single shared recommendation distribution with sampling variation. It does not identify the cause of the observed overlap.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">05</div><h2>Popularity is in the picture, and it is not the whole picture</h2><p class="sub">Finding &middot; association with prior usage</p></div></div>
+
+<p>One way to test whether recommendation frequency is strongly associated with prior familiarity is to compare it with how heavily each family is used in the catalog.</p>
+
+<figure class="wide">
+<svg viewBox="-16 0 716 430" role="img" aria-label="Times recommended, ordered by how heavily each family is used in Google Fonts.">
+  <text class="chart-txt" x="0" y="10">usage</text>
+  <g>
+    <text class="chart-txt" x="18" y="26" text-anchor="end">#1</text><text class="chart-lab" x="150" y="26" text-anchor="end">Roboto</text><rect x="158" y="18" width="152" height="9" fill="var(--mark)"/><text class="chart-txt" x="318" y="26">167</text>
+    <text class="chart-txt" x="18" y="42" text-anchor="end">#2</text><text class="chart-lab" x="150" y="42" text-anchor="end">Google Sans</text><text class="chart-txt" x="160" y="42">never recommended</text>
+    <text class="chart-txt" x="18" y="58" text-anchor="end">#3</text><text class="chart-lab" x="150" y="58" text-anchor="end">Open Sans</text><rect x="158" y="50" width="37" height="9" fill="var(--mark)"/><text class="chart-txt" x="203" y="58">41</text>
+    <text class="chart-txt" x="18" y="74" text-anchor="end">#4</text><text class="chart-lab" x="150" y="74" text-anchor="end">Inter</text><rect x="158" y="66" width="239" height="9" fill="var(--mark)"/><text class="chart-txt" x="405" y="74">262</text>
+    <text class="chart-txt" x="18" y="90" text-anchor="end">#5</text><text class="chart-lab" x="150" y="90" text-anchor="end">Montserrat</text><rect x="158" y="82" width="35" height="9" fill="var(--mark)"/><text class="chart-txt" x="201" y="90">38</text>
+    <text class="chart-txt" x="18" y="106" text-anchor="end">#6</text><text class="chart-lab" x="150" y="106" text-anchor="end">Poppins</text><rect x="158" y="98" width="14" height="9" fill="var(--mark)"/><text class="chart-txt" x="180" y="106">15</text>
+    <text class="chart-txt" x="18" y="122" text-anchor="end">#7</text><text class="chart-lab" x="150" y="122" text-anchor="end">Lato</text><rect x="158" y="114" width="10" height="9" fill="var(--mark)"/><text class="chart-txt" x="176" y="122">11</text>
+    <text class="chart-txt" x="18" y="138" text-anchor="end">#8</text><text class="chart-lab" x="150" y="138" text-anchor="end">Noto Sans JP</text><rect x="158" y="130" width="223" height="9" fill="var(--mark)"/><text class="chart-txt" x="389" y="138">244</text>
+    <text class="chart-txt" x="18" y="154" text-anchor="end">#9</text><text class="chart-lab" x="150" y="154" text-anchor="end">Roboto Condensed</text><rect x="158" y="146" width="38" height="9" fill="var(--mark)"/><text class="chart-txt" x="204" y="154">42</text>
+    <text class="chart-txt" x="18" y="170" text-anchor="end">#11</text><text class="chart-lab" x="150" y="170" text-anchor="end">Arimo</text><rect x="158" y="162" width="4" height="9" fill="var(--mark)"/><text class="chart-txt" x="170" y="170">4</text>
+    <text class="chart-txt" x="18" y="186" text-anchor="end">#12</text><text class="chart-lab" x="150" y="186" text-anchor="end">Roboto Mono</text><rect x="158" y="178" width="26" height="9" fill="var(--mark)"/><text class="chart-txt" x="192" y="186">29</text>
+    <text class="chart-txt" x="18" y="202" text-anchor="end">#13</text><text class="chart-lab" x="150" y="202" text-anchor="end">Oswald</text><rect x="158" y="194" width="32" height="9" fill="var(--mark)"/><text class="chart-txt" x="198" y="202">35</text>
+    <text class="chart-txt" x="18" y="218" text-anchor="end">#14</text><text class="chart-lab" x="150" y="218" text-anchor="end">Noto Sans</text><rect x="158" y="210" width="253" height="9" fill="var(--mark)"/><text class="chart-txt" x="419" y="218">277</text>
+    <text class="chart-txt" x="18" y="234" text-anchor="end">#15</text><text class="chart-lab" x="150" y="234" text-anchor="end">Raleway</text><rect x="158" y="226" width="3" height="9" fill="var(--mark)"/><text class="chart-txt" x="169" y="234">3</text>
+    <text class="chart-txt" x="18" y="250" text-anchor="end">#16</text><text class="chart-lab" x="150" y="250" text-anchor="end">DM Sans</text><rect x="158" y="242" width="11" height="9" fill="var(--mark)"/><text class="chart-txt" x="177" y="250">12</text>
+    <text class="chart-txt" x="18" y="266" text-anchor="end">#17</text><text class="chart-lab" x="150" y="266" text-anchor="end">Nunito</text><rect x="158" y="258" width="112" height="9" fill="var(--mark)"/><text class="chart-txt" x="278" y="266">123</text>
+  </g>
+  <line x1="60" y1="282" x2="670" y2="282" stroke="var(--hair)" stroke-dasharray="2 3"/>
+  <text class="chart-txt" x="60" y="279">ranks 18 to 130 omitted</text>
+  <g>
+    <text class="chart-txt" x="18" y="306" text-anchor="end">#131</text><text class="chart-lab" x="150" y="306" text-anchor="end">Source Serif 4</text><rect x="158" y="298" width="270" height="9" fill="var(--mark)"/><text class="chart-txt" x="436" y="306">296</text>
+    <text class="chart-txt" x="18" y="326" text-anchor="end">#160</text><text class="chart-lab" x="150" y="326" text-anchor="end">Be Vietnam Pro</text><rect x="158" y="318" width="124" height="9" fill="var(--mark)"/><text class="chart-txt" x="290" y="326">136</text>
+    <text class="chart-txt" x="18" y="346" text-anchor="end">#187</text><text class="chart-lab" x="150" y="346" text-anchor="end">IBM Plex Serif</text><rect x="158" y="338" width="87" height="9" fill="var(--mark)"/><text class="chart-txt" x="253" y="346">95</text>
+    <text class="chart-txt" x="18" y="366" text-anchor="end">#196</text><text class="chart-lab" x="150" y="366" text-anchor="end">Literata</text><rect x="158" y="358" width="196" height="9" fill="var(--mark)"/><text class="chart-txt" x="362" y="366">215</text>
+    <text class="chart-txt" x="18" y="386" text-anchor="end">#365</text><text class="chart-lab" x="150" y="386" text-anchor="end">GFS Didot</text><rect x="158" y="378" width="101" height="9" fill="var(--mark)"/><text class="chart-txt" x="267" y="386">111</text>
+  </g>
+  <text class="chart-txt" x="158" y="406">times recommended</text>
+</svg>
+<figcaption>ordered by how heavily each family is used, most-used<br>first · bar length is how often the models recommended it<br>· ranks 18 to 130 are omitted, as is the icon font<br>Material Icons at rank 10</figcaption>
+</figure>
+<p class="src wide">source: <a href="release/rank_frequency.csv">release/rank_frequency.csv</a> &middot; <a href="release/usage_correlation.csv">release/usage_correlation.csv</a></p>
+
+<p>The case pairs are the firm part of this analysis and they do not depend on any correlation statistic. Raleway is the fifteenth most-used family in the library and was recommended three times. Source Serif 4 sits at usage rank 131 and was recommended 296 times. Literata at 196 was recommended 215 times. All three are free, so availability does not separate them.</p>
+
+<p><strong>Recommendation frequency is positively associated with prior usage frequency under this measure, but usage frequency alone does not account for the observed recommendation distribution.</strong> These cases show that catalog usage rank is not sufficient to determine recommendation frequency. They show nothing about what the ordering does follow. Catalog prevalence, recommendation frequency, model familiarity and semantic fit are four different things, and this analysis separates none of them.</p>
+
+<p>The usage ranking itself needs care, because it records Google Fonts usage rather than a direct measure of designers' typeface preferences. Google Sans at rank 2 is Google's own brand face, Material Icons at 10 is not a text face, and Arimo at 11 is an Arial substitute picked for metric compatibility. None is something a designer would put on a client's brand, so their absence from the recommendations says nothing. All three are omitted from the chart above for that reason and included in the correlation below, which is why the two are not two views of one computation. Raleway and Source Serif 4 are ordinary text faces, which is why they make the cleaner comparison.</p>
+
+<div class="flagbox">
+  <span class="h">The correlation, specified</span>
+  <p>Spearman's rho = 0.31, over all 1,944 Latin-carrying catalog families on Latin-only briefs, with never-recommended families included as zeros, ties at midranks, and Google Sans, Material Icons and Arimo included.</p>
+  <p>It is specification-dependent and should never be quoted without one: 0.34 over recommended families only, 0.43 over all briefs, 0.18 as a Pearson coefficient on the same population. The claim above rests on the case pairs rather than on the coefficient.</p>
+</div>
+
+<h3>Disclosure</h3>
+
+<p>I previously ran public relations at Adobe for several typefaces appearing in these results. Source Sans 3 and Source Serif 4 descend from Source Sans and Source Serif. Noto Sans JP is Source Han Sans under its Google name. The share of recommendations falling to families from that work is recoverable from the released rank-frequency file, and is not restated here.</p>
+
+<p>This is a disclosure about my relationship to some of the outputs. It is not evidence that the press cycle put those families where they are, and nothing in the analysis is adjusted for it. A reader weighing any interpretation about professional discourse should know it.</p>
+
+<div class="shead exp"><div class="shead-in"><div class="snum">06</div><h2>Change the candidate universe and the behavior changes</h2><p class="sub">Finding &middot; the one controlled manipulation, with a preregistered control</p></div></div>
+
+<p class="anchor">One sentence in the prompt moves the distribution. A grammatically identical sentence does not.</p>
+
+<p>The same briefs went back to Claude and ChatGPT with one sentence added: recommend only typefaces available in Google Fonts. For the comparison below, only recommendations resolving to catalog families are counted, so removing licensed options cannot itself produce the difference. With the placebo control below it, this is the part of the study that directly manipulates a constraint and includes a control. It is also the section where the analysis moves from counts to the identities of the families that changed.</p>
+
+<div class="cond wide">
+  <div class="row">
+    <div class="who">Open<i>No sentence added</i></div>
+    <div class="track"><span class="dot" style="left:20.00%"></span></div>
+    <div class="val">73<em>reference draw</em></div>
+  </div>
+  <div class="row">
+    <div class="who">Catalog constraint<i>&ldquo;&hellip;only typefaces available in Google Fonts.&rdquo;</i></div>
+    <div class="track mark"><span class="ci" style="left:57.50%;right:10.00%"></span><span class="dot" style="left:73.00%"></span></div>
+    <div class="val">94.2<em>95% CI 88&ndash;101</em></div>
+  </div>
+  <div class="row">
+    <div class="who">Placebo<i>&ldquo;&hellip;only typefaces that include a bold weight.&rdquo;</i></div>
+    <div class="track"><span class="ci" style="left:12.50%;right:75.00%"></span><span class="dot" style="left:19.25%"></span></div>
+    <div class="val">72.7<em>95% CI 70&ndash;75</em></div>
+  </div>
+  <div class="axis"><div></div><div class="t">
+    <span style="left:12.50%">70</span><span style="left:37.50%">80</span>
+    <span style="left:62.50%">90</span><span style="left:87.50%">100</span></div><div></div></div>
+</div>
+<p class="src wide">distinct catalog families on matched draws of 564 recommendations &middot; Latin-only briefs, Claude and ChatGPT &middot; source: <code>release/restriction.csv</code></p>
+
+<p>The right way to read it is as a constraint response. When the most available options are removed, how does the recommendation distribution change?</p>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Latin-only briefs, catalog faces only</th><th>Open</th><th>Restricted</th></tr></thead>
+  <tbody>
+    <tr><td>Distinct catalog families, raw</td><td>73</td><td>117</td></tr>
+    
+    <tr><td>Share on the top five</td><td>37.4%</td><td>24.7%</td></tr>
+  </tbody>
+</table></div>
+<p class="src wide">source: <a href="release/restriction.csv">release/restriction.csv</a></p>
+
+<p>The raw counts are not comparable. The open condition produced 1,260 recommendation slots and 1,278 named rows once compound fields are split, of which 564 were catalog faces. The restricted condition produced 1,260 rows and slots with no compound fields, of which 1,255 were catalog faces. More draws find more distinct families whatever the underlying behavior. Drawing the restricted run down to the same 564 recommendations gives a mean of <strong>94.2 families against 73, an increase of 29.1 percent</strong>, with a 95 percent interval of 88 to 101. The top-five share is a proportion rather than a count and is unaffected by the correction; after rarefaction it holds at 25.1 percent.</p>
+
+<p>Novel families are a separate count and a larger one. Across matched draws the restricted run named a mean of <strong>34.5 families the open run did not</strong>, 95 percent interval 29 to 41, and 52 across the full restricted set. Eight families went the other way, appearing openly and not under restriction. The net difference of 21 is the difference between those two flows, not a count of new names.</p>
+
+<p>The sharpest case is briefs asking for an elegant Latin text face. Open, the eight most common answers were Garamond Premier Pro, Minion Pro, Arno Pro, Bembo, Canela, Optima, Garamond and Baskerville: every one licensed, not one in the catalog. Restricted, the same briefs returned Cormorant Garamond, EB Garamond, Libre Baskerville, Crimson Pro, Spectral and Playfair Display. EB Garamond was named zero times across the open Latin recommendations and 35 times across the restricted ones.</p>
+
+<p>Stated exactly: under this protocol, adding the catalog constraint changes the recommendation distribution. It produces more distinct catalog families in matched draws and surfaces families that do not appear in the open condition.</p>
+
+<p>The useful consequence is methodological. Pointing a model at a defined type universe is not only an implementation choice, it is an experimental variable with a measurable effect, and one that a placebo shows is specific to what is constrained. So the question worth asking about a catalog-grounded system is not whether a model can search a catalog, which is uninteresting, but what access to a defined universe changes about the recommendations a designer actually receives. That question has a number attached to it, which is the only reason it is worth asking this way.</p>
+
+<h3>The placebo control</h3>
+
+<p>The obvious objection is that the sentence works because it is a constraint, not because of what it constrains. A control was preregistered before it ran, with the decision rule fixed in advance, and the placebo sentence was <em>recommend only typefaces that include a bold weight</em>. It is a genuine, checkable set-constraint of the same grammatical form as the catalog sentence, on a property unrelated to licensing or catalog membership, and it eliminates essentially nothing, since almost every family a model would name has a bold weight. The same 42 Latin-only briefs went to the same two models at the same settings, 252 calls.</p>
+
+<div class="scroll wide"><table>
+  <thead><tr><th>Latin-only briefs, catalog faces only</th><th>Open</th><th>Restricted</th><th>Placebo</th></tr></thead>
+  <tbody>
+    <tr><td>Catalog recommendations</td><td>564</td><td>1,255</td><td>636</td></tr>
+    <tr><td>Distinct catalog families, raw</td><td>73</td><td>117</td><td>75</td></tr>
+    <tr><td>Distinct catalog families, matched draws</td><td>73</td><td>94.2</td><td>72.7</td></tr>
+    <tr><td>95 percent interval</td><td>&mdash;</td><td>88 to 101</td><td>70 to 75</td></tr>
+    <tr><td>Change against 73</td><td>&mdash;</td><td>+29.1%</td><td>&minus;0.4%</td></tr>
+    <tr><td>Share on the top five</td><td>37.4%</td><td>24.7%</td><td>36.9%</td></tr>
+    <tr><td>Novel families, matched draws</td><td>&mdash;</td><td>34.5</td><td>11.8</td></tr>
+  </tbody>
+</table></div>
+<p class="src wide">preregistration: <a href="preregistration.md">preregistration.md</a> &middot; result: <a href="placebo_result.md">placebo_result.md</a></p>
+
+<p><strong>The placebo did not widen the set.</strong> Its matched-draw mean was 72.7 families against 73 in the open condition, while the catalog restriction produced 94.2. The top-five share barely moved, 37.4 to 36.9 percent, against 37.4 to 24.7 under the catalog sentence. Its novel families, a mean of 11.8 on matched draws and 13 in the observed set, are ordinary substitutions such as PT Sans and Cardo, and every family it shared with the open condition also appears in the restricted run. It found nothing the catalog constraint did not.</p>
+
+<p>Three manipulation checks ran before the breadth analysis. The model registered the constraint, mentioning weight in 49.9 percent of its reasons against 25.4 percent in the open condition. The confirmed non-catalog share fell 4.4 points rather than staying flat, so the sentence did remove a little licensed type, about a ninth of what the catalog sentence removed, which biases the placebo toward widening rather than away from it. And seven of the 75 recommended families carry no bold weight in the catalog record, a compliance rate of 90.7 percent that does not affect a count of families.</p>
+
+<p>One check behaved worse than expected and it is worth recording. The catalog-restricted run mentions Google Fonts in only 2.6 percent of its reasons while having driven the non-catalog share from 49.3 percent to 0.1 percent. A model can obey a constraint completely without discussing it, so a low mention rate is not evidence that a sentence was ignored. The check is informative in one direction only.</p>
+
+<h3>Two things this does not show</h3>
+
+<p><strong>A constraint alone did not widen the set.</strong> The worry was that adding any rule converts an open generation task into a constraint-satisfaction task, and that the conversion rather than the catalog does the work. The placebo above tests exactly that, and provides no evidence that the widening observed under the catalog constraint is caused simply by adding a rule. A registered, grammatically matched rule produced no widening at all.</p>
+
+<p><strong>It may not be specific to this catalog.</strong> The catalog sentence names an enumerable list. The placebo names a property. A model may respond differently to a list than to a predicate, and that difference is specificity of reference rather than constraint satisfaction. So the result supports an effect that is catalog-specific or named-list-specific, and the two are not separated here. Distinguishing them needs a further arm naming a different finite catalog.</p>
+
+<p><strong>Licensing removal is untested.</strong> The catalog sentence deletes Minion, Sabon and Graphik from the answer space and the model must substitute, which could produce the widening on its own. That would refine the mechanism rather than overturn the finding, since the models held those families either way, but the reason for the withholding would change. The next control is <em>recommend only typefaces that are free for commercial use</em>, which constrains on licensing without naming a catalog.</p>
+
+<p>And it is not evidence that the wider set is better. Nothing here scores a recommendation, so a sentence that produces a third more of the catalog produces more, and only more.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">07</div><h2>How far the evidence goes</h2><p class="sub">Synthesis &middot; claim boundaries</p></div></div>
+
+<p>Claims about this kind of behavior run from very weak to very strong, and most of the available vocabulary is stronger than the evidence. The ladder below marks the boundary.</p>
+
+<div class="ladder">
+  <div class="rung"><div class="i">1</div><div class="n">Output variation</div><p>Output changes when the prompt changes or when sampling is repeated. Established, and trivially so.</p></div>
+  <div class="rung here"><div class="i">2</div><div class="n">Observed association</div><p>Properties of a brief are associated with statistics of the output, on a design balanced well enough that the association is not confounded. <strong>This audit.</strong></p></div>
+  <div class="rung"><div class="i">3</div><div class="n">Directional association</div><p>A particular semantic input systematically favors particular typographic characteristics. Two incidental observations here point at it. Not established.</p></div>
+  <div class="rung"><div class="i">4</div><div class="n">Stable relationship</div><p>The association survives repeated sampling, wording changes and other robustness tests. Exact-name retention is measured below and is low; the rest is untested.</p></div>
+  <div class="rung"><div class="i">5</div><div class="n">Semantic matching</div><p>The relationship holds on what a description means rather than the words it uses. Untestable in this design.</p></div>
+  <div class="rung"><div class="i">6</div><div class="n">Reliable mapping</div><p>Stable across repetitions, across paraphrase, and across different people describing the same project.</p></div>
+  <div class="rung"><div class="i">7</div><div class="n">Selection</div><p>The mapping applied to a defined candidate set under a criterion.</p></div>
+  <div class="rung"><div class="i">8</div><div class="n">AI-assisted selection</div><p>A system that meaningfully assists a designer under real design constraints.</p></div>
+</div>
+
+<p class="anchor">The audit sits on rung two. It provides the baseline needed to investigate whether observed recommendation differences reflect meaningful sensitivity to briefs, candidate universes and constraints, and eventually whether those differences improve human selection.</p>
+
+<p>It does not establish rungs four through eight.</p>
+
+<p>Read downward the ladder is a claim boundary. Read upward it is a sequence of experiments, each of which has to succeed before the next is worth running. Output variation is trivially established. Association between brief and output is what this study measures. Whether those associations reflect meaningful typographic characteristics is untested, as is whether they hold under repeated sampling, whether they survive paraphrase and a change of vocabulary, whether the recommendations are useful to anyone, and whether they improve an actual selection. Each of those is a separate study and none of them has been run. The ladder is short, but the distance between rungs two and eight is where most of the unresolved work lies.</p>
+
+<div class="verdicts"><div><h3>What the audit establishes</h3><ul class="vlist">
+  <li>Language models produce a highly concentrated recommendation space for typography. Ten families take 26.0 percent of all named typeface mentions; exactly forty are required to reach half.</li>
+  <li>Different models produce meaningfully different distributions, and their overlap is lower than a pooled-draw null predicts. That points to model-level differences without identifying their cause.</li>
+  <li>Recommendation breadth varies across brief characteristics, on a grid balanced by construction.</li>
+  <li>Within this dataset, the tone slices span the widest range of catalog families and the industry slices the narrowest. These are descriptive spans over slices of unequal size, not ranked effect sizes.</li>
+  <li>Outputs vary substantially across repetitions of an identical brief. Under this protocol, the recommendation set is not fixed across repeated samples of the same brief.</li>
+  <li>Adding a catalog restriction to the prompt changes the recommendation distribution, widening the distinct-family count on matched draws and surfacing families the open condition never returned.</li>
+  <li>Catalog usage alone does not explain the recommendation frequencies observed here, on the evidence of free families with inverted usage and recommendation ranks.</li>
+  <li>A measurable baseline for evaluating AI font-discovery systems. The audit provides a repeatable way to measure recommendation diversity, concentration, catalog reach, popularity effects, constraint sensitivity and run-to-run stability. Those measures can be reused to compare general-purpose models with catalog-grounded, retrieval-augmented and purpose-built discovery systems.</li>
+</ul></div><div><h3>What it does not establish</h3><ul class="vlist">
+  <li>That models understand design intent. Nothing here observes anything inside a model.</li>
+  <li>That there is a stable mapping between design intent and typography. Exact-name retention is low, which constrains any such claim, and distributional and semantic stability were not measured.</li>
+  <li>That the recommended typefaces are semantically appropriate. No criterion of appropriateness exists in this study.</li>
+  <li>That the most frequently recommended typefaces are the best choices. Frequency is production, not endorsement.</li>
+  <li>That broader recommendation sets are better. No recommendation in this study was scored against anything.</li>
+  <li>That the models reached different typefaces for different tones. The dimension analysis measures breadth, not direction.</li>
+  <li>That LLM recommendations are equivalent to professional type selection.</li>
+  <li>That a model can reliably select a typeface for a client.</li>
+  <li>That any model is better at typography. The columns here describe output distributions, not competence.</li>
+  <li>That the five brief dimensions can be ranked by effect. The breadth ratios are descriptive spans over slices of different sizes and category counts, and no comparative test has been run.</li>
+  <li>That design intent has been represented at all. The briefs were authored by me to match tags I chose.</li>
+</ul>
+
+<h3>Four constructs this audit does not measure</h3>
+
+<p>The research program ahead needs four things kept apart. Running them together makes a result uninterpretable, because a face can fit a brief, be well made, and still not be what a designer would pick.</p>
+
+<p><strong>Semantic fit.</strong> Does the typographic character correspond to the intended characteristics of the brief? <strong>Perceived quality.</strong> How strong is the typeface as an artifact, independent of any brief? <strong>Professional preference.</strong> Would a practicing designer choose it? <strong>Client suitability.</strong> Would it work for a specific real client under actual constraints?</p>
+
+<p>None is measured here. Client suitability in particular cannot be measured from synthetic briefs, because it depends on budget, licensing, an existing type system and a client's own taste, none of which these 210 briefs contain.</p></div></div>
+
+<div class="turn"><div>
+<span class="lab">The turn</span>
+<p>None of this tells us whether a designer chooses better type.</p>
+<p class="after">Six sections of measured recommendation behavior, and not one of them scores an answer against a brief. Recommendation and selection are different acts, and only one of them has been observed here.</p>
+</div></div>
+
+<div class="shead"><div class="shead-in"><div class="snum">08</div><h2>Recommendation is not selection</h2><p class="sub">The distinction the rest of the program rests on</p></div></div>
+
+<p><strong>Recommendation.</strong> A model produces a set of plausible typeface candidates in response to a brief.</p>
+
+<p><strong>Selection.</strong> A person or system chooses among a defined candidate set according to an explicit criterion.</p>
+
+<p>This audit measures recommendation. It has no candidate set, because the models supply their own, and no criterion, because nothing here scores an answer. A model producing a typeface that seems appropriate is not, by itself, evidence that it can reliably select type, and the two words are not interchangeable anywhere in this document.</p>
+
+<p>Three consequences follow, and they constrain every number below. Recommendation frequency is not evidence of design quality, because nothing here asks whether a face was any good. A model returning a familiar typeface is not thereby making a poor recommendation, since the familiar face is often the right one. And what this study characterizes is the behavior of an automated recommendation system, not the quality of the decisions a designer makes with it.</p>
+
+<p>Which locates the question this work does not reach. The interesting question is not which typefaces an automated system recommends. It is whether those recommendations help a designer arrive at a better decision, and answering that requires designers, tasks and outcomes that this design does not contain.</p>
+
+<p>That gap is not a minor omission at the edge of the method. It is the boundary between a system that can generate plausible typeface names, which is now ordinary, and a system that is useful inside professional design work, which is not established for any of the three tested here. Nothing in this study should be read as evidence that better recommendation behavior produces better selections. That is the proposition to test, and testing it is a different experiment from this one.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">09</div><h2>Generation, discovery, selection</h2><p class="sub">A three-level model, and where this audit sits</p></div></div>
+
+<p>The recommendation space changes with the brief. This audit does not say why.</p>
+
+<p>A brief carries several signals at once. It describes a business, a medium, an audience, a desired emotional response, and it does all of that in words that carry their own aesthetic freight. Those signals usually point the same way in a real brief, which is why an observational study cannot separate them. A brief tagged playful also contains playful adjectives. When breadth changes, any of those signals could be responsible, and this design cannot say which.</p>
+
+<p>Which points at what this line of work is actually about. The difficulty in AI-assisted font discovery may not be generating enough recommendations, since these systems already generate a large and structured space of them. The harder problem is turning that space into one a designer can trust, interrogate and act on. This audit finds a large, structured and unstable recommendation space, and finds brief characteristics associated with how that space is explored. Whether those associations amount to anything like semantic matching is exactly what it does not establish.</p>
+
+<p>AI-assisted font discovery is no longer hypothetical. Purpose-built systems are already putting real type catalogs into conversational interfaces: Monotype released a MyFonts app for ChatGPT in May 2026, covering more than 250,000 fonts across 300 languages and returning licensable recommendations inside the conversation, as a United States beta. That makes the next research question less about whether such systems can recommend fonts and more about what changes when they do.</p>
+
+<p>Several questions follow directly, and none of them is answered here. Each is a next-study question rather than a finding.</p>
+
+<ul class="marked">
+  <li>Does catalog grounding improve relevance?</li>
+  <li>Does grounding reduce generic or unavailable recommendations?</li>
+  <li>Does it increase long-tail discovery?</li>
+  <li>How sensitive are recommendations to intent and constraints?</li>
+  <li>Do recommendations actually improve designer decisions?</li>
+  <li>What is the tradeoff between speed and quality?</li>
+</ul>
+
+<p>The second and third are testable with the harness as it stands, because availability and long-tail reach are both properties of a catalog. The first and fourth need a way to score relevance and intent that this study does not have. The last two need designers and outcomes rather than briefs and counts.</p>
+
+<p>Underneath the list there are three separable problems, and conflating them is what makes assisted font discovery sound either solved or hopeless depending on which one is being discussed.</p>
+
+<div class="model">
+<div class="lvl"><div class="ix">i</div><div class="nm">Generation</div><div class="bd">
+  <p class="q">Can the system produce plausible candidates for a brief?</p>
+  <p class="d">General purpose models already can, at scale, and this study measures that behavior in detail. It is the part that is easiest to demonstrate and the least informative about professional utility.</p></div></div>
+<div class="lvl here"><div class="ix">ii</div><div class="nm">Discovery</div><div class="bd">
+  <p class="q">Can it navigate a meaningful type universe?</p>
+  <p class="d">Partly measurable now. Catalog reach, concentration, constraint response and the long tail are all observable, and the restriction experiment is a first probe at one corner of it.<span class="tagline">This audit sits here, at the baseline</span></p></div></div>
+<div class="lvl"><div class="ix">iii</div><div class="nm">Selection</div><div class="bd">
+  <p class="q">Does it help a designer make a better choice?</p>
+  <p class="d">Not measured here, and not approachable with briefs and counts. It requires human participants, real tasks, explicit decisions, outcomes, and comparison against alternatives.</p></div></div>
+</div>
+
+<p>It does not measure selection, and the work that matters is connecting discovery to it.</p>
+
+<div class="shead"><div class="shead-in"><div class="snum">10</div><h2>The next research problem</h2><p class="sub">Where the baseline points</p></div></div>
+
+<p>The next question is whether the behavior observed here changes when the recommendation system has access to a defined type universe.</p>
+
+<div class="study">
+<h3>One immediate test: Vocabulary or Project?</h3>
+<div class="field"><div class="k">Question</div><div class="v"><p>When the words and the project disagree, which one drives the recommendation?</p></div></div>
+<div class="field"><div class="k">Why now</div><div class="v"><p>It is the direct consequence of this audit's central limitation, and it is the cheapest experiment in the program. It needs no panel, no attribute representation and no new corpus, because the two hypotheses predict different sets of names rather than different distances between them.</p><p>It also moves the work from counting how many typefaces came back to asking what information is driving the recommendation. That is behavioral evaluation rather than any claim about a model's internal reasoning, to which this design has no access. When two signals in a brief conflict, does the system follow the words, the described project, or neither consistently? A system that cannot be characterized that way is harder to improve deliberately, because there is no clear behavioral target against which to evaluate a change.</p></div></div>
+<div class="field"><div class="k">Design</div><div class="v"><p>A conflict design, Stroop-like in structure: put two signals deliberately at odds, make the words say one thing and the described project another, and see which the output follows.</p><p>Take twenty projects with a natural register and twenty with the opposite. Write congruent briefs for each, project plus matching aesthetic vocabulary, and run them through the same harness at three repetitions. Those outputs define two poles. Then write the conflicting brief, the first project's description carrying the second project's aesthetic vocabulary, and run that.</p><p>Score by name overlap against each pole, with the retention figures from this audit setting the noise floor. If the conflicted output sits on the vocabulary pole, the recommendation is driven by the aesthetic words. If it sits on the project pole, the model is reading past them. An intermediate result is the most useful outcome, because it estimates the relative similarity of the conflict response to the two poles. Both poles are model-generated, so this measures similarity to the model's own congruent answers rather than to meanings anyone else recognizes. Testing that is Study 2.</p><p>Two cautions. The poles are the models' own congruent answers, so the question is which of its own two answers a model gives when the signals conflict. And the conflicting briefs have to be genuinely opposed rather than incoherent, or a model may treat them as noise and fall back to a default, so the construction needs a pilot.</p></div></div>
+<div class="field"><div class="k">Result</div><div class="v"><p>A quantitative answer to whether the recommendation follows aesthetic vocabulary or described project, and a first directional analysis in this program, since it compares which faces come back rather than only how many.</p></div></div>
+</div>
+
+<p>The first contribution of this work is not a list of good or bad typefaces. It is a way to observe and measure what an automated font-discovery system actually does. Concentration, catalog reach, popularity relationship, constraint response and run-to-run stability are all quantities that can be computed from stored responses, recomputed by someone else, and compared across systems that work in completely different ways.</p>
+
+<p>Once that behavior is measurable, the same framework can compare systems rather than describe one. The ungrounded general-purpose model is the baseline measured here. The next comparison is a system grounded in a defined type catalog; after that, a retrieval-augmented recommender, a purpose-built font-search experience and, ultimately, a human designer can be evaluated on the same axes. The question is not whether one system produces "better fonts" in the abstract. It is what changes in the recommendation space when different kinds of knowledge and interaction are introduced.</p>
+
+<p>None of these measurements was the point of the study. They exist because the study could not make a responsible claim without them. Reporting concentration required a denominator, which required an enumerable catalog. Reporting that a constraint widened the answer required a matched-draw correction, because more draws find more names whatever the system is doing. Reporting a difference between models required knowing how much an identical brief moves on repetition. Each measure was built to stop a specific wrong conclusion.</p>
+
+<p>The consequence is that the measurements are more durable than the thing measured. Nothing in them depends on the answer coming from a language model. A retrieval system over a type catalog, a purpose-built recommender, a search product, a hybrid, or a human designer given the same briefs all produce a set of names per brief, and all of them can be scored on the same axes. The models tested here will change. The question of whether a discovery system reaches past the obvious will not.</p>
+
+<p>Seven dimensions fall out of what this audit had to measure in order to say anything at all.</p>
+
+<p><strong>Relevance.</strong> Does the recommendation fit the stated design intent? Nothing in this audit measures it, because nothing here scores an answer against a brief.</p>
+
+<p><strong>Constraint fidelity.</strong> Does the system honour explicit requirements, whether script, medium, industry, tone, licensing or catalog availability? The restriction experiment is a first probe at one constraint, and the placebo control shows the response is specific to what is constrained rather than to the presence of a rule.</p>
+
+<p><strong>Discovery.</strong> Does the system surface appropriate typefaces beyond the obvious defaults? Catalog reach and long-tail behavior are the observable proxies, and this audit finds both narrow.</p>
+
+<p><strong>Diversity.</strong> Does it offer meaningful alternatives, or return a small set repeatedly? Concentration and distinct-family counts measure this directly.</p>
+
+<p><strong>Stability.</strong> Does it behave consistently enough to be trusted? Repeated sampling of an identical brief answers this, and the answer here is that agreement between two runs sits between 0.41 and 0.56 by Jaccard.</p>
+
+<p><strong>Intent sensitivity.</strong> Do meaningful changes in a brief produce meaningful changes in the recommendations? Breadth by brief dimension is a first approximation, and a weak one, because it counts how many families appear rather than which.</p>
+
+<p><strong>Human utility.</strong> Does the recommendation improve the designer's workflow or decision? This audit cannot address it, and no measurement of the other six substitutes for it.</p>
+
+<h3>What a useful system would have to optimize</h3>
+
+<p>These dimensions cannot be optimized independently, and most of them have a degenerate solution that scores perfectly and helps nobody.</p>
+
+<ul class="marked">
+  <li>Perfect stability is returning the same five typefaces forever.</li>
+  <li>Perfect diversity is returning arbitrary ones.</li>
+  <li>Perfect constraint fidelity can be bought by collapsing discovery to whatever trivially satisfies the constraint.</li>
+  <li>Maximum novelty reduces relevance, because most of the catalog is wrong for most briefs.</li>
+  <li>Maximum catalog coverage increases availability while saying nothing about whether the covered families were worth surfacing.</li>
+  <li>Relevance without diversity reinforces the defaults the designer already knows.</li>
+  <li>Diversity without human utility is noise presented as choice.</li>
+</ul>
+
+<p>So the problem is not building a single score. A composite number would hide exactly the conflicts that matter, and any system can be tuned to win on one axis by giving up another. The useful question is which region of this space a system occupies and which tradeoffs it has made, which means an evaluation has to report the dimensions together and name the conflicts rather than average them away.</p>
+
+<h3>Why the candidate universe matters</h3>
+
+<p>A general-purpose model recommends from an effectively open universe. A grounded system recommends from a defined and inspectable one, and that difference is what makes availability, licensing, script support, long-tail reach and substitution behavior measurable at all. <strong>The catalog is not merely a source of answers. It becomes part of the experimental apparatus.</strong></p>
+
+<p>This study uses Google Fonts as that apparatus because it is public, enumerable and dated. The same methodology runs against any other defined catalog, and the numbers are comparable only within whichever catalog was used.</p>
+
+<h3>What a serious evaluation would require</h3>
+
+<p>Measuring these dimensions at the level of a real product needs a defined catalog with accurate metadata, licensing and script coverage recorded per family, retrieval to ground against, the surfaces where recommendations are actually delivered, and working designers with real briefs and observed outcomes. Little of that is available to a general research setting, which is part of why this area is under-measured relative to how much is claimed about it.</p>
+
+<p>One requirement sits in tension with the rest. An evaluation program should, where possible, preserve independence between the party building the discovery system and the party evaluating it; otherwise the distinction between product validation and marketing becomes difficult to maintain. A program that had the catalog, the designers and the surfaces would still need its measurements defined in advance, its negative results published, and its instrument open to inspection from outside. That is solvable, but it has to be solved deliberately rather than assumed.</p>
+
+<p>The audit establishes the baseline. The next stage is to determine whether grounding, retrieval, interface design and human interaction can turn that baseline into a more useful form of type discovery, and the only way to know is to measure the same things again on systems built differently.</p>
+
+
+<h3>The evaluation program</h3>
+
+<p>Three proposed studies, none of them run. They are stated here to show what the baseline makes possible, not as results. The sequence runs from system behavior to recommendation utility to workflow outcome, and each stage is only worth attempting if the one before it produced a difference worth chasing.</p>
+
+<p><strong>Study 1. Grounded against general recommendation.</strong> Put the same brief set to four sources: a general-purpose model as measured here, a model grounded in a real and finite type catalog, a purpose-built font search or recommendation system, and human designers where that is feasible. Score every source on the same axes: relevance, catalog validity, diversity, concentration, popularity relationship, long-tail discovery, constraint fidelity, intent sensitivity, run-to-run stability and usefulness. The point is to measure what changes, not to confirm that grounding helps. A grounded system could plausibly return more valid names and less interesting ones, and the design has to be able to detect that outcome rather than assume it away.</p>
+
+<p><strong>Study 2. Recommendation against human selection.</strong> Move from what a system produces to what a designer does with it. Give working designers the same briefs and observe time to shortlist, number of candidates considered, confidence in the choice, quality of the final selection under independent review, satisfaction, perceived usefulness, and whether any unfamiliar but appropriate typeface was discovered. This is where recommendation metrics either earn their keep or fail to, since a system can look better on every axis in Study 1 and change nothing about the decision.</p>
+
+<p><strong>Study 3. Designer and system together.</strong> Test whether assistance changes the process rather than the output list. The question becomes whether assistance makes a designer more effective at finding and choosing type.</p>
+
+<p>This audit and the immediate control are the measurement stage. Everything after them is proposed, and none of the outcomes is known. What a system does in a designer's hands will tell you something your measurements did not catch, and the framework has to absorb that rather than survive it. This is not intended as a benchmark to be run once and treated as a permanent score.</p>
+
+<p>The research does not end when the baseline is established. The baseline is not an answer to the problem of assisted type discovery. It is what makes that problem measurable, and until behavior is measurable there is nothing to compare a change against.</p>
+
+
+
+<div class="method"><div class="method-in"><h2>Method and audit trail</h2><p><strong>Models.</strong> <code>claude-opus-4-5-20251101</code>, <code>gpt-5.5-2026-04-23</code> and <code>gemini-3.1-pro-preview</code>, recorded per call.</p>
+
+<p><strong>Repetition.</strong> Three samples per brief per model. 210 × 3 × 3 gives 1,890 calls.</p>
+
+<p><strong>Unit of interest.</strong> Not the individual recommendation. The distribution of recommendations produced across repeated prompts. A single good recommendation says very little; patterns across thousands say what the system tends to do.</p>
+
+<p><strong>Two counts.</strong> 1,890 calls at five recommendations each give <strong>9,450 recommendation slots</strong>. Some responses put more than one family in a single font field, and the normalizer splits those into separate rows, adding 108 named-family mentions. Every share in this document is computed over the <strong>9,558 named typeface mentions</strong>, not over slots. The restricted run contained no compound fields. The response log holds 5,044 lines against 3,780 unique keys; 1,264 superseded retry attempts are excluded under last-wins deduplication, and all 1,890 retained calls returned five parsed names.</p>
+
+<p><strong>Prompt.</strong> Held constant across all calls. Only the brief text varied, plus one appended sentence in the restricted condition.</p>
+
+<pre>Brief:
+{brief}
+
+Recommend exactly five typefaces for this brief.{condition}
+
+Respond with only a JSON object in this exact shape and
+nothing else:
+{"recommendations": [{"font": "...", "reason": "..."}]}
+
+Each reason should be one sentence.</pre>
+
+<p>The prompt deliberately avoids every provider's native structured-output feature. Those features differ, so using each would mean three instruments producing numbers that look comparable and are not. Asking all three for the same JSON in the same words keeps the machinery identical. The cost is a handful of malformed responses, recorded as outcomes rather than dropped.</p>
+
+<p><strong>Sampling.</strong> Temperature 1.0 was sent explicitly to Claude and Gemini. It was omitted for ChatGPT, so its effective sampling behavior was inferred rather than observed. Because repetition stability is one of the principal outcomes here, the cross-model retention comparison should be treated as provisional unless that behavior can be independently verified. This limits the comparison across models, not the within-model results. No top-p and no seed were supplied to any provider.</p>
+
+<p><strong>Response ceiling.</strong> <code>max_tokens</code> was not held constant. It was 4,096 for 60 calls, 8,192 for 570 and 16,384 for 630, raised in response to Gemini truncating. Every retained open-condition record still parsed exactly five names, so the change affects which attempt survived rather than how many recommendations were counted. Because the change was prompted by one provider's behavior it is not independent of model, and a sensitivity check by ceiling period has not been run.</p>
+
+<p><strong>Catalog.</strong> Exact returns from the Google Fonts Web Fonts Developer API on 1 September 2026, stored with a checksum of the response. 1,955 families, of which 1,944 carry Latin.</p>
+
+<p><strong>What counts as a family.</strong> A catalog family is one entry as the API returns it. Individual styles, weights and optical sizes collapse into their family, so Source Serif 4 Regular and Source Serif 4 Bold are one family. A recommendation resolving to no catalog entry is a non-catalog recommendation, counted and bucketed separately rather than discarded, and non-catalog names are not resolved to any family denominator because none exists for them.</p>
+
+<p><strong>Name resolution.</strong> Every returned string was matched to a catalog family, a known non-catalog family, or unresolved, through rules written to a log with the original string, the chosen match and the match method, reviewed by hand. Judgment calls are flagged in that log. 1,016 names, 10.6 percent, carry a review judgment. Excluding those unresolved classification judgments reduces top-ten concentration from 26.0 to 24.0 percent, catalog families from 228 to 226, and the outside-catalog share from 30.8 to 33.2 percent. The restriction result is the more sensitive of the two headline findings, moving from +29.3 percent to +26.1 percent. Both survive; neither is unaffected.</p>
+
+<h3>Ordering discarded</h3>
+
+<p>Each response returns five names in sequence. No analysis uses that order, so a face named first every time and one named fifth every time are counted identically. Within-response rank is the one signal in the dataset that goes unused.</p>
+<h3>Sources and release</h3>
+<p>Source for the opening: Monotype, <em>2024 Global Font Use &amp; Forecasting Survey Report</em>, conducted by the Monotype Foundry Team with Censuswide, fielded November 2024. 4,777 respondents across more than 13 countries in 6 languages. Figures cited: 91 percent see potential for AI tools in the type industry; 62 percent do not use AI to choose or design typefaces; 23 percent name finding the right font as their biggest pain point, ahead of testing fonts at 17 percent, licensing at 13 percent and management at 12 percent.</p>
+
+<p>The four most-valuable-application figures come from Monotype's press release for the same study, <em>Font choice and AI: Monotype's 2024 research on the future of creative workflows</em>, which gives the breakdown the report summarizes as "almost half": visualizing typography in real-world scenarios 45 percent, suggesting font pairings 45 percent, speeding up routine elements of design workflows 43 percent, improving the discovery of new fonts 43 percent. These are four options within one question and are reported here as such. The 62 percent non-adoption figure appears in the report rather than the release.</p>
+
+<p>Source for the grounded-system example: Monotype, <em>Monotype Launches MyFonts App for ChatGPT, Bringing Real Font Discovery Into AI Creative Workflows</em>, press release, 27 May 2026. The app is cited here only as evidence that catalog-grounded conversational discovery exists. Nothing in this study tested it, or any other product.</p>
+
+<p>The study preserves the briefs, catalog snapshot, response records and analysis files needed to rerun the measurements and compare later results against this baseline.</p>
+
+<p>Published alongside this document: the 210 briefs with their five tags, the grid seed 20260831 and the reweighting weights, so the brief set can be rebuilt exactly and judged on its own terms; and the summary tables behind every figure here, including the full rank-frequency distribution, the per-slice counts and the model-level breakdowns, so the concentration shares, HHI and Gini, the breadth spans and the usage correlation can each be recomputed. Raw model responses and the harness itself are not released.</p>
+
+<p>Every numerical claim in this document is listed in <a href="release/figure_map.csv">release/figure_map.csv</a> against the file that supports it. Three claims have no supporting file and are marked as such: two are figures from the Monotype survey, which is an external source, and one is an internal optimization cost from the grid builder. Two further rows are marked as contradicted by the release, which is the honest record of where an earlier draft and the data disagreed.</p></div></div>
+</main>
+</body>
+</html>
