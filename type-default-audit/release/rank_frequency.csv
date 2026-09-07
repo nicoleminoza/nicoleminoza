@@ -1,0 +1,1030 @@
+rank,name,times_recommended,resolution_class,in_google_fonts,google_fonts_usage_rank
+1,Source Sans 3,348,renamed_family,yes,37
+2,IBM Plex Sans,339,exact,yes,47
+3,Source Serif 4,296,renamed_family,yes,131
+4,Noto Sans,277,exact,yes,14
+5,Inter,262,exact,yes,4
+6,Noto Sans JP,244,exact,yes,8
+7,Literata,215,exact,yes,196
+8,Noto Serif,177,exact,yes,70
+9,Roboto,167,exact,yes,1
+10,Fira Sans,162,exact,yes,53
+11,Be Vietnam Pro,136,exact,yes,160
+12,Lora,135,exact,yes,30
+13,Nunito,123,exact,yes,17
+14,Minion Pro,112,known_non_google,no,
+15,GFS Didot,111,exact,yes,365
+16,PT Serif,111,exact,yes,72
+17,IBM Plex Serif,95,exact,yes,187
+18,Cormorant Garamond,93,exact,yes,64
+19,EB Garamond,90,exact,yes,74
+20,Spectral,87,exact,yes,164
+21,Noto Serif JP,83,known_alias,yes,76
+22,Arno Pro,81,known_non_google,no,
+23,Merriweather,78,exact,yes,32
+24,Rubik,72,exact,yes,22
+25,Alegreya,71,exact,yes,232
+26,Quicksand,67,exact,yes,33
+27,M PLUS Rounded 1c,65,exact,yes,107
+28,IBM Plex Sans JP,64,exact,yes,541
+29,PT Sans,63,exact,yes,31
+30,GFS Neohellenic,62,exact,yes,1434
+31,Zen Maru Gothic,60,exact,yes,183
+32,Golos Text,59,exact,yes,276
+33,IBM Plex Mono,53,exact,yes,95
+34,Ubuntu,53,exact,yes,24
+35,Tazugane Gothic,53,known_non_google,no,
+36,Baloo 2,53,exact,yes,239
+37,JetBrains Mono,49,exact,yes,60
+38,Gentium Plus,49,exact,yes,1396
+39,IBM Plex Sans Condensed,49,exact,yes,260
+40,Minion 3,48,known_non_google,no,
+41,Tiempos Text,48,known_non_google,no,
+42,Charter,48,known_non_google,no,
+43,Kazimir,47,known_non_google,no,
+44,Hiragino Sans,46,system_font,no,
+45,Crimson Pro,45,exact,yes,176
+46,Freight Text,45,known_non_google,no,
+47,Public Sans,43,exact,yes,83
+48,Nunito Sans,42,exact,yes,21
+49,Roboto Condensed,42,exact,yes,9
+50,Open Sans,41,exact,yes,3
+51,Playfair Display,39,exact,yes,19
+52,Lyon Text,39,known_non_google,no,
+53,Garamond Premier Pro,39,known_non_google,no,
+54,Comfortaa,39,exact,yes,129
+55,Kosugi Maru,39,exact,yes,367
+56,Skolar,38,known_non_google,no,
+57,Montserrat,38,exact,yes,5
+58,Manrope,37,exact,yes,26
+59,Sabon,37,known_non_google,no,
+60,Oswald,35,exact,yes,13
+61,Source Code Pro,35,exact,yes,55
+62,Literaturnaya,35,known_non_google,no,
+63,PT Root UI,35,known_non_google,no,
+64,Druk Wide,32,known_non_google,no,
+65,Kazimir Text,32,known_non_google,no,
+66,Graphik,31,known_non_google,no,
+67,Shippori Mincho,31,exact,yes,289
+68,Neue Haas Grotesk,30,known_non_google,no,
+69,Roboto Mono,29,exact,yes,12
+70,Baskerville,29,generic_historical_name,no,
+71,BIZ UDPGothic,29,exact,yes,281
+72,Libertinus Serif,28,exact,yes,841
+73,Freight Text Pro,27,known_non_google,no,
+74,Yu Mincho,27,system_font,no,
+75,Lexend,27,exact,yes,78
+76,UD Shin Go,27,known_non_google,no,
+77,Univers,26,known_non_google,no,
+78,Alegreya Sans,26,exact,yes,191
+79,Skolar PE,26,known_non_google_variant,no,
+80,Roboto Serif,26,exact,yes,185
+81,PF DIN Text Pro,25,known_non_google,no,
+82,Lazurski,25,known_non_google,no,
+83,Bebas Neue,24,exact,yes,43
+84,Druk,24,known_non_google,no,
+85,TP Mincho,24,known_non_google,no,
+86,Zen Kaku Gothic New,24,exact,yes,181
+87,Hiragino Mincho,24,system_font,no,
+88,Archivo,23,exact,yes,45
+89,Helvetica Now,23,known_non_google,no,
+90,Fredoka,23,exact,yes,112
+91,Barlow Condensed,22,exact,yes,42
+92,Barlow,22,exact,yes,38
+93,Space Grotesk,22,exact,yes,58
+94,Yu Gothic,22,system_font,no,
+95,Vollkorn,22,exact,yes,179
+96,Klee One,22,exact,yes,728
+97,STIX Two Text,21,exact,yes,275
+98,Fedra Serif,21,known_non_google,no,
+99,Newsreader,21,exact,yes,137
+100,Atlas Grotesk,21,known_non_google,no,
+101,Adobe Caslon Pro,21,known_non_google,no,
+102,Plantin,21,known_non_google,no,
+103,Commissioner,21,exact,yes,283
+104,Anton,20,exact,yes,71
+105,Hiragino Mincho ProN,20,system_font,no,
+106,Noto Sans Mono,19,exact,yes,305
+107,Garamond,19,generic_historical_name,no,
+108,Andika,19,exact,yes,356
+109,Brill,19,known_non_google,no,
+110,Suisse Int'l,18,known_non_google,no,
+111,Dela Gothic One,18,exact,yes,329
+112,Frutiger,18,known_non_google,no,
+113,Atkinson Hyperlegible,17,exact,yes,180
+114,Optima,17,known_non_google,no,
+115,Monument Extended,16,known_non_google,no,
+116,Mercury Text,16,known_non_google,no,
+117,PT Mono,16,exact,yes,240
+118,Founders Grotesk,15,known_non_google,no,
+119,GT America,15,known_non_google,no,
+120,Neue Machina,15,known_non_google,no,
+121,Poppins,15,exact,yes,6
+122,Canela,15,known_non_google,no,
+123,Bembo,15,known_non_google,no,
+124,Fira Sans Condensed,15,exact,yes,194
+125,Söhne,15,known_non_google,no,
+126,Roboto Flex,15,exact,yes,88
+127,DIN Next,15,known_non_google,no,
+128,FF DIN,15,known_non_google,no,
+129,Kiwi Maru,15,exact,yes,649
+130,M PLUS 1p,15,exact,yes,127
+131,Formular,15,known_non_google,no,
+132,Archivo Black,14,exact,yes,25
+133,DIN 2014,14,known_non_google,no,
+134,Akkurat,13,known_non_google,no,
+135,Charis SIL,13,exact,yes,590
+136,PF Centro Serif Pro,13,known_non_google,no,
+137,Exo 2,13,exact,yes,98
+138,Georgia,13,system_font,no,
+139,Pangolin,13,exact,yes,459
+140,DM Sans,12,exact,yes,16
+141,Caslon,12,generic_historical_name,no,
+142,Adobe Garamond Pro,12,known_non_google,no,
+143,Didot,12,generic_historical_name,no,
+144,Circe,12,known_non_google,no,
+145,Mulish,12,exact,yes,46
+146,Hiragino Kaku Gothic,12,system_font,no,
+147,Pitch,11,known_non_google,no,
+148,Chakra Petch,11,exact,yes,158
+149,Fedra Sans,11,known_non_google,no,
+150,Helvetica Neue,11,known_non_google,no,
+151,CoFo Sans,11,known_non_google,no,
+152,Varela Round,11,exact,yes,159
+153,Iosevka,11,known_non_google,no,
+154,Fira Mono,11,exact,yes,379
+155,Kozuka Mincho,11,known_non_google,no,
+156,Tsukushi Mincho,11,known_non_google,no,
+157,PT Sans Narrow,11,exact,yes,121
+158,Tsukushi A Round Gothic,11,known_non_google,no,
+159,Lato,11,exact,yes,7
+160,Knockout,10,known_non_google,no,
+161,Aptos,10,system_font,no,
+162,Cardo,10,exact,yes,206
+163,Impact,10,system_font,no,
+164,Fraunces,10,exact,yes,91
+165,LINE Seed JP,10,exact,yes,225
+166,Academy,10,known_non_google,no,
+167,AXIS Font,10,known_non_google,no,
+168,Morisawa UD Shin Go,10,known_non_google,no,
+169,Piazzolla,10,exact,yes,875
+170,Onest,10,exact,yes,193
+171,Fira Code,9,exact,yes,234
+172,Avenir Next,9,known_non_google,no,
+173,Miller Text,9,known_non_google,no,
+174,Sabon Next,9,known_non_google,no,
+175,Palatino Linotype,9,known_non_google_variant,no,
+176,TT Norms Pro,9,known_non_google,no,
+177,Skolar Greek,9,known_non_google,no,
+178,Shorai Sans,9,known_non_google,no,
+179,Kozuka Gothic Pro,9,known_non_google,no,
+180,Acumin Pro,9,known_non_google,no,
+181,Trade Gothic Next,9,known_non_google,no,
+182,Trajan,9,known_non_google,no,
+183,Sassoon Primary,9,known_non_google,no,
+184,Oranienbaum,9,exact,yes,573
+185,Saira Condensed,8,exact,yes,182
+186,PF Din Text Pro,8,known_non_google,no,
+187,Druk Cyr,8,known_non_google,no,
+188,Palatino,8,known_non_google,no,
+189,Sora,8,exact,yes,73
+190,A-OTF Ryumin Pr6N,8,known_non_google,no,
+191,Tungsten,8,known_non_google,no,
+192,Old Standard TT,8,exact,yes,256
+193,Saira,8,exact,yes,54
+194,Times New Roman,8,system_font,no,
+195,Libre Baskerville,8,exact,yes,59
+196,Noto Serif Display,8,exact,yes,375
+197,Roboto Slab,8,exact,yes,23
+198,Bricolage Grotesque,8,exact,yes,44
+199,Monument Grotesk,7,known_non_google,no,
+200,PF Regal Text,7,known_non_google,no,
+201,Noto Sans Display,7,exact,yes,249
+202,Soyuz Grotesk,7,known_non_google,no,
+203,Akzidenz-Grotesk,7,known_non_google,no,
+204,Tinos,7,exact,yes,229
+205,M PLUS 1 Code,7,exact,yes,1030
+206,Eurostile Bold Extended,7,known_non_google,no,
+207,Petersburg,7,known_non_google,no,
+208,GT Sectra,7,known_non_google,no,
+209,Plus Jakarta Sans,7,exact,yes,40
+210,Gill Sans,7,known_non_google,no,
+211,Trajan Pro,7,known_non_google,no,
+212,Lexie Readable,7,known_non_google,no,
+213,Space Mono,7,exact,yes,169
+214,Univers Next,7,known_non_google,no,
+215,GT Pressura,6,known_non_google,no,
+216,Stapel,6,known_non_google,no,
+217,PF DIN Text Condensed,6,known_non_google,no,
+218,Acumin Pro Condensed,6,known_non_google,no,
+219,Hiragino Kaku Gothic ProN,6,system_font,no,
+220,Averta,6,known_non_google,no,
+221,Bembo Book,6,known_non_google,no,
+222,Requiem,6,known_non_google,no,
+223,Adelle,6,known_non_google,no,
+224,Equity,6,known_non_google,no,
+225,BIZ UDMincho,6,punctuation_or_case,yes,1151
+226,PF Regal Text Pro,6,known_non_google_variant,no,
+227,Gill Sans Infant,6,known_non_google_variant,no,
+228,Neucha,6,exact,yes,543
+229,Neue Haas Grotesk Text,6,known_non_google_variant,no,
+230,Sofia Sans,6,variant_of_catalog_family,yes,170
+231,Recursive,6,exact,yes,842
+232,Pragmatica,6,known_non_google,no,
+233,Whitney,6,known_non_google,no,
+234,PT Serif Pro,6,paid_extension_of,no,
+235,Canela Text,6,known_non_google_variant,no,
+236,Teko,5,exact,yes,115
+237,Suisse Int’l,5,known_non_google,no,
+238,Druk Wide Bold,5,known_non_google,no,
+239,Red Hat Text,5,exact,yes,172
+240,Obviously,5,known_non_google,no,
+241,Roc Grotesk,5,known_non_google,no,
+242,Graphik Condensed,5,known_non_google,no,
+243,Iowan Old Style,5,known_non_google,no,
+244,Warnock Pro,5,known_non_google,no,
+245,Cera Pro,5,known_non_google,no,
+246,Cormorant,5,exact,yes,200
+247,Axis Font,5,known_non_google,no,
+248,Suisse Works,5,known_non_google,no,
+249,Trade Gothic,5,known_non_google,no,
+250,Ryumin,5,known_non_google,no,
+251,Pacifico,5,exact,yes,138
+252,Bodoni PT,5,known_non_google,no,
+253,Proxima Soft,5,known_non_google,no,
+254,Publico Text,5,known_non_google,no,
+255,GFS Artemisia,5,known_non_google,no,
+256,Proxima Nova,5,known_non_google,no,
+257,Eurostile,5,known_non_google,no,
+258,FF DIN Condensed,5,known_non_google,no,
+259,GFS Porson,5,known_non_google,no,
+260,Shantell Sans,5,exact,yes,714
+261,Bungee,4,exact,yes,117
+262,Arial,4,system_font,no,
+263,Work Sans,4,exact,yes,18
+264,Zilla Slab,4,exact,yes,145
+265,Graphik Greek,4,known_non_google,no,
+266,PF Centro Sans Pro,4,known_non_google,no,
+267,Pragmatica Condensed,4,known_non_google,no,
+268,Russo One,4,exact,yes,201
+269,GT Flexa,4,known_non_google,no,
+270,Ginto,4,known_non_google,no,
+271,Libre Franklin,4,exact,yes,67
+272,Univers Next Condensed,4,known_non_google,no,
+273,DIN Pro,4,known_non_google,no,
+274,Axis Std,4,known_non_google,no,
+275,Calluna,4,known_non_google,no,
+276,Adobe Text Pro,4,known_non_google,no,
+277,VAG Rounded,4,known_non_google,no,
+278,Blogger Sans,4,known_non_google,no,
+279,William Text,4,known_non_google,no,
+280,Fedra Serif Greek,4,known_non_google,no,
+281,Mali,4,exact,yes,544
+282,Cabin,4,exact,yes,103
+283,M PLUS 1,4,exact,yes,335
+284,Bank Gothic,4,known_non_google,no,
+285,Bannikova,4,known_non_google,no,
+286,AXIS Font Japanese,4,known_non_google_variant,no,
+287,A1 Mincho,4,known_non_google,no,
+288,Adobe Jenson Pro,4,known_non_google,no,
+289,A1 Gothic,4,known_non_google,no,
+290,UD Reimin,4,known_non_google,no,
+291,BIZ UDGothic,4,punctuation_or_case,yes,565
+292,Liberation Sans,4,known_non_google,no,
+293,Graphik Cyrillic,4,known_non_google,no,
+294,FF Scala,4,known_non_google,no,
+295,Zen Old Mincho,4,exact,yes,297
+296,Bebas Neue Pro,4,paid_extension_of,no,
+297,Avenir,4,known_non_google,no,
+298,FS Me,4,known_non_google,no,
+299,Lobster,4,exact,yes,122
+300,Plantin Infant,4,known_non_google_variant,no,
+301,PT Sans Caption,4,exact,yes,309
+302,Morisawa A1 Gothic,4,known_non_google,no,
+303,Skolar Sans PE Condensed,4,known_non_google_variant,no,
+304,Tiempos Headline,4,known_non_google,no,
+305,Gentium Book Plus,4,exact,yes,1077
+306,Geologica,4,exact,yes,213
+307,Arnhem,4,known_non_google,no,
+308,FF Meta Serif,4,known_non_google_variant,no,
+309,Meiryo,4,system_font,no,
+310,TT Trailers,4,known_non_google,no,
+311,TT Travels Next,4,known_non_google,no,
+312,Arimo,4,exact,yes,11
+313,Anonymous Pro,4,exact,yes,400
+314,Terminus,4,known_non_google,no,
+315,Input Sans Condensed,4,known_non_google,no,
+316,DIN 2014 Condensed,4,known_non_google,no,
+317,Greta Text,4,known_non_google,no,
+318,Bickham Script Pro,4,not_yet_triaged,no,
+319,Untitled Sans,4,known_non_google,no,
+320,SangBleu Empire,4,known_non_google,no,
+321,Freight Sans Pro,4,known_non_google,no,
+322,Founders Grotesk Condensed,3,known_non_google,no,
+323,Alfa Slab One,3,exact,yes,82
+324,Favorit,3,known_non_google,no,
+325,ABC Diatype,3,known_non_google,no,
+326,Avenir Next World,3,known_non_google,no,
+327,TT Firs Neue,3,known_non_google,no,
+328,Degular,3,known_non_google,no,
+329,Mabry,3,known_non_google,no,
+330,Greta Sans Condensed,3,known_non_google,no,
+331,PF DIN Text Condensed Pro,3,known_non_google_variant,no,
+332,Fedra Sans Condensed,3,known_non_google,no,
+333,Trade Gothic Next Condensed,3,known_non_google,no,
+334,Hoefler Text,3,known_non_google,no,
+335,A-OTF Gothic MB101,3,known_non_google,no,
+336,PF Handbook Pro,3,known_non_google,no,
+337,Skolar Latin,3,known_non_google,no,
+338,Didact Gothic,3,exact,yes,336
+339,GT Alpina,3,known_non_google,no,
+340,Kozuka Gothic Pro L,3,known_non_google_variant,no,
+341,Bitter,3,exact,yes,87
+342,Benton Sans Condensed,3,known_non_google,no,
+343,AXIS Font Condensed,3,known_non_google,no,
+344,TP Sky Condensed,3,known_non_google,no,
+345,Raleway,3,exact,yes,15
+346,Futura PT,3,not_yet_triaged,no,
+347,TT Commons Pro,3,known_non_google,no,
+348,Aeroport,3,known_non_google,no,
+349,Greta Text Greek,3,known_non_google,no,
+350,Asap,3,exact,yes,135
+351,Minion Pro Condensed,3,known_non_google,no,
+352,Baskerville Cyrillic,3,known_non_google,no,
+353,Tusker Grotesk,3,known_non_google,no,
+354,Compacta,3,known_non_google,no,
+355,OCR-A,3,known_non_google,no,
+356,Foundry Gridnik,3,known_non_google,no,
+357,Whitman,3,known_non_google,no,
+358,Tsukushi A Old Mincho,3,known_non_google,no,
+359,Jura,3,exact,yes,318
+360,Farnham,3,known_non_google,no,
+361,Harriet,3,known_non_google,no,
+362,Ingeborg,3,known_non_google,no,
+363,Caveat,3,exact,yes,97
+364,A-OTF UD Shin Go,3,known_non_google,no,
+365,Tsukushi Gothic,3,known_non_google,no,
+366,Libertinus Mono,3,exact,yes,1583
+367,TT Chocolates,3,known_non_google,no,
+368,Ubuntu Condensed,3,exact,yes,295
+369,Athelas,3,known_non_google,no,
+370,Aktiv Grotesk,3,known_non_google,no,
+371,ITC Charter,3,known_non_google,no,
+372,Elena,3,known_non_google,no,
+373,Zen Kurenaido,3,exact,yes,801
+374,Hina Mincho,3,exact,yes,776
+375,Sawarabi Mincho,3,exact,yes,262
+376,Shin Go,3,known_non_google,no,
+377,Fedra Serif Pro,3,known_non_google_variant,no,
+378,Heinemann,3,known_non_google,no,
+379,Castledown,3,known_non_google,no,
+380,Axis,3,known_non_google,no,
+381,Amatic SC,3,exact,yes,224
+382,Neue Frutiger,3,known_non_google,no,
+383,Myriad Pro,3,known_non_google,no,
+384,FiraGO,3,known_non_google,no,
+385,Trade Gothic Bold Condensed,3,known_non_google,no,
+386,Jost,3,exact,yes,48
+387,Gothic MB101,3,known_non_google,no,
+388,Hiragino Sans W9,3,system_font_variant,no,
+389,UD Shin Go Heavy,3,known_non_google,no,
+390,Morisawa Gothic MB101,3,known_non_google,no,
+391,A-OTF UD Shin Maru Go Pr6N,3,known_non_google,no,
+392,Publico,3,known_non_google,no,
+393,Chronicle Text,3,known_non_google,no,
+394,Grandstander,3,exact,yes,456
+395,Tiempos,3,known_non_google,no,
+396,Benton Sans,3,known_non_google,no,
+397,UD Digi Kyokasho,3,known_non_google,no,
+398,Utopia,3,known_non_google,no,
+399,DNP Shuei Mincho,3,known_non_google,no,
+400,DIN Next Greek,3,known_non_google,no,
+401,Proto Grotesk,3,not_yet_triaged,no,
+402,FF Tisa,3,known_non_google,no,
+403,FF DIN Condensed Black,3,known_non_google,no,
+404,Octava,3,known_non_google,no,
+405,A-OTF Ryumin,3,known_non_google,no,
+406,GFS Bodoni,3,known_non_google,no,
+407,Minion 3 Variable,3,known_non_google,no,
+408,Druk Condensed Super,3,known_non_google_variant,no,
+409,Halvar Breitschrift,3,known_non_google,no,
+410,Gosha Sans,3,known_non_google,no,
+411,Bree,3,known_non_google,no,
+412,MonoLisa,3,known_non_google,no,
+413,Berkeley Mono,3,known_non_google,no,
+414,DotGothic16,3,exact,yes,629
+415,Zen Kaku Gothic Antique,3,exact,yes,439
+416,OCR-B,3,known_non_google,no,
+417,Maison Neue,3,known_non_google,no,
+418,Roslindale Text,3,known_non_google,no,
+419,Minion 3 Condensed,3,known_non_google,no,
+420,Sawarabi Gothic,3,exact,yes,284
+421,Cambria,3,system_font,no,
+422,Adelle Cyrillic,3,known_non_google,no,
+423,Suisse Int'l Mono,2,known_non_google,no,
+424,Karla,2,exact,yes,61
+425,Euclid Flex,2,known_non_google,no,
+426,Neue Frutiger World,2,known_non_google,no,
+427,Aeonik Pro,2,known_non_google,no,
+428,Bandera Pro Bold,2,known_non_google,no,
+429,Rubik Mono One,2,exact,yes,339
+430,Druk Wide Cyrillic,2,known_non_google,no,
+431,Atkinson Hyperlegible Next,2,exact,yes,423
+432,Cascadia Mono,2,exact,yes,1525
+433,DIN Next Condensed,2,known_non_google,no,
+434,Univers Condensed,2,known_non_google,no,
+435,DIN Next LT Pro Condensed,2,known_non_google,no,
+436,Agrandir,2,known_non_google,no,
+437,Suisse Int'l Condensed,2,known_non_google,no,
+438,Univers Next Pro Condensed,2,known_non_google_variant,no,
+439,GT Maru,2,known_non_google,no,
+440,PF DIN Text Cond Pro,2,known_non_google_variant,no,
+441,FiraGO Condensed,2,known_non_google,no,
+442,Tabular,2,not_yet_triaged,no,
+443,Akira Expanded,2,known_non_google,no,
+444,Kozuka Gothic Pro Heavy,2,known_non_google,no,
+445,FOT-Matisse Pro,2,known_non_google,no,
+446,Tsukushi A Mincho,2,known_non_google,no,
+447,Kurokane,2,known_non_google,no,
+448,Junicode,2,not_yet_triaged,no,
+449,Brioni,2,known_non_google,no,
+450,Lava,2,not_yet_triaged,no,
+451,Neue Frutiger Condensed,2,known_non_google,no,
+452,Morisawa UD Shin Go Conde,2,known_non_google_variant,no,
+453,Fontworks UD Kakugo C80,2,known_non_google_variant,no,
+454,AXIS Font Japanese Condensed,2,known_non_google_variant,no,
+455,Tazugane Info,2,not_yet_triaged,no,
+456,Object Sans,2,not_yet_triaged,no,
+457,M PLUS 2,2,exact,yes,514
+458,HackGen,2,not_yet_triaged,no,
+459,Tipo Pépel,2,not_yet_triaged,no,
+460,Berthold Akzidenz Grotesk,2,known_non_google,no,
+461,DIN Condensed,2,known_non_google,no,
+462,Eurostile Extended Black,2,known_non_google,no,
+463,Freight Display,2,not_yet_triaged,no,
+464,Miller Display,2,not_yet_triaged,no,
+465,Requiem Text,2,known_non_google_variant,no,
+466,Requiem Display,2,known_non_google_variant,no,
+467,Farnham Text,2,known_non_google_variant,no,
+468,Apax,2,known_non_google,no,
+469,Stratos,2,not_yet_triaged,no,
+470,PF DIN Display,2,not_yet_triaged,no,
+471,Skolar Sans PE,2,known_non_google_variant,no,
+472,Liberation Mono,2,known_non_google,no,
+473,Adelle Sans,2,known_non_google_variant,no,
+474,PT Sans Pro,2,paid_extension_of,no,
+475,Mrs Eaves,2,not_yet_triaged,no,
+476,PF DIN Pro,2,known_non_google,no,
+477,Yomogi,2,exact,yes,1107
+478,Yusei Magic,2,exact,yes,695
+479,Hannari Mincho,2,not_yet_triaged,no,
+480,Druk Text Wide,2,known_non_google_variant,no,
+481,Clarendon,2,generic_historical_name,no,
+482,Morisawa Ryumin,2,not_yet_triaged,no,
+483,Kozuka Mincho Pr6N,2,known_non_google_variant,no,
+484,Titling Gothic FB,2,not_yet_triaged,no,
+485,Fedra Serif B,2,known_non_google_variant,no,
+486,Helvetica Now Greek,2,known_non_google,no,
+487,Fedra Serif A,2,known_non_google_variant,no,
+488,Bodoni,2,generic_historical_name,no,
+489,Tahoma,2,system_font,no,
+490,Marmelad,2,exact,yes,710
+491,Sniglet,2,exact,yes,632
+492,Hiragino Maru Gothic ProN,2,not_yet_triaged,no,
+493,Fontworks TsukuARdGothic,2,not_yet_triaged,no,
+494,FOT-Seurat,2,known_non_google,no,
+495,A-OTF Shin Maru Go,2,known_non_google,no,
+496,Josefin Sans,2,exact,yes,85
+497,Greta Text Condensed,2,known_non_google,no,
+498,DIN Pro Bold,2,known_non_google,no,
+499,Axis Std Bold,2,known_non_google,no,
+500,Morisawa Shin Go,2,known_non_google,no,
+501,Crimson Text,2,exact,yes,105
+502,Source Han Sans Japanese,2,known_non_google_variant,no,
+503,Fontworks New Rodin,2,known_non_google,no,
+504,SST JP,2,not_yet_triaged,no,
+505,Omnes,2,not_yet_triaged,no,
+506,TBUD Maru Gothic,2,not_yet_triaged,no,
+507,Morisawa UD Shin Maru Go,2,not_yet_triaged,no,
+508,CMU Serif,2,known_non_google,no,
+509,Newzald,2,not_yet_triaged,no,
+510,ALS Hauss,2,known_non_google,no,
+511,TP Sky,2,known_non_google,no,
+512,PT Serif Caption,2,exact,yes,661
+513,Source Han Mono,2,not_yet_triaged,no,
+514,Helvetica Greek,2,known_non_google,no,
+515,Univers Greek,2,known_non_google,no,
+516,Overpass,2,exact,yes,104
+517,Akzidenz-Grotesk Pro,2,known_non_google_variant,no,
+518,Styrene,2,not_yet_triaged,no,
+519,Styrene A,2,not_yet_triaged,no,
+520,Geometria,2,not_yet_triaged,no,
+521,CoFo Peshka,2,known_non_google,no,
+522,Sentinel,2,not_yet_triaged,no,
+523,DIN 2014 Extra Bold,2,known_non_google_variant,no,
+524,Interstate,2,known_non_google,no,
+525,Univers Next Condensed Black,2,known_non_google,no,
+526,Frutiger Condensed,2,known_non_google,no,
+527,Helvetica Neue Condensed Black,2,known_non_google,no,
+528,Bangers,2,exact,yes,251
+529,Hiragino Maru Gothic,2,not_yet_triaged,no,
+530,Podkova,2,exact,yes,576
+531,Helvetica Now Micro,2,known_non_google_variant,no,
+532,Helvetica Now Text,2,known_non_google_variant,no,
+533,Frutiger Next,2,known_non_google_variant,no,
+534,Wix Madefor Text,2,exact,yes,504
+535,Vela Sans,2,not_yet_triaged,no,
+536,RF Dewi,2,not_yet_triaged,no,
+537,Navigo,2,not_yet_triaged,no,
+538,Ubuntu Mono,2,exact,yes,353
+539,Perpetua,2,not_yet_triaged,no,
+540,Figtree,2,exact,yes,34
+541,Knockout No. 48 Featherweight,2,known_non_google_variant,no,
+542,Acumin Pro ExtraCondensed Black,2,known_non_google_variant,no,
+543,Helvetica Now Condensed Black,2,known_non_google,no,
+544,Benzin,2,known_non_google,no,
+545,Mochiy Pop One,2,exact,yes,730
+546,Mochiy Pop P One,2,exact,yes,1062
+547,Eurostile LT Std Condensed,2,known_non_google_variant,no,
+548,Inconsolata,2,exact,yes,41
+549,SF Mono,2,system_font,no,
+550,Söhne Mono,2,known_non_google_variant,no,
+551,Editorial New,2,known_non_google,no,
+552,ABCDiatype Mono,2,not_yet_triaged,no,
+553,Stick,2,exact,yes,1148
+554,Ogg,2,not_yet_triaged,no,
+555,DIN 1451 Engschrift Bold,2,known_non_google_variant,no,
+556,Microgramma Bold Extended,2,not_yet_triaged,no,
+557,Letter Gothic,2,not_yet_triaged,no,
+558,PF Grand Gothik,2,not_yet_triaged,no,
+559,Value Serif,2,not_yet_triaged,no,
+560,Ogg Text,2,not_yet_triaged,no,
+561,PragmataPro,2,not_yet_triaged,no,
+562,PF Centro Slab Pro,2,not_yet_triaged,no,
+563,Bree Greek,2,known_non_google,no,
+564,Fedra Sans Greek,2,known_non_google,no,
+565,FF Meta Greek,2,known_non_google,no,
+566,PF Encore Sans Pro,2,not_yet_triaged,no,
+567,Bodoni Moda,2,exact,yes,144
+568,Philosopher,2,exact,yes,288
+569,Latin Modern Roman,2,not_yet_triaged,no,
+570,BIZ UDPMincho,2,exact,yes,669
+571,Darker Grotesque,2,exact,yes,493
+572,Helvetica,2,known_non_google,no,
+573,Encode Sans,2,exact,yes,186
+574,Mona Sans,2,exact,yes,409
+575,Input Serif,2,not_yet_triaged,no,
+576,GT America Expanded,1,known_non_google,no,
+577,ABC Favorit Mono,1,known_non_google_variant,no,
+578,Saira Stencil,1,renamed_family,yes,1913
+579,Big Shoulders,1,renamed_family,yes,539
+580,NB International,1,known_non_google,no,
+581,Authentic Sans,1,known_non_google,no,
+582,Suisse Int’l Mono,1,known_non_google,no,
+583,Black Ops One,1,exact,yes,56
+584,Aptos Mono,1,system_font_variant,no,
+585,Apoc,1,known_non_google,no,
+586,SF Pro,1,system_font,no,
+587,Gentium,1,known_non_google,no,
+588,FF Meta,1,known_non_google,no,
+589,Helvetica Now World,1,known_non_google,no,
+590,Kazimir Text Bold,1,known_non_google,no,
+591,Activist,1,not_yet_triaged,no,
+592,Pragmatica Condensed Black,1,known_non_google,no,
+593,TT Firs Neue Condensed ExtraBold,1,known_non_google,no,
+594,Reforma Grotesk,1,known_non_google,no,
+595,TT Firs Neue Condensed,1,known_non_google,no,
+596,Molot,1,known_non_google,no,
+597,Roobert,1,known_non_google,no,
+598,ABC Whyte,1,known_non_google,no,
+599,GT America Condensed,1,known_non_google,no,
+600,Dinamo ABC Arizona,1,known_non_google,no,
+601,DIN Next Compressed,1,known_non_google,no,
+602,Akzidenz-Grotesk Condensed,1,known_non_google,no,
+603,Trim Condensed,1,known_non_google,no,
+604,ABC Ginto,1,known_non_google,no,
+605,Sharp Grotesk,1,known_non_google,no,
+606,GT Walsheim,1,known_non_google,no,
+607,Filson Pro,1,known_non_google,no,
+608,PF DIN Text Pro Condensed,1,known_non_google,no,
+609,Right Grotesk,1,known_non_google,no,
+610,Whitney Condensed,1,known_non_google,no,
+611,Helvetica Neue Black Condensed,1,known_non_google,no,
+612,A-OTF Midashi Go MB31,1,known_non_google,no,
+613,Bebas Kai,1,known_non_google,no,
+614,Univers Ultra Condensed,1,known_non_google_variant,no,
+615,Segoe UI,1,system_font,no,
+616,DNP Shuei Mincho Pr6N,1,known_non_google,no,
+617,Yu Gothic Pr6N Bold,1,system_font_variant,no,
+618,Hakusyu Gyosho,1,known_non_google,no,
+619,Kozuka Gothic,1,known_non_google,no,
+620,Shuei ShogoMincho,1,known_non_google,no,
+621,Stanley,1,not_yet_triaged,no,
+622,Greta Sans,1,known_non_google,no,
+623,Comic Neue,1,exact,yes,257
+624,Comic Sans MS,1,not_yet_triaged,no,
+625,Sassoon Primary Greek,1,known_non_google,no,
+626,Mikado,1,not_yet_triaged,no,
+627,PF Kids Pro,1,not_yet_triaged,no,
+628,PF Schoola Pro,1,not_yet_triaged,no,
+629,Parmigiano Text,1,not_yet_triaged,no,
+630,Baskerville Original Pro,1,not_yet_triaged,no,
+631,SangBleu Republic,1,not_yet_triaged,no,
+632,Baskerville PT,1,not_yet_triaged,no,
+633,William,1,not_yet_triaged,no,
+634,Austin Cyrillic,1,not_yet_triaged,no,
+635,Hiragino Sans W3,1,system_font_variant,no,
+636,Axis Std Condensed,1,known_non_google,no,
+637,Hiragino Kaku Gothic ProN W3,1,system_font_variant,no,
+638,Shuei MaruGothic,1,not_yet_triaged,no,
+639,Ivar,1,not_yet_triaged,no,
+640,TT Livret,1,not_yet_triaged,no,
+641,Aktiv Grotesk Condensed,1,known_non_google,no,
+642,Tazugane Gothic Condensed,1,known_non_google,no,
+643,Morisawa UD Shin Go NT Conde90,1,known_non_google_variant,no,
+644,TP Mincho Condensed,1,known_non_google,no,
+645,UD Shin Go Condensed,1,known_non_google,no,
+646,TP Mincho Low Contrast Condensed,1,known_non_google_variant,no,
+647,Morisawa Shin Go Condensed,1,known_non_google,no,
+648,Fontworks New Rodin ProN Condensed,1,known_non_google_variant,no,
+649,Type Project TP Sky Condensed,1,known_non_google,no,
+650,TheSerif Greek,1,not_yet_triaged,no,
+651,TT Commons,1,not_yet_triaged,no,
+652,Muller,1,not_yet_triaged,no,
+653,Gilroy,1,not_yet_triaged,no,
+654,Yeseva One,1,exact,yes,350
+655,TT Travels,1,not_yet_triaged,no,
+656,Linux Libertine,1,not_yet_triaged,no,
+657,UDEV Gothic,1,not_yet_triaged,no,
+658,Tipo Pèpel,1,not_yet_triaged,no,
+659,Skolar Cyrillic,1,known_non_google,no,
+660,Mongoose,1,not_yet_triaged,no,
+661,Kazimir Display,1,known_non_google_variant,no,
+662,Neue Machina UltraBold,1,known_non_google_variant,no,
+663,Compacta Black,1,known_non_google,no,
+664,Dharma Gothic,1,not_yet_triaged,no,
+665,Manuka,1,not_yet_triaged,no,
+666,Clash Display,1,not_yet_triaged,no,
+667,Saira Semi Condensed,1,exact,yes,395
+668,Adobe Caslon,1,not_yet_triaged,no,
+669,Capitolium,1,not_yet_triaged,no,
+670,MVB Verdigris,1,not_yet_triaged,no,
+671,Rajdhani,1,exact,yes,92
+672,Lyon Display,1,not_yet_triaged,no,
+673,Display optical sizes,1,not_yet_triaged,no,
+674,Farnham Display,1,known_non_google_variant,no,
+675,Mercury Display,1,not_yet_triaged,no,
+676,FOT-Tsukushi A Old Mincho,1,not_yet_triaged,no,
+677,Dancing Script,1,exact,yes,66
+678,Kozuka Mincho Pro,1,known_non_google_variant,no,
+679,Roslindale,1,not_yet_triaged,no,
+680,Tsukushi Antique Gothic,1,not_yet_triaged,no,
+681,Antonia H1,1,not_yet_triaged,no,
+682,PF Square Sans Pro,1,not_yet_triaged,no,
+683,Janson Text,1,not_yet_triaged,no,
+684,Helvetica Now Display,1,known_non_google_variant,no,
+685,Merriweather Sans,1,exact,yes,116
+686,FF Meta Cyrillic,1,known_non_google,no,
+687,Fedra Sans Pro Cyrillic,1,known_non_google_variant,no,
+688,FF Meta Pro Cyrillic,1,known_non_google_variant,no,
+689,Skolar Sans Cyrillic,1,known_non_google_variant,no,
+690,Museo Sans Cyrillic,1,not_yet_triaged,no,
+691,Barlow Semi Condensed,1,exact,yes,125
+692,Encode Sans Condensed,1,exact,yes,311
+693,STIX Two Math,1,exact,yes,949
+694,Milo Serif,1,not_yet_triaged,no,
+695,Graphik LCG,1,known_non_google_variant,no,
+696,Fact,1,not_yet_triaged,no,
+697,FF Scala Sans,1,known_non_google_variant,no,
+698,Outfit,1,exact,yes,28
+699,PF DIN Text Universal,1,not_yet_triaged,no,
+700,Cardea,1,not_yet_triaged,no,
+701,Sorts Mill Goudy,1,exact,yes,364
+702,FF Scala Serif,1,known_non_google_variant,no,
+703,A-OTF Bunkyu Mincho Pr6N,1,not_yet_triaged,no,
+704,JetBrains Sans,1,not_yet_triaged,no,
+705,Tsukushi Maru Gothic,1,not_yet_triaged,no,
+706,Goudy Old Style,1,not_yet_triaged,no,
+707,Chaparral,1,not_yet_triaged,no,
+708,Morisawa UD Kyokashotai,1,not_yet_triaged,no,
+709,Century,1,not_yet_triaged,no,
+710,Lyon Text Greek,1,known_non_google,no,
+711,PF DIN Text Greek,1,not_yet_triaged,no,
+712,PF Marlet Text,1,not_yet_triaged,no,
+713,Futura,1,generic_historical_name,no,
+714,Twinkl,1,not_yet_triaged,no,
+715,Bembo Infant,1,known_non_google_variant,no,
+716,Fabula,1,not_yet_triaged,no,
+717,FF Schulbuch,1,not_yet_triaged,no,
+718,Lexia Readable,1,not_yet_triaged,no,
+719,Heinemann Special,1,known_non_google_variant,no,
+720,Chewy,1,exact,yes,469
+721,TBUDGothic,1,not_yet_triaged,no,
+722,FOT-Rodin Pro,1,not_yet_triaged,no,
+723,Klee,1,not_yet_triaged,no,
+724,FOT-TsukuGo Pro,1,not_yet_triaged,no,
+725,TT Norms Japanese,1,not_yet_triaged,no,
+726,TsukuARdGothic,1,known_non_google,no,
+727,DNP Shuei Maru Gothic,1,not_yet_triaged,no,
+728,FOT-TsukuARdGothic,1,not_yet_triaged,no,
+729,DNP Shuei MaruGo,1,not_yet_triaged,no,
+730,FOT-Seurat Pro,1,known_non_google_variant,no,
+731,FOT-Skip,1,not_yet_triaged,no,
+732,FOT-TsukuB Antique,1,not_yet_triaged,no,
+733,A-OTF UD Shin Go Pr6N,1,known_non_google_variant,no,
+734,Trajan Pro 3,1,known_non_google_variant,no,
+735,SST,1,not_yet_triaged,no,
+736,PT Astra Serif,1,not_yet_triaged,no,
+737,Greta Text Hellenic,1,known_non_google_variant,no,
+738,Greta Text Greek Narrow,1,known_non_google,no,
+739,Fedra Sans Condensed Greek,1,known_non_google,no,
+740,Helvetica Now Display Bold,1,known_non_google_variant,no,
+741,Helvetica Neue Bold,1,known_non_google,no,
+742,FF Meta Bold,1,known_non_google,no,
+743,DIN 1451,1,known_non_google,no,
+744,Andada Pro,1,exact,yes,192
+745,Newton,1,not_yet_triaged,no,
+746,Monotype Shorai Sans,1,known_non_google,no,
+747,Izhitsa,1,not_yet_triaged,no,
+748,Adobe Garamond Premier Pro,1,known_non_google,no,
+749,Dante MT Pro,1,not_yet_triaged,no,
+750,Lexicon,1,not_yet_triaged,no,
+751,Museo Sans Rounded,1,not_yet_triaged,no,
+752,FOT-UD Maru Gothic Large,1,not_yet_triaged,no,
+753,Fontworks UD Marugo Large,1,not_yet_triaged,no,
+754,TP Sky Round,1,known_non_google_variant,no,
+755,Filson Soft,1,not_yet_triaged,no,
+756,Guardian Egyptian,1,not_yet_triaged,no,
+757,Gen Jyuu Gothic,1,not_yet_triaged,no,
+758,FOT-Seurat ProN,1,known_non_google_variant,no,
+759,Faustina,1,exact,yes,304
+760,Dalat,1,not_yet_triaged,no,
+761,SVN-Gilroy,1,not_yet_triaged,no,
+762,Mekong,1,not_yet_triaged,no,
+763,Itim,1,exact,yes,507
+764,Anek Greek,1,not_yet_triaged,no,
+765,Anziano,1,not_yet_triaged,no,
+766,Nocturno Text,1,not_yet_triaged,no,
+767,Sina Nova,1,not_yet_triaged,no,
+768,Apex Serif,1,not_yet_triaged,no,
+769,Fengardo Neue,1,not_yet_triaged,no,
+770,Nocturno,1,not_yet_triaged,no,
+771,Alternate Gothic,1,not_yet_triaged,no,
+772,DIN 2014 Cyrillic,1,known_non_google,no,
+773,Plantin Pro,1,known_non_google_variant,no,
+774,Adobe Garamond,1,not_yet_triaged,no,
+775,Franklin Gothic,1,not_yet_triaged,no,
+776,UD Digi Kyokasho N-R,1,known_non_google_variant,no,
+777,A P-OTF RyuMin,1,not_yet_triaged,no,
+778,Morisawa Shorai Sans,1,known_non_google,no,
+779,Scala,1,not_yet_triaged,no,
+780,Computer Modern,1,not_yet_triaged,no,
+781,din-2014,1,known_non_google,no,
+782,Kinuta Marumin Fuji,1,not_yet_triaged,no,
+783,FOT-Kurokane,1,not_yet_triaged,no,
+784,Signifier,1,not_yet_triaged,no,
+785,Toppan Bunkyu Mincho,1,not_yet_triaged,no,
+786,Pragma ND,1,not_yet_triaged,no,
+787,Chivo,1,exact,yes,218
+788,Red Hat Mono,1,exact,yes,475
+789,PF Din Text,1,not_yet_triaged,no,
+790,Dia,1,not_yet_triaged,no,
+791,Sangbleu Republic,1,not_yet_triaged,no,
+792,Freight Display Pro,1,not_yet_triaged,no,
+793,Suisse Intl,1,known_non_google,no,
+794,Suisse Int'l Cyrillic,1,known_non_google,no,
+795,Suisse Intl Cyrillic,1,known_non_google,no,
+796,ALS Sector,1,not_yet_triaged,no,
+797,Golos,1,not_yet_triaged,no,
+798,PP Neue Machina,1,known_non_google,no,
+799,Interstate Condensed,1,known_non_google,no,
+800,Interstate Bold Condensed,1,known_non_google,no,
+801,Pragmatica Extended,1,known_non_google,no,
+802,FF Info Display,1,not_yet_triaged,no,
+803,e-Ukraine,1,not_yet_triaged,no,
+804,Din Pro,1,known_non_google,no,
+805,Frutiger Condensed Black,1,known_non_google,no,
+806,Interstate Condensed Black,1,known_non_google,no,
+807,Amplitude,1,not_yet_triaged,no,
+808,Bureau Grot,1,not_yet_triaged,no,
+809,Tabular Oldstyle (Paratype),1,not_yet_triaged,no,
+810,Frutiger Neue,1,known_non_google_variant,no,
+811,Textbook New,1,not_yet_triaged,no,
+812,Suez One,1,exact,yes,457
+813,Pangram Sans,1,not_yet_triaged,no,
+814,GT America Micro,1,known_non_google_variant,no,
+815,Chaparral Pro,1,not_yet_triaged,no,
+816,Bookmania,1,not_yet_triaged,no,
+817,Financier Display,1,not_yet_triaged,no,
+818,Ruslan Display,1,exact,yes,780
+819,Pobeda,1,not_yet_triaged,no,
+820,Bandera Pro,1,known_non_google,no,
+821,RF Dewi Extended,1,not_yet_triaged,no,
+822,Intro,1,not_yet_triaged,no,
+823,Gagalin,1,not_yet_triaged,no,
+824,UD Shingo,1,known_non_google,no,
+825,Unbounded,1,exact,yes,174
+826,Pangram Sans Rounded,1,not_yet_triaged,no,
+827,Kis Antiqua,1,not_yet_triaged,no,
+828,Academica,1,not_yet_triaged,no,
+829,Kudryashev,1,not_yet_triaged,no,
+830,Academy Pro,1,known_non_google_variant,no,
+831,Petersburg Pro,1,known_non_google_variant,no,
+832,Charter Pro,1,known_non_google_variant,no,
+833,Kudryashev Text,1,not_yet_triaged,no,
+834,Lazurski Pro,1,known_non_google_variant,no,
+835,Kudryashev Pro,1,not_yet_triaged,no,
+836,Kazuraki SP2N,1,not_yet_triaged,no,
+837,Yu Mincho Pr6N,1,system_font_variant,no,
+838,Neacademia,1,not_yet_triaged,no,
+839,New Standard,1,not_yet_triaged,no,
+840,21 Cent,1,not_yet_triaged,no,
+841,Shuei Mincho,1,not_yet_triaged,no,
+842,Kis Antiqua Now,1,not_yet_triaged,no,
+843,Lyon Text Cyrillic,1,known_non_google,no,
+844,Tiempos Text Cyrillic,1,known_non_google,no,
+845,Guardian Text Egyptian,1,not_yet_triaged,no,
+846,Frutiger Greek,1,known_non_google,no,
+847,Involve,1,not_yet_triaged,no,
+848,Paytone One,1,exact,yes,263
+849,Coiny,1,exact,yes,834
+850,"This is not a real typeface, but Whitman is",1,not_yet_triaged,no,
+851,Gerbera,1,not_yet_triaged,no,
+852,Basis Grotesque Cyrillic,1,not_yet_triaged,no,
+853,Ruda,1,exact,yes,477
+854,Steinbeck,1,not_yet_triaged,no,
+855,Favorit Cyrillic,1,known_non_google,no,
+856,Bandera,1,not_yet_triaged,no,
+857,Iosevka Term,1,known_non_google_variant,no,
+858,Univers Next Pro,1,known_non_google_variant,no,
+859,Anybody,1,exact,yes,736
+860,Schibsted Grotesk,1,exact,yes,86
+861,Univers Next Pro Cyrillic Condensed,1,known_non_google_variant,no,
+862,Wix Madefor Display,1,exact,yes,471
+863,TypeBank TBUD Maru Gothic,1,not_yet_triaged,no,
+864,LINE Seed Sans JP,1,not_yet_triaged,no,
+865,Fontworks UD Marugo,1,not_yet_triaged,no,
+866,FF Meta Pro,1,known_non_google_variant,no,
+867,Copperplate Gothic,1,not_yet_triaged,no,
+868,DejaVu Serif,1,not_yet_triaged,no,
+869,Lucida Bright,1,not_yet_triaged,no,
+870,Greta Mono,1,not_yet_triaged,no,
+871,Fedra Mono,1,not_yet_triaged,no,
+872,DejaVu Sans,1,not_yet_triaged,no,
+873,Libertinus Sans,1,exact,yes,1269
+874,Knockout No. 48 Bantamweight,1,known_non_google_variant,no,
+875,Tungsten Compressed,1,known_non_google,no,
+876,Druk Wide Heavy,1,known_non_google,no,
+877,Dharma Gothic E Heavy,1,not_yet_triaged,no,
+878,DIN Next Condensed Heavy,1,known_non_google,no,
+879,Knockout No. 74 Sumatra,1,known_non_google_variant,no,
+880,Acumin Pro ExtraCondensed UltraBlack,1,known_non_google_variant,no,
+881,Tungsten Black,1,known_non_google,no,
+882,Bureau Grot Extra Compressed,1,not_yet_triaged,no,
+883,Action Condensed Black,1,not_yet_triaged,no,
+884,Bureau Grot Compressed Black,1,not_yet_triaged,no,
+885,Founders Grotesk X-Condensed Black,1,known_non_google_variant,no,
+886,GT Pressura Condensed Black,1,known_non_google,no,
+887,Univers Next Pro 930 Extra Black Condensed,1,known_non_google_variant,no,
+888,Trade Gothic Next LT Pro Heavy Condensed,1,known_non_google_variant,no,
+889,Mabry Pro,1,known_non_google_variant,no,
+890,Druk Condensed,1,known_non_google,no,
+891,Knockout No. 94 Ultimate Sumo,1,known_non_google_variant,no,
+892,Action Condensed,1,not_yet_triaged,no,
+893,PP Neue Machina Cyrillic,1,known_non_google,no,
+894,TT Octosquares,1,not_yet_triaged,no,
+895,Grtsk Cyrillic,1,not_yet_triaged,no,
+896,TT Autonomous,1,not_yet_triaged,no,
+897,Vast,1,not_yet_triaged,no,
+898,Halvar,1,not_yet_triaged,no,
+899,Univers 57 Condensed,1,known_non_google_variant,no,
+900,Titillium Web,1,exact,yes,57
+901,DIN 2014 Narrow,1,known_non_google,no,
+902,Agency FB Bold,1,not_yet_triaged,no,
+903,Purista Bold,1,not_yet_triaged,no,
+904,FK Screamer,1,not_yet_triaged,no,
+905,Akzidenz-Grotesk Next Condensed,1,known_non_google_variant,no,
+906,Neue Haas Grotesk Text Condensed,1,known_non_google_variant,no,
+907,Söhne Schmal,1,known_non_google_variant,no,
+908,Avenir Next Greek,1,known_non_google,no,
+909,Cera Round Pro,1,not_yet_triaged,no,
+910,VAG Rounded Next,1,known_non_google_variant,no,
+911,PF Bague Round Pro,1,not_yet_triaged,no,
+912,FS Albert Pro,1,not_yet_triaged,no,
+913,A-OTF Gothic MB101 Mono,1,known_non_google_variant,no,
+914,Source Han Code JP,1,not_yet_triaged,no,
+915,PlemolJP,1,not_yet_triaged,no,
+916,M PLUS Code Latin,1,exact,yes,1883
+917,Input Mono,1,not_yet_triaged,no,
+918,Akkurat Mono,1,known_non_google_variant,no,
+919,ABB Neue,1,not_yet_triaged,no,
+920,GT Super,1,not_yet_triaged,no,
+921,Reggae One,1,exact,yes,1222
+922,Bradford,1,not_yet_triaged,no,
+923,Everett,1,not_yet_triaged,no,
+924,AG Book Pro Bold,1,not_yet_triaged,no,
+925,DM Mono,1,exact,yes,141
+926,Sarasa Gothic J,1,not_yet_triaged,no,
+927,Commit Mono,1,not_yet_triaged,no,
+928,Bank Gothic Bold,1,known_non_google,no,
+929,Compacta Bold,1,known_non_google,no,
+930,Banco Gothic Bold,1,not_yet_triaged,no,
+931,Foundry Gridnik Bold,1,known_non_google,no,
+932,Zen Antique,1,exact,yes,764
+933,M,1,not_yet_triaged,no,
+934,1p,1,not_yet_triaged,no,
+935,FOT-Reggae One,1,not_yet_triaged,no,
+936,Yuji Syuku,1,exact,yes,880
+937,Syne,1,exact,yes,163
+938,FF DIN Pro Condensed Black,1,known_non_google,no,
+939,Druk Wide Super,1,known_non_google_variant,no,
+940,Eurostile Next Heavy Extended,1,known_non_google_variant,no,
+941,Helvetica Now Display Black,1,known_non_google_variant,no,
+942,Tazugane Gothic Heavy,1,known_non_google,no,
+943,A-OTF Gothic MB101 Pr6N U,1,known_non_google_variant,no,
+944,Shorai Sans Heavy,1,known_non_google,no,
+945,DDC Hardware,1,not_yet_triaged,no,
+946,Tazugane Gothic StdN Heavy,1,known_non_google_variant,no,
+947,Hiragino Kaku Gothic StdN W8,1,system_font_variant,no,
+948,Shorai Sans StdN Heavy,1,known_non_google_variant,no,
+949,DIN 2014 Condensed Black,1,known_non_google,no,
+950,Migra,1,not_yet_triaged,no,
+951,ABCMaxi,1,not_yet_triaged,no,
+952,GT America Mono,1,known_non_google_variant,no,
+953,Courier New,1,system_font,no,
+954,Courier Prime,1,exact,yes,177
+955,Minotaur,1,not_yet_triaged,no,
+956,PF Marlet Display,1,not_yet_triaged,no,
+957,Favorit Greek,1,known_non_google,no,
+958,Karloff Negative,1,not_yet_triaged,no,
+959,PF DIN Stencil Pro,1,not_yet_triaged,no,
+960,Fira Sans Extra Condensed,1,exact,yes,391
+961,Zona Pro,1,not_yet_triaged,no,
+962,Kinto Sans,1,not_yet_triaged,no,
+963,Greta Sans Greek,1,known_non_google,no,
+964,Whyte Inktrap,1,not_yet_triaged,no,
+965,Freight Sans,1,not_yet_triaged,no,
+966,Macklin Text,1,not_yet_triaged,no,
+967,Domaine Text,1,not_yet_triaged,no,
+968,Feijoa,1,not_yet_triaged,no,
+969,Noe Text,1,not_yet_triaged,no,
+970,Financier Text,1,not_yet_triaged,no,
+971,GT Super Text,1,not_yet_triaged,no,
+972,Larken Text,1,not_yet_triaged,no,
+973,Garnett,1,not_yet_triaged,no,
+974,PF Beau Sans Pro,1,not_yet_triaged,no,
+975,Panton,1,not_yet_triaged,no,
+976,FS Joey,1,not_yet_triaged,no,
+977,Skolar Sans Greek,1,known_non_google_variant,no,
+978,DIN Next Paneuropean Condensed,1,known_non_google_variant,no,
+979,DIN Next LT Pro Condensed PanEuropean,1,known_non_google_variant,no,
+980,PF Bague Sans Pro,1,not_yet_triaged,no,
+981,Sitka,1,not_yet_triaged,no,
+982,PF Centro Serif,1,not_yet_triaged,no,
+983,FF Meta Serif Condensed,1,known_non_google_variant,no,
+984,Type Together Adelle,1,not_yet_triaged,no,
+985,Baskerville 10 Pro,1,not_yet_triaged,no,
+986,Times New Roman Condensed,1,system_font,no,
+987,Chaparral Pro Condensed,1,not_yet_triaged,no,
+988,Kepler Condensed,1,not_yet_triaged,no,
+989,Murecho,1,exact,yes,531
+990,RocknRoll One,1,exact,yes,712
+991,Prata,1,exact,yes,264
+992,Didona,1,not_yet_triaged,no,
+993,Orchidea Pro,1,not_yet_triaged,no,
+994,Georgia Pro Condensed,1,system_font_variant,no,
+995,Skolar Sans Condensed,1,known_non_google_variant,no,
+996,TT Ramillas,1,not_yet_triaged,no,
+997,Austin Cyr,1,not_yet_triaged,no,
+998,ParaType Didona,1,not_yet_triaged,no,
+999,Linotype Didot,1,not_yet_triaged,no,
+1000,Emigre Lo-Res,1,not_yet_triaged,no,
+1001,Grotesk MWM,1,not_yet_triaged,no,
+1002,Bluu Suuperstar,1,not_yet_triaged,no,
+1003,Alte Haas Grotesk,1,not_yet_triaged,no,
+1004,Pirata One,1,exact,yes,453
+1005,Reforma,1,not_yet_triaged,no,
+1006,Colvert,1,not_yet_triaged,no,
+1007,Magma,1,not_yet_triaged,no,
+1008,Atyp Display,1,not_yet_triaged,no,
+1009,Fedra Serif A Greek,1,known_non_google_variant,no,
+1010,Cinzel,1,exact,yes,118
+1011,Eczar,1,exact,yes,317
+1012,Averia Serif Libre,1,exact,yes,515
+1013,Skolar Sans,1,known_non_google_variant,no,
+1014,Morisawa UD Reimin,1,known_non_google,no,
+1015,Source Han Serif Japanese,1,known_non_google_variant,no,
+1016,A-OTF UD Reimin Pr6N,1,known_non_google_variant,no,
+1017,Forma DJR,1,not_yet_triaged,no,
+1018,Input Sans,1,known_non_google,no,
+1019,Align,1,not_yet_triaged,no,
+1020,FF Unit Slab,1,not_yet_triaged,no,
+1021,Bitstream Charter,1,not_yet_triaged,no,
+1022,Baltica,1,not_yet_triaged,no,
+1023,ITC Officina Serif,1,not_yet_triaged,no,
+1024,Tabular Figures version of Helvetica Neue,1,not_yet_triaged,no,
+1025,Tabular Oldstyle,1,not_yet_triaged,no,
+1026,Tabular Figures enabled in IBM Plex Sans,1,not_yet_triaged,no,
+1027,Faune,1,not_yet_triaged,no,
+1028,Sriracha,1,exact,yes,382
+1029,Signika,1,exact,yes,242

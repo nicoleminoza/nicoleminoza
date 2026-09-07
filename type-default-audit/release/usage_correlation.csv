@@ -1,0 +1,5 @@
+coefficient,population,n,tie_handling,google_sans_material_icons_arimo_included,status,value
+Spearman,"all 1,944 Latin-carrying catalog families, zeros included; recommendations from Latin-only briefs",1944,midranks,yes,PUBLISHED,0.31
+Spearman,"recommended families only, Latin-only briefs",83,midranks,only if recommended,alternative,0.34
+Spearman,"all 1,944 Latin-carrying families, zeros included; recommendations from all briefs",1944,midranks,yes,alternative,0.43
+Pearson,"all 1,944 Latin-carrying catalog families, zeros included; recommendations from Latin-only briefs",1944,n/a,yes,alternative,0.18

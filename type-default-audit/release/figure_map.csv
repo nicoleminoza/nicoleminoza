@@ -1,0 +1,50 @@
+claim,supporting_file,note
+"Monotype survey: 4,777 respondents, 13+ countries, 91% see AI potential",,"external source, not produced by this study"
+"Monotype survey: 45/45/43/43% application values, 23% pain point, 62% non-adoption",,"external source, not produced by this study"
+"1,029 distinct typefaces named",rank_frequency.csv; concentration.csv,
+228 Google Fonts families reached,concentration.csv; rank_frequency.csv,
+89% of catalog recommendations in the 300 most-used,rank_frequency.csv,"regenerate from usage rank column, catalog rows only"
+61% of catalog recommendations in the top 100 most-used,rank_frequency.csv,"regenerate from usage rank column, catalog rows only"
+"Top 10 = 26%, top 25 = 42%, top 40 ~50%, top 100 = 70%",concentration.csv,
+Remaining 929 families = 30%,concentration.csv; rank_frequency.csv,
+Reaching half the total takes about forty names,rank_frequency.csv,cumulate the times_recommended column
+"Catalog is 1,955 families, 1,944 carrying Latin",README.md; reweighting_weights.csv,
+About half of Latin-only recommendations fall outside Google Fonts,breadth_by_slice.csv,"script=latin_only, outside_catalog_share 50.5%"
+Non-catalog share falls to roughly a quarter on non-Latin briefs,breadth_by_slice.csv,"pool the four non-Latin script rows, 25.9%"
+"210 briefs, five tags, marginals 21/35/35/42/70",briefs.json; grid.json,
+"All 347 pairwise cells occupied, cell counts 2 to 14",grid.json,
+Pairwise cost fell from 1297 to 55,,"NO SUPPORTING FILE, harness-internal figure"
+"Grid seed 20260831, grid rebuilds exactly",grid.json,
+Higher-order balance not established,grid.json,three-way occupancy 89 of 90
+"Word bands 9-25 / 24-44 / 42-67, means 16.8 / 31.0 / 55.6, overall 34.5",briefs.json,regenerate from word_count
+"Tone 64 to 140, ratio 2.19",breadth_by_slice.csv,
+"Medium 71 to 133, script 81 to 122, industry 73 to 99, specificity 139 to 163",breadth_by_slice.csv,
+"Specificity: 144 catalog families specific, 163 vague",breadth_by_slice.csv,
+Specificity: 592 distinct names specific against 446 vague,breadth_by_slice.csv,
+Specificity: top-nine share 28.0% against 21.5%,breadth_by_slice.csv,
+Vietnamese briefs stay inside the catalog 94% of the time,breadth_by_slice.csv,"CONTRADICTED. catalog_share is 93.2%. The 94% figure is 1 minus confirmed-outside, which counts unresolved names as catalog faces."
+"69% of the 118 Greek-carrying families used, against 4% of 1,944 Latin",breadth_by_slice.csv,"share_of_eligible_families_used 68.6% Greek, 4.3% Latin"
+Elegant briefs send 47.6% of recommendations outside the catalog,breadth_by_slice.csv,"tone=elegant, outside_catalog_share 47.6%"
+"Restriction: 73 open families against 117 restricted, raw",restriction.csv,
+"Restriction: 564 of 1,278 open, 1,255 of 1,260 restricted",restriction.csv,
+"Restriction: matched draw 94 against 73, an increase of 29 percent",restriction.csv,
+"Restriction: top-five share 37.4% to 24.7%, holding at 25% rarefied",restriction.csv,
+Restriction: about 21 families the open condition never named,restriction.csv,"CONTRADICTED. The file gives novel families 34.5, 95% CI [29,41]. 21 is the net count difference 94-73."
+"Restriction: EB Garamond 0 open, 35 restricted",restriction.csv,
+Model table: distinct families 179 / 146 / 133,model_breakdown.csv,
+Model table: top-5 share 12.4 / 20.4 / 17.6,model_breakdown.csv,
+Model table: outside catalog 35.2 / 31.3 / 25.8,model_breakdown.csv,
+Model table: retention 0.41 / 0.50 / 0.56,model_breakdown.csv,"column is mean pairwise Jaccard, marked PRIMARY"
+Between two and three of five recommendations survive,model_breakdown.csv,mean three-way intersection 2.49
+51 percent answer variance,model_breakdown.csv,"complement of the pooled Jaccard mean, same measurement"
+Twelve of the top twenty-five common to all three models,null_overlap.json,
+"Null overlap about 20, never fewer than 16 across 2,000 attempts",null_overlap.json,
+Raleway rank 15 recommended 3 times,rank_frequency.csv,
+Source Serif 4 rank 131 recommended 296 times,rank_frequency.csv,
+Literata rank 196 recommended 215 times,rank_frequency.csv,
+Usage correlation 0.31,usage_correlation.csv,population and tie handling stated there
+Reversing judgment calls moves concentration by under two points,resolution_sensitivity.csv,
+"9,450 recommendation slots against 9,558 named mentions",README.md; restriction.csv,
+Model identifiers,README.md,
+Catalog fetched 1 September 2026,README.md,
+Pooled figures need reweighting before describing typical practice,reweighting_weights.csv,"two of three scenarios are placeholders, marked as such in the file"

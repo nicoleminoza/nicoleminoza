@@ -1,0 +1,14 @@
+{
+  "observed_three_way_top25_overlap": 12,
+  "null_mean": 20.1,
+  "null_min": 16,
+  "null_max": 23,
+  "null_95_interval": [
+    18,
+    22
+  ],
+  "p_observed_or_lower": "< 0.0005",
+  "simulations": 2000,
+  "seed": 20260902,
+  "construction": "Pool every named mention from all three models, then deal it back out into three sets, sampling with replacement and preserving each model's own recommendation count, so the three differ only by sampling. Compare the three-way intersection of their top twenty-five."
+}

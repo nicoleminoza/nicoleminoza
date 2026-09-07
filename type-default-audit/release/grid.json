@@ -1,0 +1,44 @@
+{
+  "seed": 20260831,
+  "briefs": 210,
+  "marginals": {
+    "industry": {
+      "values": 10,
+      "briefs_per_value": 21
+    },
+    "tone": {
+      "values": 6,
+      "briefs_per_value": 35
+    },
+    "medium": {
+      "values": 6,
+      "briefs_per_value": 35
+    },
+    "script": {
+      "values": 5,
+      "briefs_per_value": 42
+    },
+    "specificity": {
+      "values": 3,
+      "briefs_per_value": 70
+    }
+  },
+  "pairwise": {
+    "cells_possible": 347,
+    "cells_occupied": 347,
+    "cell_count_min": 2,
+    "cell_count_max": 14,
+    "note": "Occupancy is not balance. Every pair of tag values appears, but counts range from 2 to 14."
+  },
+  "three_way": {
+    "dimensions": [
+      "tone",
+      "script",
+      "specificity"
+    ],
+    "cells_possible": 90,
+    "cells_occupied": 89,
+    "note": "One cell of ninety is empty, so higher-order confounding is reduced rather than eliminated."
+  },
+  "regeneration": "src/build_brief_grid.py assigns exact marginals, then hill-climbs pair occupancy. Seed above reproduces the grid."
+}

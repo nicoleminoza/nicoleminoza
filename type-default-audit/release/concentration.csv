@@ -1,0 +1,4 @@
+population,N,distinct_names,top5_share,top10_share,top25_share,top40_share,top100_share,hhi,gini_observed
+all named mentions,9558,1029,0.1592,0.2602,0.4148,0.5035,0.6991,0.0103,0.7688
+resolved only,9152,744,0.1663,0.2717,0.4332,0.5258,0.7292,0.0113,0.7526
+catalog only,6210,228,0.2451,0.4005,0.6287,0.7552,0.9456,0.0227,0.7461

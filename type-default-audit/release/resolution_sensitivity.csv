@@ -1,0 +1,7 @@
+metric,judgment_calls_included,judgment_calls_excluded
+rows flagged needs_review,1016 of 9558 (10.6%),n/a
+N,9558,8542
+top-10 share,0.2602,0.2405
+distinct catalog families,228,226
+outside-catalog share,0.3078,0.3315
+"restriction, matched-draw increase",+29.1%,+25.9%

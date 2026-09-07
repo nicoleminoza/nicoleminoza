@@ -1,0 +1,15 @@
+quantity,open,restricted,note
+recommendation slots,1260,1260,
+named rows after compound splitting,1278,1260,"18 compound fields open, 0 restricted"
+catalog recommendations,564,1255,
+"distinct catalog families, raw",73,117,"not comparable, unequal draws"
+"distinct catalog families, matched draw",73,94.2,"2,000 draws without replacement, RNG seeded to 20260831 immediately before this loop. At this simulation count the interval bounds carry about one family of Monte Carlo error."
+matched draw 95% CI,,"[88, 101]","2,000 draws without replacement, RNG seeded to 20260831 immediately before this loop. At this simulation count the interval bounds carry about one family of Monte Carlo error."
+increase in distinct families,,+29.1%,
+top-five share,0.3741,0.247,
+"top-five share, rarefied",,0.251,"proportion, unaffected by the draw correction"
+"novel families, matched draw",,34.5,"2,000 draws without replacement, RNG seeded to 20260831 immediately before this loop. At this simulation count the interval bounds carry about one family of Monte Carlo error."
+novel families 95% CI,,"[29, 41]","2,000 draws without replacement, RNG seeded to 20260831 immediately before this loop. At this simulation count the interval bounds carry about one family of Monte Carlo error."
+"novel families, full sets",,52,
+open families absent from restricted,8,,
+EB Garamond,0,35,

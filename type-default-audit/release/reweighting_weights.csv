@@ -1,0 +1,16 @@
+scenario,status,applies_to,script_slice,weight,eligible_catalog_families
+as_sampled,"MEASURED, this is the actual composition of the brief set",pooled figures across the five script slices,latin_only,0.2,1944
+as_sampled,"MEASURED, this is the actual composition of the brief set",pooled figures across the five script slices,plus_cyrillic,0.2,294
+as_sampled,"MEASURED, this is the actual composition of the brief set",pooled figures across the five script slices,plus_greek,0.2,118
+as_sampled,"MEASURED, this is the actual composition of the brief set",pooled figures across the five script slices,plus_vietnamese,0.2,519
+as_sampled,"MEASURED, this is the actual composition of the brief set",pooled figures across the five script slices,cjk_adjacent,0.2,135
+latin_dominant,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,latin_only,0.7,1944
+latin_dominant,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_cyrillic,0.1,294
+latin_dominant,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_greek,0.05,118
+latin_dominant,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_vietnamese,0.1,519
+latin_dominant,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,cjk_adjacent,0.05,135
+latin_overwhelming,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,latin_only,0.9,1944
+latin_overwhelming,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_cyrillic,0.04,294
+latin_overwhelming,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_greek,0.02,118
+latin_overwhelming,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,plus_vietnamese,0.03,519
+latin_overwhelming,"PLACEHOLDER, UNVALIDATED ASSUMPTION, not measured from anything",pooled figures across the five script slices,cjk_adjacent,0.01,135
