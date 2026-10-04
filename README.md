@@ -3,12 +3,12 @@
   <img src="assets/readme/banner-e-light.png" width="100%" alt="Nicole Miñoza. Product and product marketing leader. I turn undervalued features into revenue, retention, and reach. I own both the product and the story that sells it.">
 </picture>
 
-**Open to Director and VP roles in product and product marketing.** If your team is building something where craft and judgment matter, I’d like to hear about it. [Reach me on LinkedIn →](https://www.linkedin.com/in/nicoleminoza)
+**Open to Director and VP roles in product and product marketing.** If your team is building something where craft and judgment matter, I’d like to hear about it. [Reach me on LinkedIn](https://www.linkedin.com/in/nicoleminoza) ↗
 
 ## Independent work
 
 - [**Type Default Audit**](https://nicoleminoza.com/type-default-audit/) ↗  
-  Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems.
+  Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems. [Source](https://github.com/nicoleminoza/type-default-audit)
 - [**House Style**](https://housestyle.nicoleminoza.com/) ↗  
   A curated library of AI prompts for marketing, brand, and product leaders. Free catalog, with the most complex 30% gated behind sign-in as a product-led growth funnel, instrumented with PostHog. [Source](https://github.com/nicoleminoza/house-style)
 - [**How Institutions Behave**](https://nicoleminoza.com/how-institutions-behave/) ↗  
@@ -27,6 +27,4 @@ I also founded [Make It Land](https://makeitland.studio), a positioning-led bran
 
 ## Connect
 
-[Résumé ↗](https://nicoleminoza.com/resume.html)
-
-[nicoleminoza.com](https://nicoleminoza.com) · [hello@nicoleminoza.com](mailto:hello@nicoleminoza.com)
+[Résumé ↗](https://nicoleminoza.com/resume.html) · [nicoleminoza.com](https://nicoleminoza.com) · [hello@nicoleminoza.com](mailto:hello@nicoleminoza.com)
