@@ -20,7 +20,7 @@ Most recently Director of Product Management, where I shipped generative text ed
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/stats-e-dark.png">
-  <img src="assets/readme/stats-e-light.png" width="100%" alt="+40% monthly active users in year one after the Adobe Fonts rebrand I led (2019). 75 people across product, design, and engineering in the Adobe typography org I set direction for. 12 flagship apps moved onto one shared text platform, through teams I didn’t manage (2021–2026).">
+  <img src="assets/readme/stats-e-light.png" width="100%" alt="+40% monthly active users in year one after the Adobe Fonts rebrand I led (2019). 75 people across product, design, and engineering in the Adobe typography org I set direction for. 12 flagship apps moved onto one shared text platform, through teams I didn’t manage (2021–2024).">
 </picture>
 
 I also founded [Make It Land](https://makeitland.studio), a positioning-led brand and web studio for founder-led businesses.
