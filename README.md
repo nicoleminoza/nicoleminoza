@@ -3,7 +3,7 @@
   <img src="assets/readme/banner-e-light.png" width="100%" alt="Nicole Miñoza. Product and product marketing leader. I turn undervalued features into revenue, retention, and reach. I own both the product and the story that sells it.">
 </picture>
 
-I lead at the intersection of product, product marketing, and market strategy — turning complex technology into products people understand, adopt, and value.  
+I lead at the intersection of product, product marketing, and market strategy, turning complex technology into products people understand, adopt, and value.  
 
 I spent seven years leading product at Adobe after a decade in product marketing, most recently as Director of Product for the fonts and typography business. My work spans AI and machine learning, platform strategy, positioning, go-to-market, and adoption across complex product ecosystems.  
 
