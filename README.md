@@ -5,7 +5,7 @@
 
 **Open to Director and VP roles in product and product marketing.** If your team is building something where craft and judgment matter, I’d like to hear about it. [Reach me on LinkedIn](https://www.linkedin.com/in/nicoleminoza) ↗
 
-## Independent work
+## Live Case Studies
 
 - [**Type Default Audit**](https://nicoleminoza.com/type-default-audit/) ↗  
   Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems. [Source](https://github.com/nicoleminoza/type-default-audit)
