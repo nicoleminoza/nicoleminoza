@@ -27,6 +27,8 @@ Most recently Director of Product Management at Adobe, leading typography and AI
   <img src="assets/readme/stats-e-light.png" width="100%" alt="+40% monthly active users in year one after the Adobe Fonts rebrand I led (2019). 75 people across product, design, and engineering in the Adobe typography org I set direction for. 12 flagship apps moved onto one shared text platform, through teams I didn’t manage (2021–2024).">
 </picture>
 
+## Make It Land
+
 I founded [Make It Land](https://makeitland.studio), a positioning-led brand and web studio where I work with founder-led businesses on positioning, messaging, and digital expression.
 
 ## Connect
