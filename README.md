@@ -27,6 +27,6 @@ I also founded [Make It Land](https://makeitland.studio), a positioning-led bran
 
 ## Connect
 
-**[Connect on LinkedIn →](https://www.linkedin.com/in/nicoleminoza)** · [Résumé ↗](https://nicoleminoza.com/resume.html)
+[Résumé ↗](https://nicoleminoza.com/resume.html)
 
 [nicoleminoza.com](https://nicoleminoza.com) · [hello@nicoleminoza.com](mailto:hello@nicoleminoza.com)
