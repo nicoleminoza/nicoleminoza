@@ -3,16 +3,20 @@
   <img src="assets/readme/banner-e-light.png" width="100%" alt="Nicole Miñoza. Product and product marketing leader. I turn undervalued features into revenue, retention, and reach. I own both the product and the story that sells it.">
 </picture>
 
-**Open to Director and VP roles in product and product marketing.** If your team is building something where craft and judgment matter, I’d like to hear about it. [Reach me on LinkedIn](https://www.linkedin.com/in/nicoleminoza) ↗
+I lead at the intersection of product, product marketing, and market strategy — turning complex technology into products people understand, adopt, and value.  
 
-## Live Case Studies
+I spent seven years leading product at Adobe after a decade in product marketing, most recently as Director of Product for the fonts and typography business. My work spans AI and machine learning, platform strategy, positioning, go-to-market, and adoption across complex product ecosystems.  
+
+I’m exploring Director and VP roles in Product and Product Marketing, especially where product complexity, customer understanding, and adoption intersect. [Reach me on LinkedIn](https://www.linkedin.com/in/nicoleminoza) ↗
+
+## Selected Work
 
 - [**Type Default Audit**](https://nicoleminoza.com/type-default-audit/) ↗  
-  Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems. [Source](https://github.com/nicoleminoza/type-default-audit)
+  Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems, and a way to see which choices AI makes visible by default. [Source](https://github.com/nicoleminoza/type-default-audit)
 - [**House Style**](https://housestyle.nicoleminoza.com/) ↗  
-  A curated library of AI prompts for marketing, brand, and product leaders. Free catalog, with the most complex 30% gated behind sign-in as a product-led growth funnel, instrumented with PostHog. [Source](https://github.com/nicoleminoza/house-style)
+ A curated AI workflow product for marketing, brand, and product leaders. The library stays open; sign-in is earned through saved work and interactive builders, with product bets instrumented in PostHog. [Source](https://github.com/nicoleminoza/house-style)
 - [**How Institutions Behave**](https://nicoleminoza.com/how-institutions-behave/) ↗  
-  Interactive brand thesis arguing brand is behavior, not image, benchmarked against nine landmark cultural-institution rebrands. [Source](https://github.com/nicoleminoza/the-behavioral-brand)
+  An interactive brand thesis testing the idea that brand is behavior, not image, against nine landmark cultural-institution rebrands. Research, analysis, positioning, design, and build by me. [Source](https://github.com/nicoleminoza/the-behavioral-brand)
 
 ## At Adobe
 
