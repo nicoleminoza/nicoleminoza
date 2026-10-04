@@ -16,18 +16,18 @@ I’m exploring Director and VP roles in Product and Product Marketing, especial
 - [**House Style**](https://housestyle.nicoleminoza.com/) ↗  
  A curated AI workflow product for marketing, brand, and product leaders. The library stays open; sign-in is earned through saved work and interactive builders, with product bets instrumented in PostHog. [Source](https://github.com/nicoleminoza/house-style)
 - [**How Institutions Behave**](https://nicoleminoza.com/how-institutions-behave/) ↗  
-  An interactive brand thesis testing the idea that brand is behavior, not image, against nine landmark cultural-institution rebrands. Research, analysis, positioning, design, and build by me. [Source](https://github.com/nicoleminoza/the-behavioral-brand)
+  An interactive brand thesis testing the idea that brand is behavior, not image, against nine landmark cultural-institution rebrands. I researched, positioned, designed, and built the project end to end. [Source](https://github.com/nicoleminoza/the-behavioral-brand)
 
 ## At Adobe
 
-Most recently Director of Product Management, where I shipped generative text edit in Firefly Boards at Adobe MAX 2025.
+Most recently Director of Product Management at Adobe, leading typography and AI product strategy across a 75-person organization. My final launch was generative text editing in Firefly Boards at Adobe MAX 2025.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/stats-e-dark.png">
   <img src="assets/readme/stats-e-light.png" width="100%" alt="+40% monthly active users in year one after the Adobe Fonts rebrand I led (2019). 75 people across product, design, and engineering in the Adobe typography org I set direction for. 12 flagship apps moved onto one shared text platform, through teams I didn’t manage (2021–2024).">
 </picture>
 
-I also founded [Make It Land](https://makeitland.studio), a positioning-led brand and web studio for founder-led businesses.
+I founded [Make It Land](https://makeitland.studio), a positioning-led brand and web studio where I work with founder-led businesses on positioning, messaging, and digital expression.
 
 ## Connect
 
