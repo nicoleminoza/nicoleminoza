@@ -11,7 +11,7 @@ I’m exploring Director and VP roles in Product and Product Marketing, especial
 
 ## Selected Work
 
-- [**Working Theory**](https://nicoleminoza.com/working-theory/) ↗
+- [**Working Theory**](https://nicoleminoza.com/working-theory/) ↗  
   Three real decisions from my work at Adobe, reconstructed around what I believed, what the evidence complicated, and what I changed: a platform nobody had to adopt, a business model that stopped matching use, and a product whose job changed. [Source](https://github.com/nicoleminoza/working-theory)
 - [**Type Default Audit**](https://nicoleminoza.com/type-default-audit/) ↗  
   Independent research on what frontier AI models recommend when designers ask for type. Across 1,890 controlled calls to Claude, ChatGPT and Gemini, the models named 1,029 typefaces, and forty of them carried half the answers. The result is a reusable baseline for evaluating AI font-discovery systems, and a way to see which choices AI makes visible by default. [Source](https://github.com/nicoleminoza/type-default-audit)
@@ -22,7 +22,7 @@ I’m exploring Director and VP roles in Product and Product Marketing, especial
 
 ## At Adobe
 
-Most recently Director of Product Management at Adobe, leading typography and AI product strategy across a 75-person organization. My final launch was generative text editing in Firefly Boards at Adobe MAX 2025.
+I led typography and AI product strategy across a 75-person organization. My final launch was generative text editing in Firefly Boards at Adobe MAX 2025.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/stats-e-dark.png">
