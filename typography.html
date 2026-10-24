@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why these typefaces · Nicole Miñoza</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#6B2C41;--terra:#C07A44;--ink:#241F1D;--crimson:#9D2235;--paper:#FAF6F1;--paper2:#F2EADF;--soft:#5D534C;--faint:#8F8377;--rule:#E6DCCF;
+--display:"Newsreader",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--mono:"Spline Sans Mono",ui-monospace,monospace;
+--maxw:1180px;--gutter:clamp(20px,5vw,72px);--pad:clamp(52px,6.5vw,96px)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;font-feature-settings:"ss01" on;text-rendering:optimizeLegibility}
+a{color:var(--plum);text-decoration:none;border-bottom:1px solid var(--rule);transition:color .18s,border-color .18s}
+a:hover{color:var(--terra);border-color:var(--terra)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;margin:0;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0 0 1em;text-wrap:pretty}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.lab{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:14px}
+.lab.q{color:var(--faint)}
+nav.top{border-bottom:1px solid var(--rule)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:20px;padding-bottom:20px}
+.wm{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-.025em;color:var(--ink);border:0;white-space:nowrap;flex:none}
+.wm b{color:var(--terra);font-weight:600}
+.wm:hover{color:var(--ink)}
+.toc{display:flex;gap:22px;flex-wrap:wrap}
+.toc a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);border:0}
+.toc a:hover{color:var(--plum)}
+header.hero{padding:var(--pad) 0 calc(var(--pad)*.7)}
+header.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.98;max-width:11ch}
+header.hero h1 em{font-style:italic;font-weight:400}
+.lede{font-family:var(--display);font-size:clamp(20px,2.2vw,26px);line-height:1.36;max-width:34em;margin:28px 0 0}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:16px 0 18px;margin-top:48px}
+.meta dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.meta dd{margin:0;font-size:15px;font-weight:500}
+section.part{padding:var(--pad) 0;border-top:1px solid var(--rule)}
+.shead{display:grid;grid-template-columns:minmax(0,72px) minmax(0,1fr);gap:0 24px;border-top:2px solid var(--ink);padding-top:14px;margin-bottom:44px}
+.shead .n{font-family:var(--mono);font-size:12px;color:var(--terra);padding-top:12px}
+.shead h2{font-size:clamp(32px,4.4vw,50px);line-height:1.05}
+.shead p{color:var(--soft);max-width:36em;margin:14px 0 0}
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:0 36px}
+.goal{border-top:1px solid var(--rule);padding:22px 0 8px}
+.goal .i{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-bottom:12px}
+.goal h3{font-size:clamp(21px,2.1vw,27px);line-height:1.18;margin-bottom:10px}
+.goal p{color:var(--soft);font-size:16px}
+.aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px;margin-top:40px;background:var(--ink);color:var(--paper);padding:clamp(24px,3vw,36px);border-radius:8px}
+.aud .lab{color:var(--terra)}
+.aud div p{font-size:15.5px;color:#D9CFC4;margin:0}
+.aud h4{font-family:var(--display);font-size:22px;color:var(--paper);margin-bottom:8px}
+.spec{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:24px 48px;border-top:1px solid var(--rule);padding:36px 0}
+.spec .fam{font-family:var(--display);font-size:30px;line-height:1.05;display:block}
+.spec .job{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.06em;color:var(--soft);display:block;margin-top:12px}
+.spec .tok{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-top:8px}
+.samp{font-family:var(--display);font-size:clamp(40px,6vw,76px);line-height:1.02;letter-spacing:-.025em;margin:0 0 14px}
+.samp em{font-style:italic;font-weight:400}
+.sans .samp{font-family:var(--sans);font-weight:500;font-size:clamp(32px,4.6vw,56px);letter-spacing:-.015em}
+.mono .samp{font-family:var(--mono);font-size:clamp(26px,3.6vw,42px);letter-spacing:.06em;text-transform:uppercase}
+.glyphs{font-family:var(--mono);font-size:13px;color:var(--faint);letter-spacing:.04em;margin-bottom:18px}
+.spec .use{color:var(--soft);max-width:38em;margin:0}
+.weights{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px}
+.weights span{font-size:15px;color:var(--ink)}
+.scale{border-top:2px solid var(--ink);margin-top:56px}
+.scale h3{font-size:24px;margin:18px 0 18px}
+.row{display:grid;grid-template-columns:minmax(0,110px) minmax(0,190px) minmax(0,1fr);gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.row .r{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.row .s{font-family:var(--mono);font-size:11px;line-height:1.6;color:var(--faint)}
+.row .e{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;min-width:0;overflow-wrap:anywhere}
+.row .e.d{font-size:clamp(40px,6.5vw,84px)}
+.row .e.h{font-size:clamp(30px,4vw,50px)}
+.row .e.sh{font-size:clamp(20px,2.4vw,29px)}
+.row .e.b{font-family:var(--sans);font-size:17px;line-height:1.62;letter-spacing:0;color:var(--soft);max-width:34em}
+.row .e.m{font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra)}
+.row .e.q{font-style:italic;font-size:clamp(20px,2.3vw,27px);line-height:1.3}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:36px;margin-top:56px}
+.rules h4{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.rules .do h4{color:var(--plum)}.rules .dont h4{color:var(--crimson)}
+.rules ul{margin:0;padding-left:20px}
+.rules li{color:var(--soft);font-size:16px;margin-bottom:8px}
+.dec{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:16px 48px;border-top:1px solid var(--rule);padding:36px 0}
+.dec .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--plum);line-height:1.6}
+.dec .k i{display:block;font-style:normal;color:var(--faint);letter-spacing:.1em;margin-top:6px}
+.dec .call{font-family:var(--display);font-size:clamp(23px,2.5vw,31px);line-height:1.18;letter-spacing:-.02em;margin:0 0 16px;color:var(--ink)}
+.dec p{max-width:38em}
+.dec .tested{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.dec .tested span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);border:1px solid var(--rule);border-radius:100px;padding:5px 12px;white-space:nowrap;flex:none}
+.close{border-top:2px solid var(--ink);margin-top:24px;padding-top:24px;display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:16px 48px}
+.close p{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1.28;max-width:30em;margin:0}
+footer{border-top:1px solid var(--rule);padding:28px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+@media (max-width:760px){
+.shead{grid-template-columns:1fr}.shead .n{padding-top:0;margin-bottom:6px}
+.spec,.dec,.close{grid-template-columns:1fr}
+.row{grid-template-columns:1fr 1fr}.row .e{grid-column:1/-1}
+.toc{display:none}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap"><a class="wm" href="https://nicoleminoza.com">Nicole Miñoza<b>.</b></a><div class="toc"><a href="#principles">Principles</a><a href="#rationale">Why these three</a><a href="#choices">In use</a></div></div></nav>
+
+<header class="hero" data-screen-label="Intro"><div class="wrap">
+<span class="lab">Design notes · Typography</span>
+<h1>Why these <em>typefaces</em></h1>
+<p class="lede">How I chose the type for this site and why. A short read on the decisions behind the design: what the type has to do, why I chose these three, and how they work together.</p>
+</div></header>
+
+<section class="part" id="principles" data-screen-label="01 Principles"><div class="wrap">
+<div class="shead"><span class="n">01</span><div><h2>What the type has to do</h2><p>Four requirements. Every choice that follows answers to them.</p></div></div>
+<div class="goals">
+<div class="goal"><span class="i">01</span><h3>Lead with evidence</h3><p>The numbers carry the argument. Metrics, outcomes, and sources need to read at a glance and hold up on a second look.</p></div>
+<div class="goal"><span class="i">02</span><h3>Read as editorial, not corporate</h3><p>The site should feel like a well-set page, with strong type, real hierarchy, and generous rules, rather than a product landing page or a tech deck.</p></div>
+<div class="goal"><span class="i">03</span><h3>Show craft as proof</h3><p>A career built on typography has to look it. The typesetting itself is evidence of the judgment the work describes.</p></div>
+<div class="goal"><span class="i">04</span><h3>Hold together everywhere</h3><p>The same system has to work on the site, in a printed résumé, in social share images, and on a LinkedIn banner viewed on a phone.</p></div>
+</div>
+</div></section>
+
+<section class="part" id="rationale" data-screen-label="02 Why these three"><div class="wrap">
+<div class="shead"><span class="n">02</span><div><h2>Why these three</h2><p>Each family does a job the other two can't. I chose them by setting the type at the sizes the brand actually uses and reading it there.</p></div></div>
+
+<div class="dec">
+<div class="k">The brief<i>The starting point</i></div>
+<div><p class="call">Three families, three jobs, and the flexibility of variable type.</p>
+<p>The system needed a serif voice for judgment, a plain sans for long passages, and a monospace for labels and data, without the three competing for attention.</p>
+<p>I also wanted variable typefaces. A variable font holds a range of weights, and sometimes optical sizes, in one file, so each use can be tuned instead of picked from a short list of fixed styles. That flexibility is what lets one system cover a hero headline and a 48px avatar.</p>
+<div class="tested"><span>LinkedIn banner</span><span>48px avatar</span><span>Printed résumé</span><span>Phone body column</span></div></div>
+</div>
+
+<div class="dec">
+<div class="k">Newsreader<i>Display · serif</i></div>
+<div><p class="call">A serif built for reading on screens, with an editorial voice.</p>
+<p>Newsreader was designed by Production Type for on-screen reading, and it carries the feel of a well-made magazine. I trust the foundry's craft, and it shows in how the type holds up at every size.</p>
+<p>It works from an avatar to a hero headline because it has an optical-size axis: the letterforms adjust for the size they're set at, sturdier when small and more refined when large. That's why one family can carry the wordmark, the headlines, and the metric figures.</p></div>
+</div>
+
+<div class="dec">
+<div class="k">Hanken Grotesk<i>Text · sans</i></div>
+<div><p class="call">Neutral on purpose, so the serif and the numbers stay loud.</p>
+<p>The body sans has one job: stay out of the way. Hanken Grotesk reads cleanly at body size, so a reader gets through a case study without noticing the type, and its plain, even letterforms sit comfortably next to Newsreader.</p>
+<p>Choosing it this way, by reading it rather than reaching for a familiar name, is the habit my research is about. In the <a href="/type-default-audit/">Type Default Audit</a>, I asked three AI model families to recommend typefaces 1,890 times. They named 1,029 typefaces, and about 40 of them carried half the answers. Defaults are where tools, and people, go without thinking. Every family on this site was chosen by setting it and reading it.</p></div>
+</div>
+
+<div class="dec">
+<div class="k">Spline Sans Mono<i>Detail · mono</i></div>
+<div><p class="call">The details get their own voice.</p>
+<p>In this system, monospace marks metadata: a label, a date, an index, a source. Spline Sans Mono is a humanist monospace rather than a coding-terminal face, so it carries that signal without reading as developer tooling, and it keeps its personality at the small sizes where labels live.</p>
+<p>It's used only small and uppercase. That restriction is deliberate: once mono shows up in a paragraph, it stops signaling anything.</p></div>
+</div>
+
+<div class="dec">
+<div class="k">The pairing<i>How the three hold</i></div>
+<div><p class="call">Contrast by family, not by weight.</p>
+<p>Hierarchy comes from three clearly different voices at a small number of sizes, rather than many weights of one family. A heading, a paragraph, and a label are easy to tell apart at a glance, and the variable axes let each be tuned for where it appears.</p></div>
+</div>
+
+
+</div></section>
+
+<section class="part" id="choices" data-screen-label="03 The type in use"><div class="wrap">
+<div class="shead"><span class="n">03</span><div><h2>The type in use</h2><p>Three families, three jobs: a serif for voice, a sans for clarity, and a mono for labels and data. Hierarchy comes from family and scale, not from stacking weights.</p></div></div>
+
+<div class="spec">
+<div><span class="lab q">Display · Serif</span><span class="fam">Newsreader</span><span class="job">Wordmark · headlines<br>pull quotes · figures</span></div>
+<div><p class="samp">Judgment, <em>set in type</em></p><p class="glyphs">AaBbCcDdEe · 0123456789 · &amp;?!</p><p class="use">The voice of the brand. Used for the wordmark, every headline, metric figures, and italic pull quotes.</p></div>
+</div>
+
+<div class="spec sans">
+<div><span class="lab q">Text · Sans</span><span class="fam">Hanken Grotesk</span><span class="job">Body · navigation<br>buttons · UI</span></div>
+<div><p class="samp">Clear, plain prose</p><p class="glyphs">AaBbCcDdEe · 0123456789 · &amp;?!</p><p class="use">The workhorse for body copy, lead-ins, navigation, and buttons. Set at a comfortable 17px with generous line spacing. It keeps long passages quiet so the serif and the numbers stand out.</p></div>
+</div>
+
+<div class="spec mono">
+<div><span class="lab q">Detail · Mono</span><span class="fam">Spline Sans Mono</span><span class="job">Labels · meta<br>indices · captions</span></div>
+<div><p class="samp">Meta / 01</p><p class="glyphs">AaBbCcDdEe · 0123456789 · &amp;?!</p><p class="use">The connective tissue: eyebrow labels, section indices, dates, and citations. Always small, uppercase, and widely spaced. It signals metadata and never appears in body text.</p></div>
+</div>
+
+<div class="scale">
+<h3>The scale</h3>
+<div class="row"><span class="r">Display</span><span class="s">Newsreader<br>58–138px</span><span class="e d">Nicole Miñoza</span></div>
+<div class="row"><span class="r">Section</span><span class="s">Newsreader<br>30–50px</span><span class="e h">Signature work</span></div>
+<div class="row"><span class="r">Subhead</span><span class="s">Newsreader<br>20–29px</span><span class="e sh">How I lead</span></div>
+<div class="row"><span class="r">Quote</span><span class="s">Newsreader italic<br>20–27px</span><span class="e q">“Praised as the best annual strategy presentation they'd ever seen.”</span></div>
+<div class="row"><span class="r">Body</span><span class="s">Hanken Grotesk<br>17px</span><span class="e b">Numbers carry the argument. The design gives data room to breathe rather than dressing it up.</span></div>
+<div class="row"><span class="r">Label</span><span class="s">Spline Sans Mono<br>11.5px</span><span class="e m">Product &amp; Product Marketing</span></div>
+</div>
+
+<div class="close"><span class="lab">Why it matters</span><p>Choosing type is a small version of the job: set the requirements, weigh the options, commit, and explain the call. Everything on <a href="https://nicoleminoza.com">nicoleminoza.com</a> is set in these three.</p></div>
+</div></section>
+
+<footer><div class="wrap"><span>Nicole Miñoza · Why these typefaces</span><span>nicoleminoza.com</span></div></footer>
+</body>
+</html>

@@ -345,6 +345,10 @@
   .now-card .subdiv span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
   .now-card .subdiv::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--paper) 16%,transparent)}
   @media(max-width:980px){.now-grid{grid-template-columns:1fr}}
+  .now-card li .d{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#cdbfb6;white-space:nowrap;margin-left:4px}
+  .now-board{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:clamp(22px,2.4vw,30px);padding-top:18px;border-top:1px solid color-mix(in srgb,var(--paper) 16%,transparent)}
+  .now-board p{margin:0;color:#cdbfb6;font-size:15px;line-height:1.5;max-width:62ch}
+  .now-board .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-right:12px}
 
   /* ---------- credentials + references ---------- */
   .creds .inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,72px)}
@@ -522,7 +526,7 @@
   footer.foot a{color:#cdbfb6;text-decoration:none}
   footer.foot a:hover{color:var(--paper)}
   footer.foot .fmono{font-family:var(--mono);font-size:12px;letter-spacing:.05em}
-  footer.foot .colophon{margin-top:18px;padding-top:16px;justify-content:flex-start;
+  footer.foot .colophon{margin-top:18px;padding-top:16px;justify-content:space-between;
     border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent)}
   footer.foot .colophon .set{font-size:12px;letter-spacing:.04em;color:var(--faint)}
   footer.foot .colophon .set .fn-serif{font-family:var(--display);font-style:italic;font-size:15px;letter-spacing:0;color:#cdbfb6}
@@ -541,7 +545,7 @@
     <a href="#top" class="brandmark" style="text-decoration:none">Nicole Miñoza<span class="dot">.</span></a>
     <nav class="navlinks">
       <a href="#work" class="hide-sm">Signature Work</a>
-      <a href="#thinking" class="hide-sm">How I Think</a>
+      <a href="#leading" class="hide-sm">Principles</a>
       <a href="#now" class="hide-sm">Now</a>
       <a href="#career" class="hide-sm">Career</a>
       <a class="pill" href="#contact">Get in touch</a>
@@ -562,10 +566,10 @@
         <p class="pos editorial" style="font-weight: 400">I turn undervalued features into <b>revenue, retention, and reach.</b> I own <b>both the product and the story that sells it.</b></p>
       </div>
       <div class="hero-meta">
-        <a class="btn" href="#contact">
+        <!--email_off--><a class="btn" href="mailto:hello@nicoleminoza.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
           Email me
-        </a>
+        </a><!--/email_off-->
         <a class="btn ghost" href="https://www.linkedin.com/in/nicoleminoza" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn ghost" href="https://nicoleminoza.com/resume.html" target="_blank" rel="noopener">Résumé</a>
       </div>
@@ -814,40 +818,55 @@
       <span class="idx num">05</span>
       <div>
         <h2 class="sec-title">Now</h2>
-        <p class="sec-lede" style="color:#cdbfb6;max-width:none">Independent product, marketing, and brand work, building and shipping AI products firsthand, plus executive nonprofit leadership.<br>March 2026 to present.</p>
+        <p class="sec-lede" style="color:#cdbfb6;max-width:none">Since June 2026, I've been building products, running original research, and experimenting with how AI changes the way teams work. I'm doing the work myself: writing requirements, directing coding agents, testing what they produce, and deciding what ships.</p>
       </div>
     </div>
     <div class="now-grid">
       <div class="now-card">
         <div class="nk">Building</div>
-        <h3>Shipped Ramón, an AI styling app, end-to-end</h3>
-        <p>Wrote the product requirements from real user needs, shaped the onboarding narrative and user-experience copy, and made the technical trade-offs from server-side security to model selection. <b>I treated the prompt itself as the product.</b> Built to learn the medium; in daily use.</p>
+        <h3>Built an agent team with a human approval gate</h3>
+        <p class="when-since">October 2026</p>
+        <p>I use coding agents daily to build <a href="https://makeitland.studio/#work" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">websites</a>, workflows, and the tests that check them. I run six agents in Claude Code: one routes the work, and five specialists handle specific tasks. <b>They draft; I approve.</b> The system blocks high-risk actions, including sending messages, deleting files, and writing to client folders.</p>
+        <div class="subdiv"><span>Tested</span></div>
         <ul>
-          <li>Curation is the product. <a href="https://housestyle.nicoleminoza.com" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">House Style</a> is a curated library of more than 40 opinionated AI prompts for marketing, brand, and product leaders. Each one casts a specific expert role, takes variables, and forces a sharper answer than the obvious one. The name is a brand term for a voice rulebook, which is the whole idea. I positioned it and built it in React by directing Claude Code.</li>
+          <li><b>7 traps, 7 held.</b> I built 21 test cases, 7 of them designed to make an agent break its rules. I labeled every result, identified the biggest failure pattern, and tightened one rule. Undated years dropped from five out of five runs to three. Better, not fixed.</li>
         </ul>
-        <p><a href="https://github.com/nicoleminoza" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Source on GitHub&nbsp;&#8599;</a></p>
       </div>
       <div class="now-card">
-        <div class="nk">Branding</div>
-        <h3>Brand is behavior, not image</h3>
-        <p><a href="https://nicoleminoza.com/how-institutions-behave" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">How Institutions Behave</a> is an interactive thesis that argues exactly that, benchmarking nine landmark cultural-institution rebrands. Researched, designed, and built solo.</p>
+        <div class="nk">Research</div>
+        <h3>Studied how AI narrows creative choice</h3>
+        <p class="when-since">September 2026</p>
+        <p>The <a href="/type-default-audit/" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Type Default Audit</a> is my original study of what happens when designers ask AI to recommend typefaces. Across three model families, I ran 1,890 API calls and scored 9,558 recommendations. The models named 1,029 distinct typefaces, but roughly 40 accounted for half the recommendations.</p>
+        <ul>
+          <li>Built the research harness and measurement system, published the methodology alongside the findings, and withdrew three findings that didn't hold up under a second pass.</li>
+          <li>Shared the findings with product and AI leadership at an AI platform company.</li>
+        </ul>
+        <p style="margin-top:14px"><a href="https://github.com/nicoleminoza/type-default-audit" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Source on GitHub&nbsp;&#8599;</a></p>
+        <div class="subdiv"><span>Next study</span></div>
+        <ul>
+          <li><a href="https://housestyle.nicoleminoza.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">House Style</a> explores the other side of the question: how people guide AI. It's a library of 40+ opinionated prompts for marketing, brand, and product leaders, built by directing Claude Code.</li>
+        </ul>
+        <p style="margin-top:14px"><a href="https://github.com/nicoleminoza/house-style" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Source on GitHub&nbsp;&#8599;</a></p>
+      </div>
+      <div class="now-card">
+        <div class="nk">Product &amp; Positioning</div>
+        <h3>Made my studio's website useful to AI agents</h3>
+        <p class="when-since">October 2026</p>
+        <p>I built a small read-only MCP server that lets AI agents answer questions about <a href="https://makeitland.studio" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Make It Land</a>, my positioning and web studio. The challenge wasn't just making information accessible. It was deciding what an agent should know, what it could access, and when it needed to say it didn't have an answer.</p>
+        <ul>
+          <li>Private content stays behind an allowlist. I tested 16 paths for unauthorized access, then checked the responses against real questions and the live site.</li>
+        </ul>
+        <p style="margin-top:14px"><a href="https://github.com/nicoleminoza/makeitland-mcp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Source on GitHub&nbsp;&#8599;</a></p>
         <div class="subdiv"><span>In practice</span></div>
         <ul>
-          <li>Identity, end-to-end. <a href="https://cuppalumpia.com" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">Cuppa Lumpia</a> is a complete brand for a Filipino lumpia maker on Bainbridge Island, a logo system, brand guidelines, and a landing site, live at cuppalumpia.com. Strategy through production, designed and built solo.</li>
+          <li><b>Positioning that carries through execution.</b> Clarified the positioning for <a href="https://makeitland.studio/work/my-camino-financial.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">My Camino Financial</a>, then built the website, wrote the copy, and created the supporting LinkedIn and Instagram profiles. “I’ve worked with a lot of people, and what impressed me most was how Nicole understood and quickly translated the heart of my practice into a website I am proud to present.” <b>Leslie Roulias, Founder</b> <span class="d">July 2026</span></li>
+          <li><b>From idea to launch.</b> Positioned Citizen Medic's First Light benefit, then built its <a href="https://tickets.citizenmedic.org/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">ticket</a> and <a href="https://sponsors.citizenmedic.org/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)">sponsor</a> sites. Developed two sponsorship tiers with different benefits and pricing, giving companies clear ways to participate. <span class="d">August 2026</span></li>
         </ul>
       </div>
-      <div class="now-card">
-        <div class="nk">Board</div>
-        <h3>Board of Directors, Bainbridge Island Museum of Art</h3>
-        <p class="when-since">Since December 2025</p>
-        <p>Co-chair of BIMA Bash! 2026, the museum's flagship fundraiser. The campaign raised $1.175M, 31% over its $895K goal.</p>
-        <ul>
-        </ul>
-        <div class="subdiv"><span>Advisory</span></div>
-        <ul>
-          <li><b>Global Advisor, How Women Lead</b> · since 2026. Counseling senior women leaders on brand, marketing, and communications.</li>
-        </ul>
-      </div>
+    </div>
+    <div class="now-board">
+      <p><span class="k">Board</span>Board member, Bainbridge Island Museum of Art, since December 2025. Co-chair of BIMA Bash! 2026, which raised $1.175M, 31% over its $895K goal.</p>
+      <p><span class="k">Advisory</span>Global Advisor, How Women Lead, counseling senior women leaders on brand, marketing, and communications.</p>
     </div>
   </div>
 </section>
@@ -859,7 +878,7 @@
       <span class="idx num">06</span>
       <div>
         <h2 class="sec-title">Career</h2>
-        <p class="sec-lede">Every role inside Adobe's Digital Media business.</p>
+        <p class="sec-lede">Every role inside Adobe's $17B+ Digital Media business.</p>
       </div>
     </div>
 
@@ -1076,13 +1095,11 @@
       </ul>
     </div>
     <div>
-      <h3 class="sub">Executive development</h3>
+      <h3 class="sub">Executive education</h3>
       <ul class="edu">
         <li><b>AI-Driven Leadership</b> · Stanford Online Certificate <span>(2026)</span></li>
         <li><b>Strategic Data Storytelling</b> · University of Chicago <span>(2025)</span></li>
         <li><b>Hispanic Executive Leadership</b> · McKinsey <span>(2024)</span></li>
-        <li><b>Leadership Circles</b> · Adobe <span>(2023)</span></li>
-        <li><b>Women Unlimited LEAD</b> · AscentPoint Leadership <span>(2016–17)</span></li>
       </ul>
     </div>
   </div>
@@ -1109,11 +1126,12 @@
 
 <footer class="foot band">
   <div class="inner">
-    <span class="fmono">Nicole Miñoza</span>
-    <span class="fmono"><a href="https://nicoleminoza.com" target="_blank" rel="noopener">nicoleminoza.com</a> · <a href="https://nicoleminoza.com/resume.html" target="_blank" rel="noopener">Résumé</a> · <a href="https://github.com/nicoleminoza" target="_blank" rel="noopener">GitHub</a> · Seattle, WA · Updated October 2026</span>
+    <span class="fmono">Nicole Miñoza · Seattle, WA · Updated October 2026</span>
+    <span class="fmono"><a href="https://nicoleminoza.com/resume.html" target="_blank" rel="noopener">Résumé</a> · <a href="https://www.linkedin.com/in/nicoleminoza" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/nicoleminoza" target="_blank" rel="noopener">GitHub</a></span>
   </div>
   <div class="inner colophon">
     <span class="set">Typeset in <span class="fn-serif">Newsreader</span>, <span class="fn-sans">Hanken Grotesk</span>, and <span class="fn-mono">Spline Sans Mono</span>.</span>
+    <span class="fmono"><a href="/typography.html">Why these typefaces&nbsp;&rarr;</a></span>
   </div>
 </footer>
 
