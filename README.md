@@ -5,7 +5,7 @@
 
 I work across Product and Product Marketing, usually where technical complexity, customer understanding, business decisions, and go-to-market meet. 
 
-I spent ten years in product marketing and seven leading product at Adobe, with three years running both, most recently as Director of Product for the fonts and typography business. My work spans AI and machine learning, platform strategy, positioning, go-to-market, and adoption across complex product ecosystems.  
+I spent ten years in product marketing and seven leading product at Adobe, with three years running both, most recently as Director of Product Management for the fonts and typography business. My work spans AI and machine learning, platform strategy, positioning, go-to-market, and adoption across complex product ecosystems.  
 
 I’m exploring Director and VP roles in Product and Product Marketing, especially where product complexity, customer understanding, and adoption intersect. [Reach me on LinkedIn](https://www.linkedin.com/in/nicoleminoza) ↗
 
